@@ -112,7 +112,7 @@ const About = () => {
               organization that serves clients across Portugal and internationally.
             </p>
             <p className="text-lg leading-relaxed mb-6">
-              Based in Painho, Portugal, we combine local expertise with global perspectives, 
+              We combine local expertise with global perspectives, 
               offering comprehensive services that span from individual psychological support 
               to large-scale research initiatives and professional training programs.
             </p>

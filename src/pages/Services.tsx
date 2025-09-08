@@ -136,9 +136,9 @@ const Services = () => {
                       through behavioral interventions and communication strategies.
                     </p>
                     <div className="flex flex-wrap gap-2">
+                      <Badge variant="secondary">Motivational interview</Badge>
                       <Badge variant="secondary">Behavioral Change</Badge>
                       <Badge variant="secondary">Patient Engagement</Badge>
-                      <Badge variant="secondary">Communication</Badge>
                     </div>
                     <Button size="sm" asChild>
                       <Link to="/contacts">{t("contacts.training.enroll")}</Link>
@@ -161,9 +161,9 @@ const Services = () => {
                       strategic planning, and effective communication in healthcare settings.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">Team Management</Badge>
-                      <Badge variant="secondary">Strategic Planning</Badge>
-                      <Badge variant="secondary">Healthcare Systems</Badge>
+                      <Badge variant="secondary">Team leadership</Badge>
+                      <Badge variant="secondary">Conflict management and resolution</Badge>
+                      <Badge variant="secondary">Development and implementation of public health strategies</Badge>
                     </div>
                     <Button size="sm" asChild>
                       <Link to="/contacts">{t("contacts.training.enroll")}</Link>
@@ -176,19 +176,19 @@ const Services = () => {
                 <CardHeader>
                   <CardTitle>{t("contacts.training.research")}</CardTitle>
                   <CardDescription>
-                    Master advanced qualitative research techniques and analysis methods.
+                    Master research methods including design, qualitative approaches, and questionnaire development.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                      Hands-on training in qualitative methodologies, from study design to data collection 
-                      and analysis using state-of-the-art techniques and software.
+                      Comprehensive training in research methods from study design to questionnaire 
+                      development and psychometric evaluation.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">Interview Techniques</Badge>
-                      <Badge variant="secondary">Data Analysis</Badge>
-                      <Badge variant="secondary">Research Design</Badge>
+                      <Badge variant="secondary">Research design</Badge>
+                      <Badge variant="secondary">Qualitative research</Badge>
+                      <Badge variant="secondary">Development of questionnaires: from questioning to psychometric development</Badge>
                     </div>
                     <Button size="sm" asChild>
                       <Link to="/contacts">{t("contacts.training.enroll")}</Link>
