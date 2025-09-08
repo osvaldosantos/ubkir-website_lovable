@@ -111,16 +111,16 @@ const Team = () => {
         {/* Team Expertise Areas */}
         <section className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-            Our Collective Expertise
+            {t("team.expertise.title")}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="text-center">
               <CardHeader>
                 <Brain className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle>Research Excellence</CardTitle>
+                <CardTitle>{t("team.expertise.research")}</CardTitle>
                 <CardDescription>
-                  Advanced methodologies in quantitative and qualitative research across health sciences.
+                  {t("team.expertise.research.desc")}
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -128,9 +128,9 @@ const Team = () => {
             <Card className="text-center">
               <CardHeader>
                 <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle>Clinical Practice</CardTitle>
+                <CardTitle>{t("team.expertise.clinical")}</CardTitle>
                 <CardDescription>
-                  Evidence-based therapeutic interventions and psychological assessment expertise.
+                  {t("team.expertise.clinical.desc")}
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -138,9 +138,9 @@ const Team = () => {
             <Card className="text-center">
               <CardHeader>
                 <Award className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle>Training & Education</CardTitle>
+                <CardTitle>{t("team.expertise.training")}</CardTitle>
                 <CardDescription>
-                  Professional development programs and academic training in health sciences.
+                  {t("team.expertise.training.desc")}
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -148,9 +148,9 @@ const Team = () => {
             <Card className="text-center">
               <CardHeader>
                 <BookOpen className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle>Publishing & Innovation</CardTitle>
+                <CardTitle>{t("team.expertise.publishing")}</CardTitle>
                 <CardDescription>
-                  Editorial excellence and digital innovation in health-related technologies.
+                  {t("team.expertise.publishing.desc")}
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -161,12 +161,10 @@ const Team = () => {
         <section className="bg-muted rounded-lg p-8 md:p-12">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              EnviHeB Lab Partnership
+              {t("team.partnership.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Through Dr. Osvaldo Santos' leadership of the EnviHeB Lab at ISAMB, 
-              UBKIR maintains strong connections with cutting-edge academic research 
-              and international collaboration networks.
+              {t("team.partnership.desc")}
             </p>
           </div>
 
@@ -175,9 +173,9 @@ const Team = () => {
               <div className="bg-primary/10 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                 <Brain className="h-10 w-10 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Research Leadership</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">{t("team.partnership.leadership")}</h3>
               <p className="text-sm text-muted-foreground">
-                Leading innovative research projects in environmental health and behavior.
+                {t("team.partnership.leadership.desc")}
               </p>
             </div>
 
@@ -185,9 +183,9 @@ const Team = () => {
               <div className="bg-primary/10 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                 <Users className="h-10 w-10 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Academic Network</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">{t("team.partnership.network")}</h3>
               <p className="text-sm text-muted-foreground">
-                Strong connections with national and international research institutions.
+                {t("team.partnership.network.desc")}
               </p>
             </div>
 
@@ -195,9 +193,9 @@ const Team = () => {
               <div className="bg-primary/10 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                 <Award className="h-10 w-10 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Publication Impact</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">{t("team.partnership.impact")}</h3>
               <p className="text-sm text-muted-foreground">
-                High-impact research publications contributing to global health knowledge.
+                {t("team.partnership.impact.desc")}
               </p>
             </div>
           </div>
@@ -206,7 +204,7 @@ const Team = () => {
         {/* Specialization Areas */}
         <section className="mt-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-            Professional Specializations
+            {t("team.specializations.title")}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
@@ -233,15 +231,14 @@ const Team = () => {
         {/* Call to Action */}
         <section className="mt-20 text-center">
           <h2 className="text-3xl font-bold text-foreground mb-6">
-            Work with Our Expert Team
+            {t("team.cta.title")}
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Ready to collaborate with leading experts in health research and clinical psychology? 
-            Contact us to discuss your project or service needs.
+            {t("team.cta.desc")}
           </p>
           <Button size="lg" asChild>
             <Link to="/contacts">
-              Start a Conversation
+              {t("team.cta.button")}
             </Link>
           </Button>
         </section>

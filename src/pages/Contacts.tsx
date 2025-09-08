@@ -31,13 +31,13 @@ const Contacts = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
                   <MapPin className="h-6 w-6 text-primary" />
-                  Visit Our Office
+                  {t("contacts.office.title")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <p className="font-medium text-foreground">Address</p>
+                    <p className="font-medium text-foreground">{t("contacts.office.address")}</p>
                     <p className="text-muted-foreground">
                       Estrada Nacional 115, nº1<br />
                       2550-426 Painho<br />
@@ -49,10 +49,10 @@ const Contacts = () => {
                   <div className="bg-muted rounded-lg p-8 text-center">
                     <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
                     <p className="text-muted-foreground">
-                      Interactive map with satellite view coming soon
+                      {t("contacts.map.placeholder")}
                     </p>
                     <p className="text-sm text-muted-foreground mt-2">
-                      (Requires Supabase integration for full functionality)
+                      {t("contacts.map.note")}
                     </p>
                   </div>
                 </div>
@@ -63,21 +63,21 @@ const Contacts = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
                   <Mail className="h-6 w-6 text-primary" />
-                  Contact Information
+                  {t("contacts.info.title")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <p className="font-medium text-foreground">Email</p>
+                  <p className="font-medium text-foreground">{t("contacts.email")}</p>
                   <p className="text-muted-foreground">geral@ubkir.pt</p>
                 </div>
                 
                 <div>
-                  <p className="font-medium text-foreground">Business Hours</p>
+                  <p className="font-medium text-foreground">{t("contacts.hours.title")}</p>
                   <div className="text-muted-foreground text-sm space-y-1">
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday: 9:00 AM - 1:00 PM</p>
-                    <p>Sunday: Closed</p>
+                    <p>{t("contacts.hours.monday")}</p>
+                    <p>{t("contacts.hours.saturday")}</p>
+                    <p>{t("contacts.hours.sunday")}</p>
                   </div>
                 </div>
               </CardContent>
@@ -89,64 +89,64 @@ const Contacts = () => {
             {/* General Contact Form */}
             <Card>
               <CardHeader>
-                <CardTitle>General Inquiry</CardTitle>
+                <CardTitle>{t("contacts.general.title")}</CardTitle>
                 <CardDescription>
-                  Send us a message about our services or general questions.
+                  {t("contacts.general.desc")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Alert className="mb-6">
                   <AlertCircle className="h-4 w-4" />
                   <AlertDescription>
-                    Email functionality requires Supabase integration to be fully operational.
+                    {t("contacts.alert")}
                   </AlertDescription>
                 </Alert>
                 
                 <form className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="Your first name" />
+                      <Label htmlFor="firstName">{t("contacts.form.firstName")}</Label>
+                      <Input id="firstName" placeholder={t("contacts.form.firstName.placeholder")} />
                     </div>
                     <div>
-                      <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" placeholder="Your last name" />
+                      <Label htmlFor="lastName">{t("contacts.form.lastName")}</Label>
+                      <Input id="lastName" placeholder={t("contacts.form.lastName.placeholder")} />
                     </div>
                   </div>
                   
                   <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="your.email@example.com" />
+                    <Label htmlFor="email">{t("contacts.form.email")}</Label>
+                    <Input id="email" type="email" placeholder={t("contacts.form.email.placeholder")} />
                   </div>
                   
                   <div>
-                    <Label htmlFor="subject">Subject</Label>
+                    <Label htmlFor="subject">{t("contacts.form.subject")}</Label>
                     <Select>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select inquiry type" />
+                        <SelectValue placeholder={t("contacts.form.subject.placeholder")} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="research">Research Services</SelectItem>
-                        <SelectItem value="training">Training Programs</SelectItem>
-                        <SelectItem value="clinical">Clinical Services</SelectItem>
-                        <SelectItem value="digital">Digital Development</SelectItem>
-                        <SelectItem value="publishing">Publishing Services</SelectItem>
-                        <SelectItem value="collaboration">Collaboration</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
+                        <SelectItem value="research">{t("contacts.form.subject.research")}</SelectItem>
+                        <SelectItem value="training">{t("contacts.form.subject.training")}</SelectItem>
+                        <SelectItem value="clinical">{t("contacts.form.subject.clinical")}</SelectItem>
+                        <SelectItem value="digital">{t("contacts.form.subject.digital")}</SelectItem>
+                        <SelectItem value="publishing">{t("contacts.form.subject.publishing")}</SelectItem>
+                        <SelectItem value="collaboration">{t("contacts.form.subject.collaboration")}</SelectItem>
+                        <SelectItem value="other">{t("contacts.form.subject.other")}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   
                   <div>
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message">{t("contacts.form.message")}</Label>
                     <Textarea 
                       id="message" 
-                      placeholder="Tell us about your project or inquiry..."
+                      placeholder={t("contacts.form.message.placeholder")}
                       rows={5}
                     />
                   </div>
                   
-                  <Button className="w-full">Send Message</Button>
+                  <Button className="w-full">{t("contacts.form.send")}</Button>
                 </form>
               </CardContent>
             </Card>
@@ -154,54 +154,54 @@ const Contacts = () => {
             {/* Training Enrollment Form */}
             <Card>
               <CardHeader>
-                <CardTitle>Training Program Enrollment</CardTitle>
+                <CardTitle>{t("contacts.training.enrollment")}</CardTitle>
                 <CardDescription>
-                  Register your interest in our professional training programs.
+                  {t("contacts.training.enrollment.desc")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="trainingName">Full Name</Label>
-                      <Input id="trainingName" placeholder="Your full name" />
+                      <Label htmlFor="trainingName">{t("contacts.training.name")}</Label>
+                      <Input id="trainingName" placeholder={t("contacts.training.name.placeholder")} />
                     </div>
                     <div>
-                      <Label htmlFor="trainingEmail">Email</Label>
-                      <Input id="trainingEmail" type="email" placeholder="your.email@example.com" />
+                      <Label htmlFor="trainingEmail">{t("contacts.form.email")}</Label>
+                      <Input id="trainingEmail" type="email" placeholder={t("contacts.training.email.placeholder")} />
                     </div>
                   </div>
                   
                   <div>
-                    <Label htmlFor="organization">Organization</Label>
-                    <Input id="organization" placeholder="Your organization or institution" />
+                    <Label htmlFor="organization">{t("contacts.training.organization")}</Label>
+                    <Input id="organization" placeholder={t("contacts.training.organization.placeholder")} />
                   </div>
                   
                   <div>
-                    <Label htmlFor="trainingProgram">Training Program</Label>
+                    <Label htmlFor="trainingProgram">{t("contacts.training.program")}</Label>
                     <Select>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select training program" />
+                        <SelectValue placeholder={t("contacts.training.program.placeholder")} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="adherence">Promotion of Treatment Adherence</SelectItem>
-                        <SelectItem value="leadership">Leadership in Healthcare</SelectItem>
-                        <SelectItem value="qualitative">Qualitative Research Methods</SelectItem>
-                        <SelectItem value="custom">Custom Training (specify in comments)</SelectItem>
+                        <SelectItem value="adherence">{t("contacts.training.adherence")}</SelectItem>
+                        <SelectItem value="leadership">{t("contacts.training.leadership")}</SelectItem>
+                        <SelectItem value="qualitative">{t("contacts.training.qualitative")}</SelectItem>
+                        <SelectItem value="custom">{t("contacts.training.custom")}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   
                   <div>
-                    <Label htmlFor="trainingComments">Additional Comments</Label>
+                    <Label htmlFor="trainingComments">{t("contacts.training.comments")}</Label>
                     <Textarea 
                       id="trainingComments" 
-                      placeholder="Any specific requirements or questions about the training?"
+                      placeholder={t("contacts.training.comments.placeholder")}
                       rows={3}
                     />
                   </div>
                   
-                  <Button className="w-full">Submit Enrollment</Button>
+                  <Button className="w-full">{t("contacts.training.submit")}</Button>
                 </form>
               </CardContent>
             </Card>
@@ -214,36 +214,35 @@ const Contacts = () => {
             <CardContent className="p-8">
               <div className="text-center mb-8">
                 <h2 className="text-2xl font-bold text-foreground mb-4">
-                  Ready to Start Your Project?
+                  {t("contacts.cta.title")}
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Whether you need research support, training programs, clinical services, or digital solutions,
-                  our team is ready to help you achieve your goals with evidence-based approaches.
+                  {t("contacts.cta.desc")}
                 </p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div>
                   <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-semibold text-foreground mb-2">Quick Response</h3>
+                  <h3 className="font-semibold text-foreground mb-2">{t("contacts.response.title")}</h3>
                   <p className="text-sm text-muted-foreground">
-                    We typically respond to inquiries within 24 hours during business days.
+                    {t("contacts.response.desc")}
                   </p>
                 </div>
                 
                 <div>
                   <Mail className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-semibold text-foreground mb-2">Direct Communication</h3>
+                  <h3 className="font-semibold text-foreground mb-2">{t("contacts.direct.title")}</h3>
                   <p className="text-sm text-muted-foreground">
-                    Reach out directly to geral@ubkir.pt for immediate assistance.
+                    {t("contacts.direct.desc")}
                   </p>
                 </div>
                 
                 <div>
                   <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-semibold text-foreground mb-2">Visit Us</h3>
+                  <h3 className="font-semibold text-foreground mb-2">{t("contacts.visit.title")}</h3>
                   <p className="text-sm text-muted-foreground">
-                    Schedule an in-person consultation at our Painho office.
+                    {t("contacts.visit.desc")}
                   </p>
                 </div>
               </div>
