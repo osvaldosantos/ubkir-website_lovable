@@ -16,6 +16,7 @@ const Map = () => {
   const [mapboxToken, setMapboxToken] = useState<string | null>(null);
   const [tokenInput, setTokenInput] = useState('');
   const [mapError, setMapError] = useState<string | null>(null);
+  const [showTokenPanel, setShowTokenPanel] = useState(false);
 
   // UBKIR headquarters coordinates (Painho, Portugal)
   const ubkirLocation: [number, number] = [-9.0603874, 39.2904501];
@@ -29,6 +30,9 @@ const Map = () => {
       const saved = typeof window !== 'undefined' ? localStorage.getItem('mapbox_public_token') : null;
       if (saved) {
         setMapboxToken(saved);
+        setShowTokenPanel(false);
+      } else {
+        setShowTokenPanel(true);
       }
       setIsMapReady(false);
       return; // wait for token
@@ -83,12 +87,18 @@ const Map = () => {
         popup.addTo(map.current!);
       });
 
-      map.current.on('error', () => {
+      map.current.on('error', (e) => {
+        const status = (e as any)?.error?.status ?? (e as any)?.status;
+        if (status === 401 || status === 403) {
+          localStorage.removeItem('mapbox_public_token');
+          setMapboxToken(null);
+          setShowTokenPanel(true);
+        }
         setMapError('Map failed to load. Please check your token or network.');
         setIsMapReady(false);
         toast({
           title: 'Map error',
-          description: 'Please verify your Mapbox public token (pk-…).',
+          description: status ? `Error ${status}. Please verify your Mapbox public token (pk-…).` : 'Please verify your Mapbox public token (pk-…).',
           variant: 'destructive',
         });
       });
@@ -116,6 +126,7 @@ const Map = () => {
     setMapboxToken(token);
     setTokenInput('');
     setMapError(null);
+    setShowTokenPanel(false);
     toast({ title: 'Token saved', description: 'Map will load with your token.' });
   };
 
@@ -124,6 +135,7 @@ const Map = () => {
     setMapboxToken(null);
     setIsMapReady(false);
     setMapError(null);
+    setShowTokenPanel(true);
     map.current?.remove();
     toast({ title: 'Token cleared', description: 'Enter a new token to load the map.' });
   };
@@ -131,29 +143,51 @@ const Map = () => {
   return (
     <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
       <div ref={mapContainer} className="absolute inset-0" />
+
+      {mapboxToken && (
+        <div className="absolute top-2 right-2 z-20">
+          <Button size="sm" variant="secondary" onClick={() => setShowTokenPanel((v) => !v)}>
+            Change token
+          </Button>
+        </div>
+      )}
+
       {(!mapboxToken || mapError) && (
-        <div className="absolute inset-0 bg-background/90 flex items-center justify-center p-4">
-          <div className="w-full max-w-md rounded-lg border border-border bg-card p-4 shadow-lg">
-            <h2 className="text-lg font-semibold mb-2">Mapbox token required</h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              Enter your Mapbox public token (starts with pk.) to load the map.
-            </p>
-            <div className="flex gap-2">
+        <iframe
+          title="UBKIR location map - Google Maps"
+          className="absolute inset-0 w-full h-full"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          src={`https://www.google.com/maps?q=${ubkirLocation[1]},${ubkirLocation[0]}&z=17&output=embed`}
+        />
+      )}
+
+      {(!mapboxToken || mapError || showTokenPanel) && (
+        <div className="absolute top-2 left-1/2 -translate-x-1/2 z-30 w-[min(100%,680px)] px-4">
+          <div className="w-full rounded-lg border border-border bg-card/95 backdrop-blur p-4 shadow-lg">
+            <div className="flex items-center justify-between gap-2">
+              <div>
+                <h2 className="text-sm font-semibold">Mapbox token</h2>
+                <p className="text-xs text-muted-foreground">Enter your public token (starts with pk.)</p>
+              </div>
+              {mapboxToken && (
+                <Button size="sm" variant="outline" onClick={handleClearToken}>Clear</Button>
+              )}
+            </div>
+            <div className="mt-3 flex gap-2">
               <Input
                 placeholder="pk.********************************"
                 value={tokenInput}
                 onChange={(e) => setTokenInput(e.target.value)}
               />
               <Button onClick={handleSaveToken}>Save</Button>
-              {mapboxToken && (
-                <Button variant="outline" onClick={handleClearToken}>Clear</Button>
-              )}
             </div>
           </div>
         </div>
       )}
+
       {mapboxToken && !isMapReady && (
-        <div className="absolute inset-0 bg-muted flex items-center justify-center">
+        <div className="absolute inset-0 bg-muted/60 flex items-center justify-center z-10">
           <div className="text-center">
             <MapPin className="h-8 w-8 text-primary mx-auto mb-2 animate-pulse" />
             <p className="text-sm text-muted-foreground">Loading satellite map...</p>
