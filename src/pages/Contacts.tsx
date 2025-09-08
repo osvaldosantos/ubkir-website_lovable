@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { MapPin, Mail, Phone, Clock, AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Map from "@/components/Map";
 
 const Contacts = () => {
   const { t } = useLanguage();
@@ -46,15 +47,7 @@ const Contacts = () => {
                   </div>
                   
                   {/* Map Placeholder */}
-                  <div className="bg-muted rounded-lg p-8 text-center">
-                    <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <p className="text-muted-foreground">
-                      {t("contacts.map.placeholder")}
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      {t("contacts.map.note")}
-                    </p>
-                  </div>
+                  <Map />
                 </div>
               </CardContent>
             </Card>

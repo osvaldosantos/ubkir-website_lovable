@@ -86,6 +86,15 @@ const Team = () => {
                 </div>
 
                 <div className="text-center">
+                  {/* CEO Photo */}
+                  <div className="mb-6">
+                    <img 
+                      src="/lovable-uploads/383f7e0f-7e49-44bd-9e3c-2035355fd892.png" 
+                      alt="Dr. Osvaldo Santos - CEO & Clinical Health Psychologist"
+                      className="w-48 h-48 object-cover rounded-lg mx-auto shadow-lg"
+                    />
+                  </div>
+                  
                   <div className="bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-lg p-8 mb-6">
                     <Brain className="h-20 w-20 text-primary mx-auto mb-4" />
                     <div className="text-sm text-muted-foreground">Leading Expert in</div>
