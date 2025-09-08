@@ -106,7 +106,7 @@ const Home = () => {
               </Button>
             </div>
             <div className="bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-lg p-8 text-center">
-              <div className="text-4xl font-bold text-primary mb-2">15+</div>
+              <div className="text-4xl font-bold text-primary mb-2">25+</div>
               <div className="text-lg text-muted-foreground mb-4">{t("home.stats.years")}</div>
               <div className="text-4xl font-bold text-primary mb-2">100+</div>
               <div className="text-lg text-muted-foreground">{t("home.stats.projects")}</div>
