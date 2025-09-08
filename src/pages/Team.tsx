@@ -38,10 +38,7 @@ const Team = () => {
                   </div>
                   
                   <p className="text-lg text-muted-foreground mb-6">
-                    Dr. Osvaldo Santos is a distinguished clinical and health psychologist with extensive 
-                    experience in clinical practice, research, and teaching. As the head of the EnviHeB Lab 
-                    and one of Portugal's most cited psychologists, Dr. Santos brings unparalleled expertise 
-                    to UBKIR's mission of advancing health through innovation and research.
+                    Osvaldo Santos is a distinguished clinical and health psychologist with extensive experience in clinical practice, research, and teaching. As the head of the Environmental Health Behavior Laboratory (EnviHeB Lab), from the Environmental health Institute of the Lisbon School of Medicine, and one of Portugal's most cited psychologists, Osvaldo Santos brings unparalleled expertise to UBKIR's mission of advancing health through innovation and research.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">

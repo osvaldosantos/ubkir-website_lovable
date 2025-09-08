@@ -241,9 +241,9 @@ const Services = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                    <li>• Psychological assessment</li>
                     <li>• Couple therapy</li>
-                    <li>• Health psychology interventions</li>
+                    <li>• Intervention in eating disorders (anorexia, bulimia, compulsive eating)</li>
+                    <li>• Psychological treatment of obesity</li>
                     <li>• Behavioral modification programs</li>
                   </ul>
                   <Button size="sm" asChild>
