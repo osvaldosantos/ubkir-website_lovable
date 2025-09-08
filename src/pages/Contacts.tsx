@@ -36,12 +36,12 @@ const Contacts = () => {
   });
   const [isTrainingLoading, setIsTrainingLoading] = useState(false);
 
-  // EmailJS Configuration - Please update with your actual EmailJS credentials
+  // EmailJS Configuration
   const EMAIL_CONFIG = {
-    PUBLIC_KEY: "YOUR_EMAILJS_PUBLIC_KEY", // Get from https://dashboard.emailjs.com/admin/account
-    SERVICE_ID: "YOUR_EMAILJS_SERVICE_ID", // Get from https://dashboard.emailjs.com/admin
-    GENERAL_TEMPLATE_ID: "YOUR_GENERAL_TEMPLATE_ID", // Get from https://dashboard.emailjs.com/admin/templates
-    TRAINING_TEMPLATE_ID: "YOUR_TRAINING_TEMPLATE_ID" // Get from https://dashboard.emailjs.com/admin/templates
+    PUBLIC_KEY: "OPfizN3VSaTfGTH_G", // Your EmailJS public key
+    SERVICE_ID: "service_dfqma8a", // Your EmailJS service ID
+    GENERAL_TEMPLATE_ID: "YOUR_GENERAL_TEMPLATE_ID", // Create this template in EmailJS
+    TRAINING_TEMPLATE_ID: "YOUR_TRAINING_TEMPLATE_ID" // Create this template in EmailJS
   };
 
   // Handle general contact form submission
