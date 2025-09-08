@@ -36,9 +36,12 @@ const Contacts = () => {
   });
   const [isTrainingLoading, setIsTrainingLoading] = useState(false);
 
-  // Initialize EmailJS
-  const initializeEmailJS = () => {
-    emailjs.init("YOUR_PUBLIC_KEY"); // User will need to set this up
+  // EmailJS Configuration - Replace with your actual keys
+  const EMAIL_CONFIG = {
+    PUBLIC_KEY: "YOUR_PUBLIC_KEY", // Replace with your EmailJS public key
+    SERVICE_ID: "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+    GENERAL_TEMPLATE_ID: "YOUR_GENERAL_TEMPLATE", // Replace with general contact template ID
+    TRAINING_TEMPLATE_ID: "YOUR_TRAINING_TEMPLATE" // Replace with training template ID
   };
 
   // Handle general contact form submission
@@ -57,8 +60,21 @@ const Contacts = () => {
     setIsGeneralLoading(true);
     
     try {
-      // For now, we'll simulate email sending - user will need to configure EmailJS
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      const templateParams = {
+        to_email: "geral@ubkir.pt",
+        firstName: generalForm.firstName,
+        lastName: generalForm.lastName,
+        email: generalForm.email,
+        subject: generalForm.subject || "General Inquiry",
+        message: generalForm.message,
+      };
+
+      await emailjs.send(
+        EMAIL_CONFIG.SERVICE_ID,
+        EMAIL_CONFIG.GENERAL_TEMPLATE_ID,
+        templateParams,
+        EMAIL_CONFIG.PUBLIC_KEY
+      );
       
       toast({
         title: "Message Sent!",
@@ -74,6 +90,7 @@ const Contacts = () => {
         message: ""
       });
     } catch (error) {
+      console.error("EmailJS error:", error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again or contact us directly at geral@ubkir.pt",
@@ -100,8 +117,21 @@ const Contacts = () => {
     setIsTrainingLoading(true);
     
     try {
-      // For now, we'll simulate email sending - user will need to configure EmailJS
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      const templateParams = {
+        to_email: "geral@ubkir.pt",
+        name: trainingForm.name,
+        email: trainingForm.email,
+        organization: trainingForm.organization || "Not specified",
+        program: trainingForm.program,
+        comments: trainingForm.comments || "No additional comments",
+      };
+
+      await emailjs.send(
+        EMAIL_CONFIG.SERVICE_ID,
+        EMAIL_CONFIG.TRAINING_TEMPLATE_ID,
+        templateParams,
+        EMAIL_CONFIG.PUBLIC_KEY
+      );
       
       toast({
         title: "Enrollment Request Sent!",
@@ -117,6 +147,7 @@ const Contacts = () => {
         comments: ""
       });
     } catch (error) {
+      console.error("EmailJS error:", error);
       toast({
         title: "Error",
         description: "Failed to send enrollment request. Please try again or contact us directly at geral@ubkir.pt",
