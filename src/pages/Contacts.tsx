@@ -61,7 +61,7 @@ const Contacts = () => {
     
     try {
       const templateParams = {
-        to_email: "geral@ubkir.pt",
+        to_email: "info@ubkir.pt",
         firstName: generalForm.firstName,
         lastName: generalForm.lastName,
         email: generalForm.email,
@@ -93,7 +93,7 @@ const Contacts = () => {
       console.error("EmailJS error:", error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again or contact us directly at geral@ubkir.pt",
+        description: "Failed to send message. Please try again or contact us directly at info@ubkir.pt",
         variant: "destructive",
       });
     } finally {
@@ -118,7 +118,7 @@ const Contacts = () => {
     
     try {
       const templateParams = {
-        to_email: "geral@ubkir.pt",
+        to_email: "info@ubkir.pt",
         name: trainingForm.name,
         email: trainingForm.email,
         organization: trainingForm.organization || "Not specified",
@@ -150,7 +150,7 @@ const Contacts = () => {
       console.error("EmailJS error:", error);
       toast({
         title: "Error",
-        description: "Failed to send enrollment request. Please try again or contact us directly at geral@ubkir.pt",
+        description: "Failed to send enrollment request. Please try again or contact us directly at info@ubkir.pt",
         variant: "destructive",
       });
     } finally {
@@ -208,7 +208,7 @@ const Contacts = () => {
               <CardContent className="space-y-4">
                 <div>
                   <p className="font-medium text-foreground">{t("contacts.email")}</p>
-                  <p className="text-muted-foreground">geral@ubkir.pt</p>
+                  <p className="text-muted-foreground">info@ubkir.pt</p>
                 </div>
                 
                 <div>

@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="text-sm text-muted-foreground space-y-2">
               <p>Estrada Nacional 115, nº1</p>
               <p>2550-426 Painho, Portugal</p>
-              <p>geral@ubkir.pt</p>
+              <p>info@ubkir.pt</p>
             </div>
           </div>
           

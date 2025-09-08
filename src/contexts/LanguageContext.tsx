@@ -174,7 +174,7 @@ const translations = {
     'contacts.response.title': 'Quick Response',
     'contacts.response.desc': 'We typically respond to inquiries within 24 hours during business days.',
     'contacts.direct.title': 'Direct Communication',
-    'contacts.direct.desc': 'Reach out directly to geral@ubkir.pt for immediate assistance.',
+    'contacts.direct.desc': 'Reach out directly to info@ubkir.pt for immediate assistance.',
     'contacts.visit.title': 'Visit Us',
     'contacts.visit.desc': 'Schedule an in-person consultation at our Painho office.',
     
@@ -351,7 +351,7 @@ const translations = {
     'contacts.response.title': 'Resposta Rápida',
     'contacts.response.desc': 'Normalmente respondemos a consultas dentro de 24 horas durante os dias úteis.',
     'contacts.direct.title': 'Comunicação Direta',
-    'contacts.direct.desc': 'Contacte diretamente geral@ubkir.pt para assistência imediata.',
+    'contacts.direct.desc': 'Contacte diretamente info@ubkir.pt para assistência imediata.',
     'contacts.visit.title': 'Visite-nos',
     'contacts.visit.desc': 'Agende uma consulta presencial no nosso escritório em Painho.',
     
