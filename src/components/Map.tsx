@@ -14,11 +14,19 @@ const Map = () => {
   const ubkirLocation: [number, number] = [-8.8157, 39.3629]; // Approximate coordinates for Painho, Portugal
 
   useEffect(() => {
-    if (!mapContainer.current) return;
+    console.log('Map useEffect called');
+    console.log('mapContainer.current:', mapContainer.current);
+    
+    if (!mapContainer.current) {
+      console.log('No mapContainer ref');
+      return;
+    }
 
     try {
-      mapboxgl.accessToken = 'pk.eyJ1Ijoib3N2YWxkb3JzYW50b3MiLCJhIjoiY21mYXY0aWYxMDVzaTJpcW9ldzlsM2l4ciJ9.VYdoSGyhPIJrS4OzOw6Nsw';
+      console.log('Setting Mapbox access token');
+      mapboxgl.accessToken = 'pk.eyJ1Ijoib3N2YWxkb3JzYW50b3MiLCJhIjoiY21mYXY0aWYxMDVzaTJvcW9ldzlsM2l4ciJ9.VYdoSGyhPIJrS4OzOw6Nsw';
       
+      console.log('Creating new Mapbox map');
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/satellite-streets-v12', // Satellite view with streets
