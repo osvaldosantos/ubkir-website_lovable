@@ -44,7 +44,7 @@ const Map = () => {
 
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
-        style: 'mapbox://styles/mapbox/satellite-streets-v12', // Satellite view with streets
+        style: 'mapbox://styles/mapbox/satellite-v9', // Updated satellite imagery
         center: ubkirLocation,
         zoom: 15,
         pitch: 45,
@@ -88,19 +88,28 @@ const Map = () => {
       });
 
       map.current.on('error', (e) => {
+        console.log('Map error:', e);
         const status = (e as any)?.error?.status ?? (e as any)?.status;
+        // Only clear token for auth errors, not general map errors
         if (status === 401 || status === 403) {
           localStorage.removeItem('mapbox_public_token');
           setMapboxToken(null);
           setShowTokenPanel(true);
+          toast({
+            title: 'Authentication error',
+            description: 'Invalid token. Please enter a valid Mapbox public token.',
+            variant: 'destructive',
+          });
+        } else {
+          // For non-auth errors, just show error but keep token
+          setMapError('Map failed to load. Check your network connection.');
+          toast({
+            title: 'Map loading error',
+            description: 'Network issue or map service temporarily unavailable.',
+            variant: 'destructive',
+          });
         }
-        setMapError('Map failed to load. Please check your token or network.');
         setIsMapReady(false);
-        toast({
-          title: 'Map error',
-          description: status ? `Error ${status}. Please verify your Mapbox public token (pk-…).` : 'Please verify your Mapbox public token (pk-…).',
-          variant: 'destructive',
-        });
       });
     } catch (error) {
       console.error('Error initializing map:', error);
