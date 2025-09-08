@@ -11,22 +11,14 @@ const Map = () => {
   const [isMapReady, setIsMapReady] = useState(false);
 
   // UBKIR headquarters coordinates (Painho, Portugal)
-  const ubkirLocation: [number, number] = [-8.8157, 39.3629]; // Approximate coordinates for Painho, Portugal
+  const ubkirLocation: [number, number] = [-9.0603874, 39.2904501];
 
   useEffect(() => {
-    console.log('Map useEffect called');
-    console.log('mapContainer.current:', mapContainer.current);
-    
-    if (!mapContainer.current) {
-      console.log('No mapContainer ref');
-      return;
-    }
+    if (!mapContainer.current) return;
 
     try {
-      console.log('Setting Mapbox access token');
-      mapboxgl.accessToken = 'pk.eyJ1Ijoib3N2YWxkb3JzYW50b3MiLCJhIjoiY21mYXY0aWYxMDVzaTJvcW9ldzlsM2l4ciJ9.VYdoSGyhPIJrS4OzOw6Nsw';
+      mapboxgl.accessToken = 'pk.eyJ1Ijoib3N2YWxkb3JzYW50b3MiLCJhIjoiY21mYXY0aWYxMDVzaTJpcW9ldzlsM2l4ciJ9.VYdoSGyhPIJrS4OzOw6Nsw';
       
-      console.log('Creating new Mapbox map');
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/satellite-streets-v12', // Satellite view with streets
@@ -49,7 +41,7 @@ const Map = () => {
       // Add marker for UBKIR location
       const marker = new mapboxgl.Marker({
         color: '#c10d3d', // UBKIR brand color
-        scale: 1.2
+        scale: 1.2,
       })
         .setLngLat(ubkirLocation)
         .addTo(map.current);
@@ -71,7 +63,6 @@ const Map = () => {
         // Show popup on map load
         popup.addTo(map.current!);
       });
-
     } catch (error) {
       console.error('Error initializing map:', error);
     }
