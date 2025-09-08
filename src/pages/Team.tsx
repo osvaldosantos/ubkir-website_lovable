@@ -100,12 +100,16 @@ const Team = () => {
                   
                   <div className="space-y-3">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-primary">15+</div>
+                      <div className="text-2xl font-bold text-primary">20+</div>
                       <div className="text-sm text-muted-foreground">Years Experience</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-primary">100+</div>
                       <div className="text-sm text-muted-foreground">Research Publications</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-primary">15 000+</div>
+                      <div className="text-sm text-muted-foreground">Citations</div>
                     </div>
                   </div>
                 </div>
