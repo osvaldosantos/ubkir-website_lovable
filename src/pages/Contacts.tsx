@@ -40,8 +40,8 @@ const Contacts = () => {
   const EMAIL_CONFIG = {
     PUBLIC_KEY: "OPfizN3VSaTfGTH_G", // Your EmailJS public key
     SERVICE_ID: "service_dfqma8a", // Your EmailJS service ID
-    GENERAL_TEMPLATE_ID: "YOUR_GENERAL_TEMPLATE_ID", // Create this template in EmailJS
-    TRAINING_TEMPLATE_ID: "YOUR_TRAINING_TEMPLATE_ID" // Create this template in EmailJS
+    GENERAL_TEMPLATE_ID: "general_contact", // General contact form template
+    TRAINING_TEMPLATE_ID: "training_request" // Training enrollment form template
   };
 
   // Handle general contact form submission
