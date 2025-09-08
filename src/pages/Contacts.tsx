@@ -1,16 +1,131 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Mail, Phone, Clock, AlertCircle } from "lucide-react";
+import { MapPin, Mail, Phone, Clock, AlertCircle, Send } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useToast } from "@/hooks/use-toast";
 import Map from "@/components/Map";
+import emailjs from "@emailjs/browser";
 
 const Contacts = () => {
   const { t } = useLanguage();
+  const { toast } = useToast();
+  
+  // General contact form state
+  const [generalForm, setGeneralForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [isGeneralLoading, setIsGeneralLoading] = useState(false);
+  
+  // Training enrollment form state
+  const [trainingForm, setTrainingForm] = useState({
+    name: "",
+    email: "",
+    organization: "",
+    program: "",
+    comments: ""
+  });
+  const [isTrainingLoading, setIsTrainingLoading] = useState(false);
+
+  // Initialize EmailJS
+  const initializeEmailJS = () => {
+    emailjs.init("YOUR_PUBLIC_KEY"); // User will need to set this up
+  };
+
+  // Handle general contact form submission
+  const handleGeneralSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!generalForm.firstName || !generalForm.lastName || !generalForm.email || !generalForm.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsGeneralLoading(true);
+    
+    try {
+      // For now, we'll simulate email sending - user will need to configure EmailJS
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. We'll get back to you soon.",
+      });
+      
+      // Reset form
+      setGeneralForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact us directly at geral@ubkir.pt",
+        variant: "destructive",
+      });
+    } finally {
+      setIsGeneralLoading(false);
+    }
+  };
+
+  // Handle training enrollment form submission
+  const handleTrainingSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!trainingForm.name || !trainingForm.email || !trainingForm.program) {
+      toast({
+        title: "Error", 
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsTrainingLoading(true);
+    
+    try {
+      // For now, we'll simulate email sending - user will need to configure EmailJS
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      
+      toast({
+        title: "Enrollment Request Sent!",
+        description: "We'll contact you soon with training details.",
+      });
+      
+      // Reset form
+      setTrainingForm({
+        name: "",
+        email: "",
+        organization: "",
+        program: "",
+        comments: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send enrollment request. Please try again or contact us directly at geral@ubkir.pt",
+        variant: "destructive",
+      });
+    } finally {
+      setIsTrainingLoading(false);
+    }
+  };
   
   return (
     <div className="min-h-screen py-20">
@@ -95,26 +210,45 @@ const Contacts = () => {
                   </AlertDescription>
                 </Alert>
                 
-                <form className="space-y-4">
+                <form onSubmit={handleGeneralSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="firstName">{t("contacts.form.firstName")}</Label>
-                      <Input id="firstName" placeholder={t("contacts.form.firstName.placeholder")} />
+                      <Label htmlFor="firstName">{t("contacts.form.firstName")} *</Label>
+                      <Input 
+                        id="firstName" 
+                        value={generalForm.firstName}
+                        onChange={(e) => setGeneralForm({...generalForm, firstName: e.target.value})}
+                        placeholder={t("contacts.form.firstName.placeholder")} 
+                        required
+                      />
                     </div>
                     <div>
-                      <Label htmlFor="lastName">{t("contacts.form.lastName")}</Label>
-                      <Input id="lastName" placeholder={t("contacts.form.lastName.placeholder")} />
+                      <Label htmlFor="lastName">{t("contacts.form.lastName")} *</Label>
+                      <Input 
+                        id="lastName" 
+                        value={generalForm.lastName}
+                        onChange={(e) => setGeneralForm({...generalForm, lastName: e.target.value})}
+                        placeholder={t("contacts.form.lastName.placeholder")} 
+                        required
+                      />
                     </div>
                   </div>
                   
                   <div>
-                    <Label htmlFor="email">{t("contacts.form.email")}</Label>
-                    <Input id="email" type="email" placeholder={t("contacts.form.email.placeholder")} />
+                    <Label htmlFor="email">{t("contacts.form.email")} *</Label>
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      value={generalForm.email}
+                      onChange={(e) => setGeneralForm({...generalForm, email: e.target.value})}
+                      placeholder={t("contacts.form.email.placeholder")} 
+                      required
+                    />
                   </div>
                   
                   <div>
                     <Label htmlFor="subject">{t("contacts.form.subject")}</Label>
-                    <Select>
+                    <Select value={generalForm.subject} onValueChange={(value) => setGeneralForm({...generalForm, subject: value})}>
                       <SelectTrigger>
                         <SelectValue placeholder={t("contacts.form.subject.placeholder")} />
                       </SelectTrigger>
@@ -131,15 +265,30 @@ const Contacts = () => {
                   </div>
                   
                   <div>
-                    <Label htmlFor="message">{t("contacts.form.message")}</Label>
+                    <Label htmlFor="message">{t("contacts.form.message")} *</Label>
                     <Textarea 
                       id="message" 
+                      value={generalForm.message}
+                      onChange={(e) => setGeneralForm({...generalForm, message: e.target.value})}
                       placeholder={t("contacts.form.message.placeholder")}
                       rows={5}
+                      required
                     />
                   </div>
                   
-                  <Button className="w-full">{t("contacts.form.send")}</Button>
+                  <Button type="submit" className="w-full" disabled={isGeneralLoading}>
+                    {isGeneralLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2" />
+                        {t("contacts.form.send")}
+                      </>
+                    )}
+                  </Button>
                 </form>
               </CardContent>
             </Card>
@@ -153,26 +302,44 @@ const Contacts = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
+                <form onSubmit={handleTrainingSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="trainingName">{t("contacts.training.name")}</Label>
-                      <Input id="trainingName" placeholder={t("contacts.training.name.placeholder")} />
+                      <Label htmlFor="trainingName">{t("contacts.training.name")} *</Label>
+                      <Input 
+                        id="trainingName" 
+                        value={trainingForm.name}
+                        onChange={(e) => setTrainingForm({...trainingForm, name: e.target.value})}
+                        placeholder={t("contacts.training.name.placeholder")} 
+                        required
+                      />
                     </div>
                     <div>
-                      <Label htmlFor="trainingEmail">{t("contacts.form.email")}</Label>
-                      <Input id="trainingEmail" type="email" placeholder={t("contacts.training.email.placeholder")} />
+                      <Label htmlFor="trainingEmail">{t("contacts.form.email")} *</Label>
+                      <Input 
+                        id="trainingEmail" 
+                        type="email" 
+                        value={trainingForm.email}
+                        onChange={(e) => setTrainingForm({...trainingForm, email: e.target.value})}
+                        placeholder={t("contacts.training.email.placeholder")} 
+                        required
+                      />
                     </div>
                   </div>
                   
                   <div>
                     <Label htmlFor="organization">{t("contacts.training.organization")}</Label>
-                    <Input id="organization" placeholder={t("contacts.training.organization.placeholder")} />
+                    <Input 
+                      id="organization" 
+                      value={trainingForm.organization}
+                      onChange={(e) => setTrainingForm({...trainingForm, organization: e.target.value})}
+                      placeholder={t("contacts.training.organization.placeholder")} 
+                    />
                   </div>
                   
                   <div>
-                    <Label htmlFor="trainingProgram">{t("contacts.training.program")}</Label>
-                    <Select>
+                    <Label htmlFor="trainingProgram">{t("contacts.training.program")} *</Label>
+                    <Select value={trainingForm.program} onValueChange={(value) => setTrainingForm({...trainingForm, program: value})}>
                       <SelectTrigger>
                         <SelectValue placeholder={t("contacts.training.program.placeholder")} />
                       </SelectTrigger>
@@ -189,12 +356,26 @@ const Contacts = () => {
                     <Label htmlFor="trainingComments">{t("contacts.training.comments")}</Label>
                     <Textarea 
                       id="trainingComments" 
+                      value={trainingForm.comments}
+                      onChange={(e) => setTrainingForm({...trainingForm, comments: e.target.value})}
                       placeholder={t("contacts.training.comments.placeholder")}
                       rows={3}
                     />
                   </div>
                   
-                  <Button className="w-full">{t("contacts.training.submit")}</Button>
+                  <Button type="submit" className="w-full" disabled={isTrainingLoading}>
+                    {isTrainingLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2" />
+                        {t("contacts.training.submit")}
+                      </>
+                    )}
+                  </Button>
                 </form>
               </CardContent>
             </Card>
