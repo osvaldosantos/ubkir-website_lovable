@@ -1,19 +1,21 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Target, Award, Globe, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            About UBKIR
+            {t("about.title")}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Unbreakable Idea Research is a pioneering organization dedicated to advancing health 
-            through innovative research, comprehensive training, and evidence-based clinical services.
+            {t("about.subtitle")}
           </p>
         </div>
 
@@ -23,14 +25,12 @@ const About = () => {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <Target className="h-8 w-8 text-primary" />
-                <CardTitle className="text-2xl">Our Mission</CardTitle>
+                <CardTitle className="text-2xl">{t("about.mission.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                To bridge the gap between cutting-edge research and practical healthcare solutions, 
-                providing comprehensive services that enhance health outcomes, professional development, 
-                and scientific knowledge across multiple disciplines.
+                {t("about.mission.desc")}
               </p>
             </CardContent>
           </Card>
@@ -39,14 +39,12 @@ const About = () => {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <Globe className="h-8 w-8 text-primary" />
-                <CardTitle className="text-2xl">Our Vision</CardTitle>
+                <CardTitle className="text-2xl">{t("about.vision.title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                To be a leading international organization in health research and innovation, 
-                fostering evidence-based practices that transform healthcare delivery and 
-                improve quality of life for individuals and communities worldwide.
+                {t("about.vision.desc")}
               </p>
             </CardContent>
           </Card>
@@ -55,16 +53,16 @@ const About = () => {
         {/* Our Values */}
         <section className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-            Our Core Values
+            {t("about.values.title")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-primary/10 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                 <Award className="h-10 w-10 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">Excellence</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{t("about.values.excellence")}</h3>
               <p className="text-muted-foreground">
-                Commitment to the highest standards in research, training, and clinical practice.
+                {t("about.values.excellence.desc")}
               </p>
             </div>
 
@@ -72,9 +70,9 @@ const About = () => {
               <div className="bg-primary/10 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                 <Heart className="h-10 w-10 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">Compassion</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{t("about.values.innovation")}</h3>
               <p className="text-muted-foreground">
-                Putting human wellbeing at the center of everything we do.
+                {t("about.values.innovation.desc")}
               </p>
             </div>
 
@@ -82,9 +80,9 @@ const About = () => {
               <div className="bg-primary/10 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                 <Globe className="h-10 w-10 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">Innovation</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{t("about.values.collaboration")}</h3>
               <p className="text-muted-foreground">
-                Embracing new technologies and methodologies to advance healthcare.
+                {t("about.values.collaboration.desc")}
               </p>
             </div>
 
@@ -92,14 +90,16 @@ const About = () => {
               <div className="bg-primary/10 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                 <Target className="h-10 w-10 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">Integrity</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{t("about.values.integrity")}</h3>
               <p className="text-muted-foreground">
-                Maintaining the highest ethical standards in all our activities.
+                {t("about.values.integrity.desc")}
               </p>
             </div>
           </div>
         </section>
 
+        {/* ... keep existing code (Company Background and Specializations sections) */}
+        
         {/* Company Background */}
         <section className="bg-muted rounded-lg p-8 md:p-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">

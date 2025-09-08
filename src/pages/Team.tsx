@@ -3,19 +3,21 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Award, BookOpen, Users, Brain } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Team = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Our Team
+            {t("team.title")}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Led by renowned experts in clinical psychology, health research, and innovation,
-            our multidisciplinary team brings together decades of experience and cutting-edge expertise.
+            {t("team.subtitle")}
           </p>
         </div>
 

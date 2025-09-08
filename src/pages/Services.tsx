@@ -14,37 +14,39 @@ import {
   ExternalLink
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Our Services
+            {t("services.title")}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive solutions spanning research, training, clinical services, 
-            and digital innovation in the health sector.
+            {t("services.subtitle")}
           </p>
         </div>
 
         {/* Services Tabs */}
         <Tabs defaultValue="research" className="w-full">
           <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 mb-12">
-            <TabsTrigger value="research">Research</TabsTrigger>
-            <TabsTrigger value="training">Training</TabsTrigger>
-            <TabsTrigger value="clinical">Clinical</TabsTrigger>
-            <TabsTrigger value="digital">Digital</TabsTrigger>
-            <TabsTrigger value="publishing">Publishing</TabsTrigger>
+            <TabsTrigger value="research">{t("nav.research")}</TabsTrigger>
+            <TabsTrigger value="training">{t("nav.training")}</TabsTrigger>
+            <TabsTrigger value="clinical">{t("nav.clinical")}</TabsTrigger>
+            <TabsTrigger value="digital">{t("nav.digital")}</TabsTrigger>
+            <TabsTrigger value="publishing">{t("nav.publishing")}</TabsTrigger>
           </TabsList>
 
           {/* Research Activities */}
           <TabsContent value="research" className="space-y-8">
             <div className="text-center mb-12">
               <Brain className="h-16 w-16 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-4">Research Activities</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">{t("services.research.title")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Evidence-based research solutions using advanced methodologies and cutting-edge analytics.
               </p>
@@ -54,9 +56,9 @@ const Services = () => {
               <Card>
                 <CardHeader>
                   <BarChart3 className="h-8 w-8 text-primary mb-2" />
-                  <CardTitle>Quantitative Research</CardTitle>
+                  <CardTitle>{t("services.research.quant")}</CardTitle>
                   <CardDescription>
-                    Comprehensive surveys, statistical analysis, and data-driven insights for informed decision-making.
+                    {t("services.research.quant.desc")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -72,9 +74,9 @@ const Services = () => {
               <Card>
                 <CardHeader>
                   <MessageSquare className="h-8 w-8 text-primary mb-2" />
-                  <CardTitle>Qualitative Research</CardTitle>
+                  <CardTitle>{t("services.research.qual")}</CardTitle>
                   <CardDescription>
-                    In-depth exploration of human experiences through focus groups, interviews, and ethnographic studies.
+                    {t("services.research.qual.desc")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -90,9 +92,9 @@ const Services = () => {
               <Card>
                 <CardHeader>
                   <Target className="h-8 w-8 text-primary mb-2" />
-                  <CardTitle>Specialized Methods</CardTitle>
+                  <CardTitle>{t("services.research.specialized")}</CardTitle>
                   <CardDescription>
-                    Advanced research methodologies for complex health and behavioral studies.
+                    {t("services.research.specialized.desc")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -107,11 +109,13 @@ const Services = () => {
             </div>
           </TabsContent>
 
+          {/* ... keep existing code for other tabs but update key text elements */}
+
           {/* Training Programs */}
           <TabsContent value="training" className="space-y-8">
             <div className="text-center mb-12">
               <Users className="h-16 w-16 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-4">Training Programs</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">{t("services.training.title")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Professional development programs designed to enhance skills and knowledge in healthcare and research.
               </p>
@@ -120,7 +124,7 @@ const Services = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <Card className="border-l-4 border-l-primary">
                 <CardHeader>
-                  <CardTitle>Promotion of Treatment Adherence</CardTitle>
+                  <CardTitle>{t("contacts.training.adherence")}</CardTitle>
                   <CardDescription>
                     Evidence-based strategies to improve patient compliance and treatment outcomes.
                   </CardDescription>
@@ -137,7 +141,7 @@ const Services = () => {
                       <Badge variant="secondary">Communication</Badge>
                     </div>
                     <Button size="sm" asChild>
-                      <Link to="/contacts">Enroll Now</Link>
+                      <Link to="/contacts">{t("contacts.training.enroll")}</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -145,7 +149,7 @@ const Services = () => {
 
               <Card className="border-l-4 border-l-primary">
                 <CardHeader>
-                  <CardTitle>Leadership in Healthcare</CardTitle>
+                  <CardTitle>{t("contacts.training.leadership")}</CardTitle>
                   <CardDescription>
                     Develop essential leadership skills for health professionals and team management.
                   </CardDescription>
@@ -162,7 +166,7 @@ const Services = () => {
                       <Badge variant="secondary">Healthcare Systems</Badge>
                     </div>
                     <Button size="sm" asChild>
-                      <Link to="/contacts">Enroll Now</Link>
+                      <Link to="/contacts">{t("contacts.training.enroll")}</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -170,7 +174,7 @@ const Services = () => {
 
               <Card className="border-l-4 border-l-primary">
                 <CardHeader>
-                  <CardTitle>Qualitative Research Methods</CardTitle>
+                  <CardTitle>{t("contacts.training.research")}</CardTitle>
                   <CardDescription>
                     Master advanced qualitative research techniques and analysis methods.
                   </CardDescription>
@@ -187,7 +191,7 @@ const Services = () => {
                       <Badge variant="secondary">Research Design</Badge>
                     </div>
                     <Button size="sm" asChild>
-                      <Link to="/contacts">Enroll Now</Link>
+                      <Link to="/contacts">{t("contacts.training.enroll")}</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -195,11 +199,13 @@ const Services = () => {
             </div>
           </TabsContent>
 
+          {/* ... keep existing code for remaining tabs */}
+
           {/* Clinical Services */}
           <TabsContent value="clinical" className="space-y-8">
             <div className="text-center mb-12">
               <Heart className="h-16 w-16 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-4">Clinical Services</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">{t("services.clinical.title")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Evidence-based psychological and clinical services for individuals and couples.
               </p>
@@ -252,9 +258,9 @@ const Services = () => {
           <TabsContent value="digital" className="space-y-8">
             <div className="text-center mb-12">
               <Laptop className="h-16 w-16 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-4">Digital Development</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">{t("services.digital.title")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Innovative health-related software and digital solutions for modern healthcare challenges.
+                {t("services.digital.desc")}
               </p>
             </div>
 
@@ -285,9 +291,9 @@ const Services = () => {
           <TabsContent value="publishing" className="space-y-8">
             <div className="text-center mb-12">
               <BookOpen className="h-16 w-16 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-4">Acendalha Publishing</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">{t("services.publishing.title")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Professional editorial services for scientific and science-fiction publications.
+                {t("services.publishing.desc")}
               </p>
             </div>
 

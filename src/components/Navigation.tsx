@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Team", path: "/team" },
-    { name: "Contacts", path: "/contacts" },
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.about"), path: "/about" },
+    { name: t("nav.services"), path: "/services" },
+    { name: t("nav.team"), path: "/team" },
+    { name: t("nav.contacts"), path: "/contacts" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -46,8 +49,85 @@ const Navigation = () => {
             ))}
           </div>
 
+          {/* Language Selector */}
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="relative">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
+                className="flex items-center space-x-1"
+              >
+                <Globe size={16} />
+                <span className="text-sm font-medium">{language.toUpperCase()}</span>
+              </Button>
+              {isLanguageMenuOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-popover border border-border rounded-md shadow-lg z-50">
+                  <button
+                    onClick={() => {
+                      setLanguage('en');
+                      setIsLanguageMenuOpen(false);
+                    }}
+                    className={`w-full px-4 py-2 text-left text-sm hover:bg-accent transition-colors ${
+                      language === 'en' ? 'bg-accent text-accent-foreground' : 'text-foreground'
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    onClick={() => {
+                      setLanguage('pt');
+                      setIsLanguageMenuOpen(false);
+                    }}
+                    className={`w-full px-4 py-2 text-left text-sm hover:bg-accent transition-colors ${
+                      language === 'pt' ? 'bg-accent text-accent-foreground' : 'text-foreground'
+                    }`}
+                  >
+                    Português
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Mobile Language Selector */}
+            <div className="relative">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
+              >
+                <Globe size={16} />
+              </Button>
+              {isLanguageMenuOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-popover border border-border rounded-md shadow-lg z-50">
+                  <button
+                    onClick={() => {
+                      setLanguage('en');
+                      setIsLanguageMenuOpen(false);
+                    }}
+                    className={`w-full px-4 py-2 text-left text-sm hover:bg-accent transition-colors ${
+                      language === 'en' ? 'bg-accent text-accent-foreground' : 'text-foreground'
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    onClick={() => {
+                      setLanguage('pt');
+                      setIsLanguageMenuOpen(false);
+                    }}
+                    className={`w-full px-4 py-2 text-left text-sm hover:bg-accent transition-colors ${
+                      language === 'pt' ? 'bg-accent text-accent-foreground' : 'text-foreground'
+                    }`}
+                  >
+                    Português
+                  </button>
+                </div>
+              )}
+            </div>
             <Button
               variant="ghost"
               size="sm"
