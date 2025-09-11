@@ -419,19 +419,19 @@ const translations = {
     
     // Services page - Clinical examples (Portuguese)
     'services.clinical.individual.example': 'Terapia Individual',
-    'services.clinical.individual.desc': 'Intervenções psicológicas especializadas usando abordagens cognitivo-comportamentais.',
+    'services.clinical.individual.desc': 'Intervenções psicológicas especializadas usando abordagens cognitivo-comportamentais e experienciais.',
     'services.clinical.individual.item1': 'Terapia Cognitivo-Comportamental (TCC)',
-    'services.clinical.individual.item2': 'Tratamento de distúrbios alimentares',
-    'services.clinical.individual.item3': 'Gestão de depressão e ansiedade',
-    'services.clinical.individual.item4': 'Ajustamento a doenças crónicas',
+    'services.clinical.individual.item2': 'Aconselhamento psicológico para tomada de decisão',
+    'services.clinical.individual.item3': 'Programas de modificação comportamental',
+    'services.clinical.individual.item4': '',
     'services.clinical.schedule': 'Agendar Consulta',
     'services.clinical.specialized.example': 'Serviços Especializados',
-    'services.clinical.specialized.desc2': 'Avaliação psicológica abrangente e serviços de terapia de casal.',
+    'services.clinical.specialized.desc2': 'Terapia individual e de casal.',
     'services.clinical.specialized.item1': 'Terapia de casal',
-    'services.clinical.specialized.item2': 'Intervenção em distúrbios alimentares (anorexia, bulimia, compulsão alimentar)',
-    'services.clinical.specialized.item3': 'Tratamento psicológico da obesidade',
-    'services.clinical.specialized.item4': 'Programas de modificação comportamental',
-    'services.clinical.learnmore': 'Saber Mais',
+    'services.clinical.specialized.item2': 'Intervenção psicológica para tratamento de distúrbios alimentares (anorexia, bulimia, compulsão alimentar)',
+    'services.clinical.specialized.item3': 'Intervenção psicológica para tratamento da obesidade',
+    'services.clinical.specialized.item4': 'Intervenção psicológica para tratamento de outras doenças crónicas (diabetes, doença cardiovascular, cancro)',
+    'services.clinical.learnmore': 'Agendar consulta',
     
     // Services page - Digital examples (Portuguese)
     'services.digital.solutions.example': 'Soluções de Software de Saúde',
