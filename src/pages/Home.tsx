@@ -24,7 +24,7 @@ const Home = () => {
                 {t("home.hero.services")} <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
+            <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent" asChild>
               <Link to="/about">{t("home.hero.learn")}</Link>
             </Button>
           </div>

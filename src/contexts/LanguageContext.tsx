@@ -67,6 +67,27 @@ const translations = {
     'about.values.integrity': 'Integrity',
     'about.values.integrity.desc': 'Maintaining the highest ethical standards in all our research and clinical activities',
     
+    // About page - Our Story section
+    'about.story.title': 'Our Story',
+    'about.story.p1': 'Founded with the vision of creating unbreakable connections between research, education, and clinical practice, UBKIR has grown into a multidisciplinary organization that serves clients across Portugal and internationally.',
+    'about.story.p2': 'We combine local expertise with global perspectives, offering comprehensive services that span from individual psychological support to large-scale research initiatives and professional training programs.',
+    'about.story.p3': 'Our diverse portfolio includes quantitative and qualitative research, statistical analysis, psychometric evaluation, clinical psychology services, professional training, and editorial services through our Acendalha Publishing division.',
+    
+    // About page - Areas of Specialization
+    'about.specializations.title': 'Areas of Specialization',
+    'about.spec.quantResearch': 'Quantitative Research & Surveys',
+    'about.spec.qualResearch': 'Qualitative Research & Focus Groups',
+    'about.spec.statAnalysis': 'Statistical Analysis & Data Visualization',
+    'about.spec.psychometric': 'Psychometric Analysis',
+    'about.spec.realWorld': 'Real World Evidence Research',
+    'about.spec.marketing': 'Marketing Research',
+    'about.spec.healthComm': 'Health Communication Training',
+    'about.spec.leadership': 'Leadership Development',
+    'about.spec.cbt': 'Cognitive-Behavioral Therapy',
+    'about.spec.eatingDisorders': 'Eating Disorders Treatment',
+    'about.spec.chronicDisease': 'Chronic Disease Management',
+    'about.spec.publishing': 'Scientific Publishing',
+    
     // Services page
     'services.title': 'Our Services',
     'services.subtitle': 'Comprehensive solutions for health research, training, and clinical practice',
@@ -94,6 +115,36 @@ const translations = {
     'services.publishing.title': 'Acendalha Publishing',
     'services.publishing.desc': 'Editorial services for scientific publications and science-fiction literature',
     
+    // Services page - Research examples
+    'services.research.examples.survey': 'Survey design and implementation',
+    'services.research.examples.statistical': 'Statistical analysis and modeling',
+    'services.research.examples.visualization': 'Data visualization and dashboards',
+    'services.research.examples.epidemiological': 'Epidemiological studies',
+    'services.research.examples.focus': 'Focus group facilitation',
+    'services.research.examples.interviews': 'In-depth interviews',
+    'services.research.examples.worldcafe': 'World Café methodology',
+    'services.research.examples.thematic': 'Thematic analysis',
+    'services.research.examples.psychometric': 'Psychometric validation',
+    'services.research.examples.realworld': 'Real-world evidence studies',
+    'services.research.examples.marketing': 'Market research and analysis',
+    'services.research.examples.behavioral': 'Behavioral research',
+    
+    // Services page - Training examples
+    'services.training.adherence.example': 'Treatment Adherence Promotion',
+    'services.training.communication.example': 'Communication and Leadership in Healthcare',
+    'services.training.methods.example': 'Research Methods',
+    
+    // Services page - Clinical examples
+    'services.clinical.individual.example': 'Individual Therapy',
+    'services.clinical.specialized.example': 'Specialized Services',
+    
+    // Services page - Digital examples  
+    'services.digital.solutions.example': 'Health Software Solutions',
+    
+    // Services page - Publishing examples
+    'services.publishing.excellence.example': 'Editorial Excellence',
+    'services.publishing.division.example': 'Acendalha Publishing Division',
+    
     // Team page
     'team.title': 'Our Team',
     'team.subtitle': 'Meet the experts driving innovation at UBKIR',
@@ -119,6 +170,35 @@ const translations = {
     'team.cta.desc': 'Ready to collaborate with leading experts in health research and clinical psychology? Contact us to discuss your project or service needs.',
     'team.cta.button': 'Start a Conversation',
     
+    // Team page - Osvaldo Santos section
+    'team.osvaldo.title': 'Osvaldo Santos',
+    'team.osvaldo.subtitle': 'CEO & Clinical Health Psychologist',
+    'team.osvaldo.bio': 'Osvaldo Santos is a distinguished clinical and health psychologist with extensive experience in clinical practice, research, and teaching. As the head of the Environmental Health Behavior Laboratory (EnviHeB Lab), from the Environmental health Institute of the Lisbon School of Medicine, and one of Portugal\'s most cited psychologists, Osvaldo Santos brings unparalleled expertise to UBKIR\'s mission of advancing health through innovation and research.',
+    'team.osvaldo.achievements.title': 'Key Achievements',
+    'team.osvaldo.achievements.enviheb': 'Head of EnviHeB Lab at ISAMB',
+    'team.osvaldo.achievements.cited': 'One of Portugal\'s most cited psychologists',
+    'team.osvaldo.achievements.research': 'Extensive research in health psychology',
+    'team.osvaldo.achievements.clinical': 'Clinical expertise in multiple therapeutic approaches',
+    'team.osvaldo.specializations.title': 'Specializations',
+    'team.osvaldo.specializations.clinical': 'Clinical Psychology',
+    'team.osvaldo.specializations.health': 'Health Psychology Research',
+    'team.osvaldo.specializations.leadership': 'Academic Leadership',
+    'team.osvaldo.specializations.methodology': 'Research Methodology',
+    
+    // Team page - Professional Specializations
+    'team.prof.spec.clinical': 'Clinical Psychology',
+    'team.prof.spec.health': 'Health Psychology',
+    'team.prof.spec.research': 'Research Methodology',
+    'team.prof.spec.cbt': 'Cognitive-Behavioral Therapy',
+    'team.prof.spec.psychometric': 'Psychometric Assessment',
+    'team.prof.spec.statistical': 'Statistical Analysis',
+    'team.prof.spec.qualitative': 'Qualitative Research',
+    'team.prof.spec.quantitative': 'Quantitative Research',
+    'team.prof.spec.training': 'Professional Training',
+    'team.prof.spec.leadership': 'Leadership Development',
+    'team.prof.spec.communication': 'Health Communication',
+    'team.prof.spec.digital': 'Digital Health Solutions',
+    
     // Contacts page
     'contacts.title': 'Contact Us',
     'contacts.subtitle': 'Get in touch with our team',
@@ -129,8 +209,8 @@ const translations = {
     'contacts.info.title': 'Contact Information',
     'contacts.email': 'Email',
     'contacts.hours.title': 'Business Hours',
-    'contacts.hours.monday': 'Monday - Friday: 9:00 AM - 6:00 PM',
-    'contacts.hours.saturday': 'Saturday: 9:00 AM - 1:00 PM',
+    'contacts.hours.monday': 'Monday - Friday: 10:00 AM - 5:00 PM',
+    'contacts.hours.saturday': 'Saturday: Closed',
     'contacts.hours.sunday': 'Sunday: Closed',
     'contacts.general.title': 'General Inquiry',
     'contacts.general.desc': 'Send us a message about our services or general questions.',
@@ -245,6 +325,27 @@ const translations = {
     'about.values.integrity': 'Integridade',
     'about.values.integrity.desc': 'Manter os mais altos padrões éticos em todas as nossas atividades de investigação e clínicas',
     
+    // About page - Our Story section (Portuguese)
+    'about.story.title': 'A Nossa História',
+    'about.story.p1': 'Fundada com a visão de criar ligações inquebráveis entre investigação, educação e prática clínica, a UBKIR cresceu numa organização multidisciplinar que serve clientes em Portugal e internacionalmente.',
+    'about.story.p2': 'Combinamos experiência local com perspetivas globais, oferecendo serviços abrangentes que vão desde apoio psicológico individual a iniciativas de investigação em larga escala e programas de formação profissional.',
+    'about.story.p3': 'O nosso portfólio diversificado inclui investigação quantitativa e qualitativa, análise estatística, avaliação psicométrica, serviços de psicologia clínica, formação profissional e serviços editoriais através da nossa divisão Acendalha Publishing.',
+    
+    // About page - Areas of Specialization (Portuguese)
+    'about.specializations.title': 'Áreas de Especialização',
+    'about.spec.quantResearch': 'Investigação Quantitativa e Inquéritos',
+    'about.spec.qualResearch': 'Investigação Qualitativa e Grupos Focais',
+    'about.spec.statAnalysis': 'Análise Estatística e Visualização de Dados',
+    'about.spec.psychometric': 'Análise Psicométrica',
+    'about.spec.realWorld': 'Investigação de Evidência do Mundo Real',
+    'about.spec.marketing': 'Investigação de Marketing',
+    'about.spec.healthComm': 'Formação em Comunicação em Saúde',
+    'about.spec.leadership': 'Desenvolvimento de Liderança',
+    'about.spec.cbt': 'Terapia Cognitivo-Comportamental',
+    'about.spec.eatingDisorders': 'Tratamento de Distúrbios Alimentares',
+    'about.spec.chronicDisease': 'Gestão de Doenças Crónicas',
+    'about.spec.publishing': 'Publicação Científica',
+    
     // Services page
     'services.title': 'Os Nossos Serviços',
     'services.subtitle': 'Soluções abrangentes para investigação em saúde, formação e prática clínica',
@@ -272,6 +373,36 @@ const translations = {
     'services.publishing.title': 'Publicação Acendalha',
     'services.publishing.desc': 'Serviços editoriais para publicações científicas e literatura de ficção científica',
     
+    // Services page - Research examples (Portuguese)
+    'services.research.examples.survey': 'Conceção e implementação de inquéritos',
+    'services.research.examples.statistical': 'Análise estatística e modelação',
+    'services.research.examples.visualization': 'Visualização de dados e dashboards',
+    'services.research.examples.epidemiological': 'Estudos epidemiológicos',
+    'services.research.examples.focus': 'Facilitação de grupos focais',
+    'services.research.examples.interviews': 'Entrevistas em profundidade',
+    'services.research.examples.worldcafe': 'Metodologia World Café',
+    'services.research.examples.thematic': 'Análise temática',
+    'services.research.examples.psychometric': 'Validação psicométrica',
+    'services.research.examples.realworld': 'Estudos de evidência do mundo real',
+    'services.research.examples.marketing': 'Investigação e análise de mercado',
+    'services.research.examples.behavioral': 'Investigação comportamental',
+    
+    // Services page - Training examples (Portuguese)
+    'services.training.adherence.example': 'Promoção da Adesão ao Tratamento',
+    'services.training.communication.example': 'Comunicação e Liderança em Cuidados de Saúde',
+    'services.training.methods.example': 'Métodos de Investigação',
+    
+    // Services page - Clinical examples (Portuguese)
+    'services.clinical.individual.example': 'Terapia Individual',
+    'services.clinical.specialized.example': 'Serviços Especializados',
+    
+    // Services page - Digital examples (Portuguese)
+    'services.digital.solutions.example': 'Soluções de Software de Saúde',
+    
+    // Services page - Publishing examples (Portuguese)
+    'services.publishing.excellence.example': 'Excelência Editorial',
+    'services.publishing.division.example': 'Divisão de Publicação Acendalha',
+    
     // Team page
     'team.title': 'A Nossa Equipa',
     'team.subtitle': 'Conheça os especialistas que impulsionam a inovação na UBKIR',
@@ -297,6 +428,35 @@ const translations = {
     'team.cta.desc': 'Pronto para colaborar com especialistas líderes em investigação em saúde e psicologia clínica? Contacte-nos para discutir as suas necessidades de projeto ou serviço.',
     'team.cta.button': 'Iniciar uma Conversa',
     
+    // Team page - Osvaldo Santos section (Portuguese)
+    'team.osvaldo.title': 'Osvaldo Santos',
+    'team.osvaldo.subtitle': 'CEO e Psicólogo Clínico da Saúde',
+    'team.osvaldo.bio': 'Osvaldo Santos é um distinto psicólogo clínico e da saúde com vasta experiência em prática clínica, investigação e ensino. Como diretor do Laboratório de Comportamento de Saúde Ambiental (EnviHeB Lab), do Instituto de Saúde Ambiental da Faculdade de Medicina de Lisboa, e um dos psicólogos mais citados de Portugal, Osvaldo Santos traz uma experiência incomparável à missão da UBKIR de promover a saúde através da inovação e investigação.',
+    'team.osvaldo.achievements.title': 'Principais Conquistas',
+    'team.osvaldo.achievements.enviheb': 'Diretor do EnviHeB Lab no ISAMB',
+    'team.osvaldo.achievements.cited': 'Um dos psicólogos mais citados de Portugal',
+    'team.osvaldo.achievements.research': 'Vasta investigação em psicologia da saúde',
+    'team.osvaldo.achievements.clinical': 'Experiência clínica em múltiplas abordagens terapêuticas',
+    'team.osvaldo.specializations.title': 'Especializações',
+    'team.osvaldo.specializations.clinical': 'Psicologia Clínica',
+    'team.osvaldo.specializations.health': 'Investigação em Psicologia da Saúde',
+    'team.osvaldo.specializations.leadership': 'Liderança Académica',
+    'team.osvaldo.specializations.methodology': 'Metodologia de Investigação',
+    
+    // Team page - Professional Specializations (Portuguese)
+    'team.prof.spec.clinical': 'Psicologia Clínica',
+    'team.prof.spec.health': 'Psicologia da Saúde',
+    'team.prof.spec.research': 'Metodologia de Investigação',
+    'team.prof.spec.cbt': 'Terapia Cognitivo-Comportamental',
+    'team.prof.spec.psychometric': 'Avaliação Psicométrica',
+    'team.prof.spec.statistical': 'Análise Estatística',
+    'team.prof.spec.qualitative': 'Investigação Qualitativa',
+    'team.prof.spec.quantitative': 'Investigação Quantitativa',
+    'team.prof.spec.training': 'Formação Profissional',
+    'team.prof.spec.leadership': 'Desenvolvimento de Liderança',
+    'team.prof.spec.communication': 'Comunicação em Saúde',
+    'team.prof.spec.digital': 'Soluções de Saúde Digital',
+    
     // Contacts page
     'contacts.title': 'Contacte-nos',
     'contacts.subtitle': 'Entre em contacto com a nossa equipa',
@@ -307,8 +467,8 @@ const translations = {
     'contacts.info.title': 'Informações de Contacto',
     'contacts.email': 'Email',
     'contacts.hours.title': 'Horário de Funcionamento',
-    'contacts.hours.monday': 'Segunda - Sexta: 9:00 - 18:00',
-    'contacts.hours.saturday': 'Sábado: 9:00 - 13:00',
+    'contacts.hours.monday': 'Segunda - Sexta: 10:00 - 17:00',
+    'contacts.hours.saturday': 'Sábado: Fechado',
     'contacts.hours.sunday': 'Domingo: Fechado',
     'contacts.general.title': 'Consulta Geral',
     'contacts.general.desc': 'Envie-nos uma mensagem sobre os nossos serviços ou questões gerais.',

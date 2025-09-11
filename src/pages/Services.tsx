@@ -63,10 +63,10 @@ const Services = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="text-sm text-muted-foreground space-y-2">
-                    <li>• Survey design and implementation</li>
-                    <li>• Statistical analysis and modeling</li>
-                    <li>• Data visualization and dashboards</li>
-                    <li>• Epidemiological studies</li>
+                    <li>• {t("services.research.examples.survey")}</li>
+                    <li>• {t("services.research.examples.statistical")}</li>
+                    <li>• {t("services.research.examples.visualization")}</li>
+                    <li>• {t("services.research.examples.epidemiological")}</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -81,10 +81,10 @@ const Services = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="text-sm text-muted-foreground space-y-2">
-                    <li>• Focus group facilitation</li>
-                    <li>• In-depth interviews</li>
-                    <li>• World Café methodology</li>
-                    <li>• Thematic analysis</li>
+                    <li>• {t("services.research.examples.focus")}</li>
+                    <li>• {t("services.research.examples.interviews")}</li>
+                    <li>• {t("services.research.examples.worldcafe")}</li>
+                    <li>• {t("services.research.examples.thematic")}</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -100,9 +100,9 @@ const Services = () => {
                 <CardContent>
                   <ul className="text-sm text-muted-foreground space-y-2">
                     <li>• Delphi consensus panels</li>
-                    <li>• Psychometric analysis</li>
-                    <li>• Real-world evidence research</li>
-                    <li>• Marketing research</li>
+                    <li>• {t("services.research.examples.psychometric")}</li>
+                    <li>• {t("services.research.examples.realworld")}</li>
+                    <li>• {t("services.research.examples.marketing")}</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -124,7 +124,7 @@ const Services = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <Card className="border-l-4 border-l-primary">
                 <CardHeader>
-                  <CardTitle>{t("contacts.training.adherence")}</CardTitle>
+                  <CardTitle>{t("services.training.adherence.example")}</CardTitle>
                   <CardDescription>
                     Evidence-based strategies to improve patient compliance and treatment outcomes.
                   </CardDescription>
@@ -149,7 +149,7 @@ const Services = () => {
 
               <Card className="border-l-4 border-l-primary">
                 <CardHeader>
-                  <CardTitle>{t("contacts.training.leadership")}</CardTitle>
+                  <CardTitle>{t("services.training.communication.example")}</CardTitle>
                   <CardDescription>
                     Develop essential leadership skills for health professionals and team management.
                   </CardDescription>
@@ -214,7 +214,7 @@ const Services = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card>
                 <CardHeader>
-                  <CardTitle>Individual Therapy</CardTitle>
+                  <CardTitle>{t("services.clinical.individual.example")}</CardTitle>
                   <CardDescription>
                     Specialized psychological interventions using cognitive-behavioral approaches.
                   </CardDescription>
@@ -234,7 +234,7 @@ const Services = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Specialized Services</CardTitle>
+                  <CardTitle>{t("services.clinical.specialized.example")}</CardTitle>
                   <CardDescription>
                     Comprehensive psychological assessment and couple therapy services.
                   </CardDescription>
@@ -267,7 +267,7 @@ const Services = () => {
             <Card>
               <CardContent className="p-8">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Health Software Solutions</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">{t("services.digital.solutions.example")}</h3>
                   <p className="text-lg text-muted-foreground mb-6">
                     Custom software development for healthcare organizations, including patient management systems, 
                     research platforms, and digital health interventions.
@@ -301,9 +301,9 @@ const Services = () => {
               <CardContent className="p-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">Editorial Excellence</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-4">{t("services.publishing.excellence.example")}</h3>
                     <p className="text-muted-foreground mb-6">
-                      Acendalha Publishing specializes in high-quality scientific publications and 
+                      {t("services.publishing.division.example")} specializes in high-quality scientific publications and 
                       creative science-fiction works, bridging the gap between academic rigor and 
                       accessible storytelling.
                     </p>

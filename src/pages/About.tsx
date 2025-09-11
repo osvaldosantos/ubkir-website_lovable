@@ -103,23 +103,17 @@ const About = () => {
         {/* Company Background */}
         <section className="bg-muted rounded-lg p-8 md:p-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-            Our Story
+            {t("about.story.title")}
           </h2>
           <div className="prose prose-lg max-w-none text-muted-foreground">
             <p className="text-lg leading-relaxed mb-6">
-              Founded with the vision of creating unbreakable connections between research, 
-              education, and clinical practice, UBKIR has grown into a multidisciplinary 
-              organization that serves clients across Portugal and internationally.
+              {t("about.story.p1")}
             </p>
             <p className="text-lg leading-relaxed mb-6">
-              We combine local expertise with global perspectives, 
-              offering comprehensive services that span from individual psychological support 
-              to large-scale research initiatives and professional training programs.
+              {t("about.story.p2")}
             </p>
             <p className="text-lg leading-relaxed">
-              Our diverse portfolio includes quantitative and qualitative research, 
-              statistical analysis, psychometric evaluation, clinical psychology services, 
-              professional training, and editorial services through our Acendalha Publishing division.
+              {t("about.story.p3")}
             </p>
           </div>
         </section>
@@ -127,22 +121,22 @@ const About = () => {
         {/* Specializations */}
         <section className="mt-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-            Areas of Specialization
+            {t("about.specializations.title")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "Quantitative Research & Surveys",
-              "Qualitative Research & Focus Groups",
-              "Statistical Analysis & Data Visualization",
-              "Psychometric Analysis",
-              "Real World Evidence Research",
-              "Marketing Research",
-              "Health Communication Training",
-              "Leadership Development",
-              "Cognitive-Behavioral Therapy",
-              "Eating Disorders Treatment",
-              "Chronic Disease Management",
-              "Scientific Publishing"
+              t("about.spec.quantResearch"),
+              t("about.spec.qualResearch"),
+              t("about.spec.statAnalysis"),
+              t("about.spec.psychometric"),
+              t("about.spec.realWorld"),
+              t("about.spec.marketing"),
+              t("about.spec.healthComm"),
+              t("about.spec.leadership"),
+              t("about.spec.cbt"),
+              t("about.spec.eatingDisorders"),
+              t("about.spec.chronicDisease"),
+              t("about.spec.publishing")
             ].map((specialization, index) => (
               <Badge key={index} variant="secondary" className="text-sm p-3 justify-center">
                 {specialization}

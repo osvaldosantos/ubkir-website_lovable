@@ -32,33 +32,33 @@ const Team = () => {
                       <Award className="h-8 w-8 text-primary" />
                     </div>
                     <div>
-                      <h2 className="text-3xl font-bold text-foreground">Osvaldo Santos</h2>
-                      <p className="text-lg text-primary font-semibold">CEO & Clinical Health Psychologist</p>
+                      <h2 className="text-3xl font-bold text-foreground">{t("team.osvaldo.title")}</h2>
+                      <p className="text-lg text-primary font-semibold">{t("team.osvaldo.subtitle")}</p>
                     </div>
                   </div>
                   
                   <p className="text-lg text-muted-foreground mb-6">
-                    Osvaldo Santos is a distinguished clinical and health psychologist with extensive experience in clinical practice, research, and teaching. As the head of the Environmental Health Behavior Laboratory (EnviHeB Lab), from the Environmental health Institute of the Lisbon School of Medicine, and one of Portugal's most cited psychologists, Osvaldo Santos brings unparalleled expertise to UBKIR's mission of advancing health through innovation and research.
+                    {t("team.osvaldo.bio")}
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
-                      <h3 className="font-semibold text-foreground mb-3">Key Achievements</h3>
+                      <h3 className="font-semibold text-foreground mb-3">{t("team.osvaldo.achievements.title")}</h3>
                       <ul className="text-sm text-muted-foreground space-y-2">
-                        <li>• Head of EnviHeB Lab at ISAMB</li>
-                        <li>• One of Portugal's most cited psychologists</li>
-                        <li>• Extensive research in health psychology</li>
-                        <li>• Clinical expertise in multiple therapeutic approaches</li>
+                        <li>• {t("team.osvaldo.achievements.enviheb")}</li>
+                        <li>• {t("team.osvaldo.achievements.cited")}</li>
+                        <li>• {t("team.osvaldo.achievements.research")}</li>
+                        <li>• {t("team.osvaldo.achievements.clinical")}</li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h3 className="font-semibold text-foreground mb-3">Specializations</h3>
+                      <h3 className="font-semibold text-foreground mb-3">{t("team.osvaldo.specializations.title")}</h3>
                       <ul className="text-sm text-muted-foreground space-y-2">
-                        <li>• Clinical Psychology</li>
-                        <li>• Health Psychology Research</li>
-                        <li>• Academic Leadership</li>
-                        <li>• Research Methodology</li>
+                        <li>• {t("team.osvaldo.specializations.clinical")}</li>
+                        <li>• {t("team.osvaldo.specializations.health")}</li>
+                        <li>• {t("team.osvaldo.specializations.leadership")}</li>
+                        <li>• {t("team.osvaldo.specializations.methodology")}</li>
                       </ul>
                     </div>
                   </div>
@@ -218,18 +218,18 @@ const Team = () => {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              "Clinical Psychology",
-              "Health Psychology", 
-              "Research Methodology",
-              "Statistical Analysis",
-              "Psychometric Assessment",
-              "Cognitive-Behavioral Therapy",
-              "Health Communication",
-              "Leadership Training",
-              "Qualitative Research",
-              "Data Visualization",
-              "Digital Health Solutions",
-              "Editorial Services"
+              t("team.prof.spec.clinical"),
+              t("team.prof.spec.health"), 
+              t("team.prof.spec.research"),
+              t("team.prof.spec.statistical"),
+              t("team.prof.spec.psychometric"),
+              t("team.prof.spec.cbt"),
+              t("team.prof.spec.communication"),
+              t("team.prof.spec.training"),
+              t("team.prof.spec.qualitative"),
+              t("team.prof.spec.quantitative"),
+              t("team.prof.spec.digital"),
+              t("team.prof.spec.leadership")
             ].map((specialization, index) => (
               <Badge key={index} variant="secondary" className="text-sm p-3 justify-center">
                 {specialization}
