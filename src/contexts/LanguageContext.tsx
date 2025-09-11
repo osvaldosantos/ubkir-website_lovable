@@ -133,11 +133,16 @@ const translations = {
     'services.research.examples.behavioral': 'Behavioral research',
     
     // Services page - Training examples
+    'services.training.desc': 'Professional development programs designed to enhance skills and knowledge in healthcare and research.',
     'services.training.adherence.example': 'Treatment Adherence Promotion',
-    'services.training.communication.example': 'Communication and Leadership in Healthcare',
-    'services.training.methods.example': 'Research Methods',
-    
+    'services.training.adherence.desc': 'Evidence-based strategies to improve patient compliance and treatment outcomes.',
+    'services.training.adherence.text': 'Learn effective techniques to enhance patient engagement and medication adherence through behavioral interventions and communication strategies.',
+    'services.training.adherence.item1': 'Motivational interview',
+    'services.training.adherence.item2': 'Behavioral Change',
+    'services.training.adherence.item3': 'Patient Engagement',
+     
     // Services page - Clinical examples
+    'services.clinical.desc': 'Evidence-based psychological and clinical services for individuals and couples.',
     'services.clinical.individual.example': 'Individual Therapy',
     'services.clinical.specialized.example': 'Specialized Services',
     
@@ -363,13 +368,13 @@ const translations = {
     'team.leading.expert': 'Especialista Reconhecido em',
     'team.health.psychology': 'Psicologia da Saúde',
     'services.training.title': 'Programas de Formação',
+    'services.training.desc': 'Programas de desenvolvimento profissional para melhorar competências e conhecimentos em cuidados de saúde e investigação.',
     'services.training.leadership': 'Desenvolvimento de Liderança',
     'services.training.leadership.desc': 'Programas especializados para equipas de profissionais de saúde e gestão de cuidados de saúde',
     'services.training.communication': 'Comunicação em Saúde',
-    'services.training.communication.desc': 'Estratégias de comunicação eficazes para ambientes de cuidados de saúde e envolvimento de pacientes',
     'services.training.methods': 'Métodos de Investigação',
-    'services.training.methods.desc': 'Formação abrangente em metodologias de investigação qualitativa e quantitativa',
     'services.clinical.title': 'Serviços Clínicos',
+    'services.clinical.desc': 'Serviços psicológicos e clínicos baseados em evidência para indivíduos e casais.',
     'services.clinical.therapy': 'Terapia Cognitivo-Comportamental',
     'services.clinical.therapy.desc': 'Intervenções terapêuticas baseadas em evidência para várias condições psicológicas',
     'services.clinical.specialized': 'Tratamentos Especializados',
@@ -395,15 +400,48 @@ const translations = {
     
     // Services page - Training examples (Portuguese)
     'services.training.adherence.example': 'Promoção da Adesão ao Tratamento',
+    'services.training.adherence.desc': 'Estratégias baseadas em evidência para melhorar a adesão dos doentes e os resultados do tratamento.',
+    'services.training.adherence.text': 'Aprenda técnicas eficazes para aumentar o envolvimento dos doentes e a adesão à medicação através de intervenções comportamentais e estratégias de comunicação.',
+    'services.training.adherence.item1': 'Entrevista motivacional',
+    'services.training.adherence.item2': 'Mudança comportamental',
+    'services.training.adherence.item3': 'Envolvimento do doente',
     'services.training.communication.example': 'Comunicação e Liderança em Cuidados de Saúde',
-    'services.training.methods.example': 'Métodos de Investigação',
+    'services.training.communication.desc': 'Desenvolva competências essenciais de liderança para profissionais de saúde e gestão de equipas.',
+    'services.training.communication.text': 'Formação abrangente em liderança que abrange dinâmicas de equipa, resolução de conflitos, planeamento estratégico e comunicação eficaz em contextos de cuidados de saúde.',
+    'services.training.communication.item1': 'Liderança de equipas',
+    'services.training.communication.item2': 'Gestão e resolução de conflitos',
+    'services.training.communication.item3': 'Desenvolvimento e implementação de estratégias de saúde pública',
+    'services.training.methods.desc': 'Domine métodos de investigação incluindo desenho, abordagens qualitativas e desenvolvimento de questionários.',
+    'services.training.methods.text': 'Formação abrangente em métodos de investigação desde o desenho de estudos ao desenvolvimento de questionários e avaliação psicométrica.',
+    'services.training.methods.item1': 'Desenho de investigação',
+    'services.training.methods.item2': 'Investigação qualitativa',
+    'services.training.methods.item3': 'Desenvolvimento de questionários: desde a questão à avaliação psicométrica',
     
     // Services page - Clinical examples (Portuguese)
     'services.clinical.individual.example': 'Terapia Individual',
+    'services.clinical.individual.desc': 'Intervenções psicológicas especializadas usando abordagens cognitivo-comportamentais.',
+    'services.clinical.individual.item1': 'Terapia Cognitivo-Comportamental (TCC)',
+    'services.clinical.individual.item2': 'Tratamento de distúrbios alimentares',
+    'services.clinical.individual.item3': 'Gestão de depressão e ansiedade',
+    'services.clinical.individual.item4': 'Ajustamento a doenças crónicas',
+    'services.clinical.schedule': 'Agendar Consulta',
     'services.clinical.specialized.example': 'Serviços Especializados',
+    'services.clinical.specialized.desc2': 'Avaliação psicológica abrangente e serviços de terapia de casal.',
+    'services.clinical.specialized.item1': 'Terapia de casal',
+    'services.clinical.specialized.item2': 'Intervenção em distúrbios alimentares (anorexia, bulimia, compulsão alimentar)',
+    'services.clinical.specialized.item3': 'Tratamento psicológico da obesidade',
+    'services.clinical.specialized.item4': 'Programas de modificação comportamental',
+    'services.clinical.learnmore': 'Saber Mais',
     
     // Services page - Digital examples (Portuguese)
     'services.digital.solutions.example': 'Soluções de Software de Saúde',
+    'services.digital.solutions.desc': 'Desenvolvimento de software personalizado para organizações de saúde, incluindo sistemas de gestão de doentes, plataformas de investigação e intervenções de saúde digital.',
+    'services.digital.badge1': 'Saúde Digital',
+    'services.digital.badge2': 'Gestão de Doentes',
+    'services.digital.badge3': 'Plataformas de Investigação',
+    'services.digital.badge4': 'Análise de Dados',
+    'services.digital.badge5': 'Aplicações de Saúde Móvel',
+    'services.digital.discuss': 'Discutir o Seu Projeto',
     
     // Services page - Publishing examples (Portuguese)
     'services.publishing.excellence.example': 'Excelência Editorial',

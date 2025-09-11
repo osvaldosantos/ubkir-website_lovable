@@ -117,7 +117,7 @@ const Services = () => {
               <Users className="h-16 w-16 text-primary mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-foreground mb-4">{t("services.training.title")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Professional development programs designed to enhance skills and knowledge in healthcare and research.
+                {t("services.training.desc")}
               </p>
             </div>
 
@@ -126,19 +126,18 @@ const Services = () => {
                 <CardHeader>
                   <CardTitle>{t("services.training.adherence.example")}</CardTitle>
                   <CardDescription>
-                    Evidence-based strategies to improve patient compliance and treatment outcomes.
+                    {t("services.training.adherence.desc")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                      Learn effective techniques to enhance patient engagement and medication adherence 
-                      through behavioral interventions and communication strategies.
+                      {t("services.training.adherence.text")}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">Motivational interview</Badge>
-                      <Badge variant="secondary">Behavioral Change</Badge>
-                      <Badge variant="secondary">Patient Engagement</Badge>
+                      <Badge variant="secondary">{t("services.training.adherence.item1")}</Badge>
+                      <Badge variant="secondary">{t("services.training.adherence.item2")}</Badge>
+                      <Badge variant="secondary">{t("services.training.adherence.item3")}</Badge>
                     </div>
                     <Button size="sm" asChild>
                       <Link to="/contacts">{t("contacts.training.enroll")}</Link>
@@ -151,19 +150,18 @@ const Services = () => {
                 <CardHeader>
                   <CardTitle>{t("services.training.communication.example")}</CardTitle>
                   <CardDescription>
-                    Develop essential leadership skills for health professionals and team management.
+                    {t("services.training.communication.desc")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                      Comprehensive leadership training covering team dynamics, conflict resolution, 
-                      strategic planning, and effective communication in healthcare settings.
+                      {t("services.training.communication.text")}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">Team leadership</Badge>
-                      <Badge variant="secondary">Conflict management and resolution</Badge>
-                      <Badge variant="secondary">Development and implementation of public health strategies</Badge>
+                      <Badge variant="secondary">{t("services.training.communication.item1")}</Badge>
+                      <Badge variant="secondary">{t("services.training.communication.item2")}</Badge>
+                      <Badge variant="secondary">{t("services.training.communication.item3")}</Badge>
                     </div>
                     <Button size="sm" asChild>
                       <Link to="/contacts">{t("contacts.training.enroll")}</Link>
@@ -176,19 +174,18 @@ const Services = () => {
                 <CardHeader>
                   <CardTitle>{t("contacts.training.research")}</CardTitle>
                   <CardDescription>
-                    Master research methods including design, qualitative approaches, and questionnaire development.
+                    {t("services.training.methods.desc")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                      Comprehensive training in research methods from study design to questionnaire 
-                      development and psychometric evaluation.
+                      {t("services.training.methods.text")}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">Research design</Badge>
-                      <Badge variant="secondary">Qualitative research</Badge>
-                      <Badge variant="secondary">Development of questionnaires: from questioning to psychometric development</Badge>
+                      <Badge variant="secondary">{t("services.training.methods.item1")}</Badge>
+                      <Badge variant="secondary">{t("services.training.methods.item2")}</Badge>
+                      <Badge variant="secondary">{t("services.training.methods.item3")}</Badge>
                     </div>
                     <Button size="sm" asChild>
                       <Link to="/contacts">{t("contacts.training.enroll")}</Link>
@@ -207,7 +204,7 @@ const Services = () => {
               <Heart className="h-16 w-16 text-primary mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-foreground mb-4">{t("services.clinical.title")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Evidence-based psychological and clinical services for individuals and couples.
+                {t("services.clinical.desc")}
               </p>
             </div>
 
@@ -216,18 +213,18 @@ const Services = () => {
                 <CardHeader>
                   <CardTitle>{t("services.clinical.individual.example")}</CardTitle>
                   <CardDescription>
-                    Specialized psychological interventions using cognitive-behavioral approaches.
+                    {t("services.clinical.individual.desc")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                    <li>• Cognitive-Behavioral Therapy (CBT)</li>
-                    <li>• Eating disorders treatment</li>
-                    <li>• Depression and anxiety management</li>
-                    <li>• Chronic disease adjustment</li>
+                    <li>• {t("services.clinical.individual.item1")}</li>
+                    <li>• {t("services.clinical.individual.item2")}</li>
+                    <li>• {t("services.clinical.individual.item3")}</li>
+                    <li>• {t("services.clinical.individual.item4")}</li>
                   </ul>
                   <Button size="sm" asChild>
-                    <Link to="/contacts">Schedule Consultation</Link>
+                    <Link to="/contacts">{t("services.clinical.schedule")}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -236,18 +233,18 @@ const Services = () => {
                 <CardHeader>
                   <CardTitle>{t("services.clinical.specialized.example")}</CardTitle>
                   <CardDescription>
-                    Comprehensive psychological assessment and couple therapy services.
+                    {t("services.clinical.specialized.desc2")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                    <li>• Couple therapy</li>
-                    <li>• Intervention in eating disorders (anorexia, bulimia, compulsive eating)</li>
-                    <li>• Psychological treatment of obesity</li>
-                    <li>• Behavioral modification programs</li>
+                    <li>• {t("services.clinical.specialized.item1")}</li>
+                    <li>• {t("services.clinical.specialized.item2")}</li>
+                    <li>• {t("services.clinical.specialized.item3")}</li>
+                    <li>• {t("services.clinical.specialized.item4")}</li>
                   </ul>
                   <Button size="sm" asChild>
-                    <Link to="/contacts">Learn More</Link>
+                    <Link to="/contacts">{t("services.clinical.learnmore")}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -269,18 +266,17 @@ const Services = () => {
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-foreground mb-4">{t("services.digital.solutions.example")}</h3>
                   <p className="text-lg text-muted-foreground mb-6">
-                    Custom software development for healthcare organizations, including patient management systems, 
-                    research platforms, and digital health interventions.
+                    {t("services.digital.solutions.desc")}
                   </p>
                   <div className="flex flex-wrap justify-center gap-3 mb-6">
-                    <Badge>Digital Health</Badge>
-                    <Badge>Patient Management</Badge>
-                    <Badge>Research Platforms</Badge>
-                    <Badge>Data Analytics</Badge>
-                    <Badge>Mobile Health Apps</Badge>
+                    <Badge>{t("services.digital.badge1")}</Badge>
+                    <Badge>{t("services.digital.badge2")}</Badge>
+                    <Badge>{t("services.digital.badge3")}</Badge>
+                    <Badge>{t("services.digital.badge4")}</Badge>
+                    <Badge>{t("services.digital.badge5")}</Badge>
                   </div>
                   <Button asChild>
-                    <Link to="/contacts">Discuss Your Project</Link>
+                    <Link to="/contacts">{t("services.digital.discuss")}</Link>
                   </Button>
                 </div>
               </CardContent>
