@@ -152,6 +152,12 @@ const translations = {
     // Services page - Publishing examples
     'services.publishing.excellence.example': 'Editorial Excellence',
     'services.publishing.division.example': 'Acendalha Publishing Division',
+    'services.publishing.scientific': 'Scientific book publishing',
+    'services.publishing.fiction': 'Science-fiction publications',
+    'services.publishing.consulting': 'Editorial consulting',
+    'services.publishing.manuscript': 'Manuscript development',
+    'services.publishing.inquiry': 'Publishing Inquiry',
+    'services.publishing.division': 'Publishing Division',
     
     // Team page
     'team.title': 'Our Team',
@@ -423,7 +429,6 @@ const translations = {
     'services.clinical.individual.item1': 'Terapia Cognitivo-Comportamental (TCC)',
     'services.clinical.individual.item2': 'Aconselhamento psicológico para tomada de decisão',
     'services.clinical.individual.item3': 'Programas de modificação comportamental',
-    'services.clinical.individual.item4': '',
     'services.clinical.schedule': 'Agendar Consulta',
     'services.clinical.specialized.example': 'Serviços Especializados',
     'services.clinical.specialized.desc2': 'Terapia individual e de casal.',
@@ -446,6 +451,12 @@ const translations = {
     // Services page - Publishing examples (Portuguese)
     'services.publishing.excellence.example': 'Excelência Editorial',
     'services.publishing.division.example': 'Divisão de Publicação Acendalha',
+    'services.publishing.scientific': 'Publicação de livros científicos',
+    'services.publishing.fiction': 'Publicações de ficção científica',
+    'services.publishing.consulting': 'Consultoria editorial',
+    'services.publishing.manuscript': 'Desenvolvimento de manuscritos',
+    'services.publishing.inquiry': 'Consulta de Publicação',
+    'services.publishing.division': 'Divisão de Publicação',
     
     // Team page
     'team.title': 'A Nossa Equipa',
@@ -460,7 +471,7 @@ const translations = {
     'team.expertise.publishing': 'Publicação e Inovação',
     'team.expertise.publishing.desc': 'Excelência editorial e inovação digital em tecnologias relacionadas com a saúde.',
     'team.partnership.title': 'Parceria com o Laboratório EnviHeB',
-    'team.partnership.desc': 'Através da liderança de Osvaldo Santos no Laboratório EnviHeB no Instituto de Saúde Ambiental da Faculdade de Medicina da Universidade de Lisboa (SAMB-FMUL), a UBKIR mantém fortes conexões com investigação académica de ponta e redes de colaboração internacional.',
+    'team.partnership.desc': 'Através da liderança de Osvaldo Santos no Laboratório EnviHeB, do Instituto de Saúde Ambiental da Faculdade de Medicina da Universidade de Lisboa (SAMB-FMUL), a UBKIR mantém fortes conexões com investigação académica de ponta e redes de colaboração internacional.',
     'team.partnership.leadership': 'Liderança em Investigação',
     'team.partnership.leadership.desc': 'Liderar projetos de investigação inovadores em saúde ambiental e comportamento.',
     'team.partnership.network': 'Rede Académica',
@@ -490,7 +501,7 @@ const translations = {
     // Team page - Professional Specializations (Portuguese)
     'team.prof.spec.clinical': 'Psicologia Clínica',
     'team.prof.spec.health': 'Psicologia da Saúde',
-    'team.prof.spec.research': 'Metodologia de Investigação',
+    'team.prof.spec.research': 'Métodos de Investigação',
     'team.prof.spec.cbt': 'Terapia Cognitivo-Comportamental',
     'team.prof.spec.psychometric': 'Avaliação Psicométrica',
     'team.prof.spec.statistical': 'Análise Estatística',

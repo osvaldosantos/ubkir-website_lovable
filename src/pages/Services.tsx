@@ -306,19 +306,19 @@ const Services = () => {
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-sm">Scientific book publishing</span>
+                        <span className="text-sm">{t("services.publishing.scientific")}</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-sm">Science-fiction publications</span>
+                        <span className="text-sm">{t("services.publishing.fiction")}</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-sm">Editorial consulting</span>
+                        <span className="text-sm">{t("services.publishing.consulting")}</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-sm">Manuscript development</span>
+                        <span className="text-sm">{t("services.publishing.manuscript")}</span>
                       </div>
                     </div>
                     <div className="flex gap-4">
@@ -328,14 +328,14 @@ const Services = () => {
                         </a>
                       </Button>
                       <Button variant="outline" asChild>
-                        <Link to="/contacts">Publishing Inquiry</Link>
+                        <Link to="/contacts">{t("services.publishing.inquiry")}</Link>
                       </Button>
                     </div>
                   </div>
                   <div className="bg-gradient-to-br from-primary/5 to-primary-glow/5 rounded-lg p-8 text-center">
                     <BookOpen className="h-20 w-20 text-primary mx-auto mb-4" />
                     <div className="text-2xl font-bold text-primary mb-2">Acendalha</div>
-                    <div className="text-muted-foreground">Publishing Division</div>
+                    <div className="text-muted-foreground">{t("services.publishing.division")}</div>
                   </div>
                 </div>
               </CardContent>
