@@ -94,8 +94,8 @@ const Team = () => {
                   
                   <div className="bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-lg p-8 mb-6">
                     <Brain className="h-20 w-20 text-primary mx-auto mb-4" />
-                    <div className="text-sm text-muted-foreground">Leading Expert in</div>
-                    <div className="text-lg font-semibold text-primary">Health Psychology</div>
+                    <div className="text-sm text-muted-foreground">{t("team.leading.expert")}</div>
+                    <div className="text-lg font-semibold text-primary">{t("team.health.psychology")}</div>
                   </div>
                   
                   <div className="space-y-3">

@@ -47,9 +47,9 @@ const Services = () => {
             <div className="text-center mb-12">
               <Brain className="h-16 w-16 text-primary mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-foreground mb-4">{t("services.research.title")}</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Evidence-based research solutions using advanced methodologies and cutting-edge analytics.
-              </p>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  {t("services.research.evidence.desc")}
+                </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
