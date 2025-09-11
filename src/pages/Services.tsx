@@ -99,7 +99,7 @@ const Services = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="text-sm text-muted-foreground space-y-2">
-                    <li>• Delphi consensus panels</li>
+                    <li>• {t("services.research.examples.delphi")}</li>
                     <li>• {t("services.research.examples.psychometric")}</li>
                     <li>• {t("services.research.examples.realworld")}</li>
                     <li>• {t("services.research.examples.marketing")}</li>
