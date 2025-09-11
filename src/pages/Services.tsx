@@ -221,7 +221,6 @@ const Services = () => {
                     <li>• {t("services.clinical.individual.item1")}</li>
                     <li>• {t("services.clinical.individual.item2")}</li>
                     <li>• {t("services.clinical.individual.item3")}</li>
-                    <li>• {t("services.clinical.individual.item4")}</li>
                   </ul>
                   <Button size="sm" asChild>
                     <Link to="/contacts">{t("services.clinical.schedule")}</Link>
@@ -299,9 +298,7 @@ const Services = () => {
                   <div>
                     <h3 className="text-2xl font-bold text-foreground mb-4">{t("services.publishing.excellence.example")}</h3>
                     <p className="text-muted-foreground mb-6">
-                      {t("services.publishing.division.example")} specializes in high-quality scientific publications and 
-                      creative science-fiction works, bridging the gap between academic rigor and 
-                      accessible storytelling.
+                      {t("services.publishing.excellence.desc")}
                     </p>
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center gap-3">
@@ -324,7 +321,7 @@ const Services = () => {
                     <div className="flex gap-4">
                       <Button asChild>
                         <a href="https://www.acendalha.pt" target="_blank" rel="noopener noreferrer">
-                          Visit Acendalha <ExternalLink className="ml-2" size={16} />
+                          {t("services.publishing.visit")} <ExternalLink className="ml-2" size={16} />
                         </a>
                       </Button>
                       <Button variant="outline" asChild>

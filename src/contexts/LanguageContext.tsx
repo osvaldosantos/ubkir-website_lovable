@@ -151,12 +151,14 @@ const translations = {
     
     // Services page - Publishing examples
     'services.publishing.excellence.example': 'Editorial Excellence',
+    'services.publishing.excellence.desc': 'Acendalha Publishing specializes in high-quality scientific publications and creative science-fiction works, bridging the gap between academic rigor and accessible storytelling.',
     'services.publishing.division.example': 'Acendalha Publishing Division',
     'services.publishing.scientific': 'Scientific book publishing',
     'services.publishing.fiction': 'Science-fiction publications',
     'services.publishing.consulting': 'Editorial consulting',
     'services.publishing.manuscript': 'Manuscript development',
     'services.publishing.inquiry': 'Publishing Inquiry',
+    'services.publishing.visit': 'Visit Acendalha',
     'services.publishing.division': 'Publishing Division',
     
     // Team page
@@ -450,12 +452,14 @@ const translations = {
     
     // Services page - Publishing examples (Portuguese)
     'services.publishing.excellence.example': 'Excelência Editorial',
+    'services.publishing.excellence.desc': 'A Acendalha especializa-se em publicações científicas de elevada qualidade e em obras criativas de ficção científica, aproximando o rigor académico de uma linguagem acessível.',
     'services.publishing.division.example': 'Divisão de Publicação Acendalha',
     'services.publishing.scientific': 'Publicação de livros científicos',
     'services.publishing.fiction': 'Publicações de ficção científica',
     'services.publishing.consulting': 'Consultoria editorial',
     'services.publishing.manuscript': 'Desenvolvimento de manuscritos',
     'services.publishing.inquiry': 'Consulta de Publicação',
+    'services.publishing.visit': 'Visitar a Acendalha',
     'services.publishing.division': 'Divisão de Publicação',
     
     // Team page
@@ -471,7 +475,7 @@ const translations = {
     'team.expertise.publishing': 'Publicação e Inovação',
     'team.expertise.publishing.desc': 'Excelência editorial e inovação digital em tecnologias relacionadas com a saúde.',
     'team.partnership.title': 'Parceria com o Laboratório EnviHeB',
-    'team.partnership.desc': 'Através da liderança de Osvaldo Santos no Laboratório EnviHeB, do Instituto de Saúde Ambiental da Faculdade de Medicina da Universidade de Lisboa (SAMB-FMUL), a UBKIR mantém fortes conexões com investigação académica de ponta e redes de colaboração internacional.',
+    'team.partnership.desc': 'Através da liderança por Osvaldo Santos do Laboratório EnviHeB, do Instituto de Saúde Ambiental da Faculdade de Medicina da Universidade de Lisboa (SAMB-FMUL), a UBKIR  mantém fortes conexões com investigação de ponta na área da saúde, e da saúde ambiental, garantindo também redes de colaboração internacional.',
     'team.partnership.leadership': 'Liderança em Investigação',
     'team.partnership.leadership.desc': 'Liderar projetos de investigação inovadores em saúde ambiental e comportamento.',
     'team.partnership.network': 'Rede Académica',
