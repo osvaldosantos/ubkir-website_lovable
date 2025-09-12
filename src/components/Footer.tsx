@@ -29,6 +29,7 @@ const Footer = () => {
               <p>{t("footer.research")}</p>
               <p>{t("footer.training")}</p>
               <p>{t("footer.clinical")}</p>
+              <p>{t("footer.software")}</p>
               <p>{t("footer.editorial")}</p>
             </div>
           </div>
