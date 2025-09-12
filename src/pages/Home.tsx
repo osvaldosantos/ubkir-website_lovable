@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Brain, Users, TrendingUp, BookOpen } from "lucide-react";
+import { ArrowRight, Brain, Users, TrendingUp, BookOpen, Monitor } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -43,46 +43,66 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <CardHeader>
-                <Brain className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>{t("home.research.title")}</CardTitle>
-                <CardDescription>
-                  {t("home.research.desc")}
-                </CardDescription>
-              </CardHeader>
-            </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <Link to="/services?tab=research">
+              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
+                <CardHeader>
+                  <Brain className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>{t("home.research.title")}</CardTitle>
+                  <CardDescription>
+                    {t("home.research.desc")}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <CardHeader>
-                <Users className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>{t("home.training.title")}</CardTitle>
-                <CardDescription>
-                  {t("home.training.desc")}
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <Link to="/services?tab=training">
+              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
+                <CardHeader>
+                  <Users className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>{t("home.training.title")}</CardTitle>
+                  <CardDescription>
+                    {t("home.training.desc")}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <CardHeader>
-                <TrendingUp className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>{t("home.clinical.title")}</CardTitle>
-                <CardDescription>
-                  {t("home.clinical.desc")}
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <Link to="/services?tab=clinical">
+              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
+                <CardHeader>
+                  <TrendingUp className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>{t("home.clinical.title")}</CardTitle>
+                  <CardDescription>
+                    {t("home.clinical.desc")}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <CardHeader>
-                <BookOpen className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>{t("home.editorial.title")}</CardTitle>
-                <CardDescription>
-                  {t("home.editorial.desc")}
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <Link to="/services?tab=digital">
+              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
+                <CardHeader>
+                  <Monitor className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>{t("home.digital.title")}</CardTitle>
+                  <CardDescription>
+                    {t("home.digital.desc")}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+
+            <Link to="/services?tab=publishing">
+              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
+                <CardHeader>
+                  <BookOpen className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>{t("home.editorial.title")}</CardTitle>
+                  <CardDescription>
+                    {t("home.editorial.desc")}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>
