@@ -171,29 +171,6 @@ const Map = () => {
         />
       )}
 
-      {(!mapboxToken || mapError || showTokenPanel) && (
-        <div className="absolute top-2 left-1/2 -translate-x-1/2 z-30 w-[min(100%,680px)] px-4">
-          <div className="w-full rounded-lg border border-border bg-card/95 backdrop-blur p-4 shadow-lg">
-            <div className="flex items-center justify-between gap-2">
-              <div>
-                <h2 className="text-sm font-semibold">Mapbox token</h2>
-                <p className="text-xs text-muted-foreground">Enter your public token (starts with pk.)</p>
-              </div>
-              {mapboxToken && (
-                <Button size="sm" variant="outline" onClick={handleClearToken}>Clear</Button>
-              )}
-            </div>
-            <div className="mt-3 flex gap-2">
-              <Input
-                placeholder="pk.********************************"
-                value={tokenInput}
-                onChange={(e) => setTokenInput(e.target.value)}
-              />
-              <Button onClick={handleSaveToken}>Save</Button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {mapboxToken && !isMapReady && (
         <div className="absolute inset-0 bg-muted/60 flex items-center justify-center z-10">
