@@ -68,7 +68,7 @@ const Home = () => {
               </Card>
             </Link>
 
-            <Link to="/services?tab=clinical">
+            <Link to="/clinical">
               <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
                 <CardHeader>
                   <TrendingUp className="h-12 w-12 text-primary mb-4" />
