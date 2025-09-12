@@ -13,11 +13,13 @@ import {
   Target,
   ExternalLink
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
   const { t } = useLanguage();
+  const [searchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || 'research';
   
   return (
     <div className="min-h-screen py-20">
@@ -33,7 +35,7 @@ const Services = () => {
         </div>
 
         {/* Services Tabs */}
-        <Tabs defaultValue="research" className="w-full">
+        <Tabs defaultValue={activeTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 mb-12">
             <TabsTrigger value="research">{t("nav.research")}</TabsTrigger>
             <TabsTrigger value="training">{t("nav.training")}</TabsTrigger>
