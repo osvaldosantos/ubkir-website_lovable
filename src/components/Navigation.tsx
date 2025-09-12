@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ubkirLogo from "@/assets/ubkir-logo.jpg";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,11 +26,12 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-primary font-bold text-xl">UBKIR</div>
-            <div className="hidden sm:block text-sm text-muted-foreground">
-              Unbreakable Idea Research
-            </div>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={ubkirLogo} 
+              alt="UBKIR - Unbreakable Idea Research" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
