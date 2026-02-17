@@ -17,6 +17,8 @@ const Home = () => {
         </h1>
       </div>
 
+      <div className="h-4 bg-background" />
+
       {/* Hero Carousel */}
       <HeroCarousel />
 
