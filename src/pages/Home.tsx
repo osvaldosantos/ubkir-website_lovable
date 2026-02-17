@@ -3,33 +3,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowRight, Brain, Users, TrendingUp, BookOpen, Monitor } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import HeroCarousel from "@/components/HeroCarousel";
 
 const Home = () => {
   const { t } = useLanguage();
   
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            {t("home.hero.title")}
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
-            {t("home.hero.subtitle")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg" asChild>
-              <Link to="/services">
-                {t("home.hero.services")} <ArrowRight className="ml-2" size={20} />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent" asChild>
-              <Link to="/about">{t("home.hero.learn")}</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
       {/* Services Overview */}
       <section className="py-20">
