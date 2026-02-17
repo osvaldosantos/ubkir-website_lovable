@@ -10,15 +10,6 @@ const Home = () => {
   
   return (
     <div className="min-h-screen">
-      {/* Company Name Banner */}
-      <div className="bg-primary py-5 text-center">
-        <h1 className="text-3xl md:text-5xl font-bold text-primary-foreground tracking-widest uppercase">
-          Unbreakable Idea Research
-        </h1>
-      </div>
-
-      <div className="h-4 bg-background" />
-
       {/* Hero Carousel */}
       <HeroCarousel />
 
