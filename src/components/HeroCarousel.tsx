@@ -56,7 +56,7 @@ const HeroCarousel = () => {
   }, [current, goTo]);
 
   return (
-    <section className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+    <section className="relative w-full h-[340px] md:h-[400px] overflow-hidden">
       {slides.map((slide, i) => (
         <div
           key={i}
