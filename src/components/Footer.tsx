@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
-import ubkirLogo from "@/assets/ubkir-logo.jpg";
+import ubkirLogo from "@/assets/ubkir-logo-transparent.png";
 
 const Footer = () => {
   const { t } = useLanguage();
