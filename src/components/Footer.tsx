@@ -1,4 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
+import ubkirLogo from "@/assets/ubkir-logo.jpg";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -8,7 +10,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-lg font-semibold text-primary mb-4">{t("footer.company")}</h3>
+            <Link to="/" className="inline-block mb-4">
+              <img src={ubkirLogo} alt="UBKIR" className="h-10 w-auto" />
+            </Link>
             <p className="text-sm text-muted-foreground">
               {t("footer.description")}
             </p>
