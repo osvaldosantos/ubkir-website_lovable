@@ -167,50 +167,6 @@ const Team = () => {
           </div>
         </section>
 
-        {/* Research Lab Connection */}
-        <section className="bg-muted rounded-lg p-8 md:p-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              {t("team.partnership.title")}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              {t("team.partnership.desc")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-primary/10 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                <Brain className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{t("team.partnership.leadership")}</h3>
-              <p className="text-sm text-muted-foreground">
-                {t("team.partnership.leadership.desc")}
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-primary/10 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                <Users className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{t("team.partnership.network")}</h3>
-              <p className="text-sm text-muted-foreground">
-                {t("team.partnership.network.desc")}
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-primary/10 rounded-full p-6 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                <Award className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{t("team.partnership.impact")}</h3>
-              <p className="text-sm text-muted-foreground">
-                {t("team.partnership.impact.desc")}
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Specialization Areas */}
         <section className="mt-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
