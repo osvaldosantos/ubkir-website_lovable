@@ -231,7 +231,7 @@ const translations = {
     // Team page - Osvaldo Santos section
     'team.osvaldo.title': 'Osvaldo Santos',
     'team.osvaldo.subtitle': 'CEO & Clinical Health Psychologist',
-    'team.osvaldo.bio': 'Osvaldo Santos is a distinguished clinical and health psychologist with extensive experience in clinical practice, research, and teaching. As the head of the Environmental Health Behavior Laboratory, from the Institute of Environmental Health of the Lisbon School of Medicine (ISAMB-FMUL), and one of Portugal\'s most cited psychologists, Osvaldo Santos brings unparalleled expertise to UBKIR\'s mission of advancing health through innovation and research.',
+    'team.osvaldo.bio': 'Osvaldo Santos is a clinical and health psychologist with extensive experience in clinical practice, research, and teaching. He is a faculty member at the Lisbon School of Medicine, University of Lisbon, and coordinator of the Environmental Health Behavior Laboratory (EnviHeB Lab), at the Institute of Environmental Health of the Lisbon School of Medicine, and one of Portugal\'s most cited psychologists.',
     'team.osvaldo.achievements.title': 'Key Achievements',
     'team.osvaldo.achievements.enviheb': 'Head of EnviHeB Lab at ISAMB',
     'team.osvaldo.achievements.cited': 'One of Portugal\'s most cited psychologists',
@@ -547,7 +547,7 @@ const translations = {
     // Team page - Osvaldo Santos section (Portuguese)
     'team.osvaldo.title': 'Osvaldo Santos',
     'team.osvaldo.subtitle': 'CEO e Psicólogo Clínico da Saúde',
-    'team.osvaldo.bio': 'Osvaldo Santos é um distinto psicólogo clínico e da saúde com vasta experiência em prática clínica, investigação e ensino. Como diretor do Laboratório de Comportamento de Saúde Ambiental (EnviHeB Lab), do Instituto de Saúde Ambiental da Faculdade de Medicina de Lisboa, e um dos psicólogos mais citados de Portugal, Osvaldo Santos traz uma experiência incomparável à missão da UBKIR de promover a saúde através da inovação e investigação.',
+    'team.osvaldo.bio': 'Osvaldo Santos é um psicólogo clínico e da saúde com vasta experiência em prática clínica, investigação e ensino. É docente da Faculdade de Medicina da Universidade de Lisboa, sendo o coordenador do Laboratório de Comportamento de Saúde Ambiental (EnviHeB Lab), do Instituto de Saúde Ambiental da Faculdade de Medicina de Lisboa, e um dos psicólogos mais citados de Portugal.',
     'team.osvaldo.achievements.title': 'Principais Conquistas',
     'team.osvaldo.achievements.enviheb': 'Diretor do EnviHeB Lab no ISAMB',
     'team.osvaldo.achievements.cited': 'Um dos psicólogos mais citados de Portugal',
