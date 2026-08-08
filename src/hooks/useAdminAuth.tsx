@@ -18,7 +18,14 @@ export const useAdminAuth = () => {
             .eq("user_id", newSession.user.id)
             .eq("role", "admin")
             .maybeSingle();
-          setIsAdmin(!!data);
+          if (data) {
+            setIsAdmin(true);
+            setLoading(false);
+            return;
+          }
+          // Bootstrap: the very first registered account becomes the administrator.
+          const { data: claimed } = await supabase.rpc("claim_first_admin");
+          setIsAdmin(claimed === true);
           setLoading(false);
         }, 0);
       } else {
