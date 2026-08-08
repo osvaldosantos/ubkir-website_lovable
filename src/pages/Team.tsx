@@ -4,9 +4,14 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Award, BookOpen, Users, Brain } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSiteImage } from "@/hooks/useSiteImages";
 
 const Team = () => {
   const { t } = useLanguage();
+  const ceoPhoto = useSiteImage(
+    "team.osvaldo.photo",
+    "/lovable-uploads/383f7e0f-7e49-44bd-9e3c-2035355fd892.png"
+  );
   
   return (
     <div className="min-h-screen py-20">
@@ -86,7 +91,7 @@ const Team = () => {
                   {/* CEO Photo */}
                   <div className="mb-6">
                     <img 
-                      src="/lovable-uploads/383f7e0f-7e49-44bd-9e3c-2035355fd892.png" 
+                      src={ceoPhoto}
                       alt="Dr. Osvaldo Santos - CEO & Clinical Health Psychologist"
                       className="w-48 h-48 object-cover rounded-lg mx-auto shadow-lg"
                     />

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSiteImages } from "@/hooks/useSiteImages";
 import heroResearch from "@/assets/hero-research.png";
 import heroTraining from "@/assets/hero-training.png";
 import heroClinical from "@/assets/hero-clinical.png";
@@ -11,35 +12,36 @@ import heroEditorial from "@/assets/hero-editorial.png";
 
 const HeroCarousel = () => {
   const { t } = useLanguage();
+  const { images } = useSiteImages();
   const [current, setCurrent] = useState(0);
 
   const slides = [
     {
-      image: heroResearch,
+      image: images["hero.research"] || heroResearch,
       titleKey: "home.hero.slide.research.title",
       subtitleKey: "home.hero.slide.research.subtitle",
       link: "/services?tab=research",
     },
     {
-      image: heroTraining,
+      image: images["hero.training"] || heroTraining,
       titleKey: "home.hero.slide.training.title",
       subtitleKey: "home.hero.slide.training.subtitle",
       link: "/services?tab=training",
     },
     {
-      image: heroClinical,
+      image: images["hero.clinical"] || heroClinical,
       titleKey: "home.hero.slide.clinical.title",
       subtitleKey: "home.hero.slide.clinical.subtitle",
       link: "/services?tab=clinical",
     },
     {
-      image: heroSoftware,
+      image: images["hero.digital"] || heroSoftware,
       titleKey: "home.hero.slide.digital.title",
       subtitleKey: "home.hero.slide.digital.subtitle",
       link: "/services?tab=digital",
     },
     {
-      image: heroEditorial,
+      image: images["hero.editorial"] || heroEditorial,
       titleKey: "home.hero.slide.editorial.title",
       subtitleKey: "home.hero.slide.editorial.subtitle",
       link: "/services?tab=publishing",

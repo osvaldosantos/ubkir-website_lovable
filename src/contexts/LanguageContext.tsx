@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 
 type Language = 'en' | 'pt';
 
@@ -6,12 +7,14 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  overrides: Record<string, Record<string, string>>;
+  reloadContent: () => Promise<void>;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 // Translation data
-const translations = {
+export const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
     'nav.home': 'Home',
@@ -650,6 +653,23 @@ const translations = {
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>('en');
+  const [overrides, setOverrides] = useState<Record<string, Record<string, string>>>({ en: {}, pt: {} });
+
+  const reloadContent = async () => {
+    const { data, error } = await supabase.from('site_texts').select('key, lang, value');
+    if (error || !data) return;
+    const next: Record<string, Record<string, string>> = { en: {}, pt: {} };
+    for (const row of data) {
+      if (row.value && row.value.trim() !== '') {
+        next[row.lang] = { ...(next[row.lang] || {}), [row.key]: row.value };
+      }
+    }
+    setOverrides(next);
+  };
+
+  useEffect(() => {
+    reloadContent();
+  }, []);
 
   // Load language preference from localStorage on mount
   useEffect(() => {
@@ -665,11 +685,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const t = (key: string): string => {
-    return translations[language][key] || key;
+    return overrides[language]?.[key] || translations[language][key] || key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, overrides, reloadContent }}>
       {children}
     </LanguageContext.Provider>
   );
