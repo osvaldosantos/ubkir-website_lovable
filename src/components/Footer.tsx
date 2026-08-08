@@ -39,10 +39,16 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-border text-center">
+        <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-sm text-muted-foreground">
             {t("footer.rights")}
           </p>
+          <Link
+            to="/admin"
+            className="text-xs text-muted-foreground/70 hover:text-foreground transition-colors"
+          >
+            Admin
+          </Link>
         </div>
       </div>
     </footer>
