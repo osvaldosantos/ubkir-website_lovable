@@ -36,7 +36,7 @@ const Seo = ({ page }: SeoProps) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
     </Helmet>
-    <OrganizationSchema />
+    {page === "home" && <OrganizationSchema />}
     </>
   );
 };
