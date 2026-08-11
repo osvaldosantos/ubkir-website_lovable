@@ -4,12 +4,18 @@ import { ArrowRight, Brain, Users, TrendingUp, BookOpen, Monitor } from "lucide-
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import HeroCarousel from "@/components/HeroCarousel";
+import Seo from "@/components/Seo";
 
 const Home = () => {
   const { t } = useLanguage();
   
   return (
     <div className="min-h-screen">
+      <Seo
+        title="UBKIR | Applied Research, Training & Digital Health"
+        description="UBKIR provides quantitative, qualitative and mixed-methods research, training, clinical psychology, digital health and scientific publishing services."
+        path="/"
+      />
       {/* Hero Carousel */}
       <HeroCarousel />
 

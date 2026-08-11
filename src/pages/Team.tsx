@@ -5,6 +5,7 @@ import { ExternalLink, Award, BookOpen, Users, Brain } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSiteImage } from "@/hooks/useSiteImages";
+import Seo from "@/components/Seo";
 
 const Team = () => {
   const { t } = useLanguage();
@@ -15,6 +16,11 @@ const Team = () => {
   
   return (
     <div className="min-h-screen py-20">
+      <Seo
+        title="UBKIR Team | Research, Psychology & Digital Expertise"
+        description="Meet the UBKIR team and its expertise in research, psychology, public health, training, data analysis, digital development and scientific communication."
+        path="/team"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

@@ -2,12 +2,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Target, Award, Globe, Heart } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Seo from "@/components/Seo";
 
 const About = () => {
   const { t } = useLanguage();
   
   return (
     <div className="min-h-screen py-20">
+      <Seo
+        title="About UBKIR | Research, Health & Innovation in Portugal"
+        description="Learn how UBKIR combines research, psychology, health, training and digital expertise to support evidence-informed decisions and practical solutions."
+        path="/about"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
