@@ -16,19 +16,17 @@ import {
 import { Link, useSearchParams } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Seo from "@/components/Seo";
+import { useLocalizedPaths } from "@/hooks/useLocalizedPaths";
 
 const Services = () => {
   const { t } = useLanguage();
+  const { localePath } = useLocalizedPaths();
   const [searchParams] = useSearchParams();
   const activeTab = searchParams.get('tab') || 'research';
   
   return (
     <div className="min-h-screen py-20">
-      <Seo
-        title="UBKIR Services | Research, Training, Clinical & Digital"
-        description="Explore UBKIR services in research, training, clinical psychology, digital solutions, data analysis and scientific and editorial support."
-        path="/services"
-      />
+      <Seo page="services" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -148,7 +146,7 @@ const Services = () => {
                       <Badge variant="secondary">{t("services.training.adherence.item3")}</Badge>
                     </div>
                     <Button size="sm" asChild>
-                      <Link to="/contacts">{t("contacts.training.enroll")}</Link>
+                      <Link to={localePath("contacts")}>{t("contacts.training.enroll")}</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -172,7 +170,7 @@ const Services = () => {
                       <Badge variant="secondary">{t("services.training.communication.item3")}</Badge>
                     </div>
                     <Button size="sm" asChild>
-                      <Link to="/contacts">{t("contacts.training.enroll")}</Link>
+                      <Link to={localePath("contacts")}>{t("contacts.training.enroll")}</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -196,7 +194,7 @@ const Services = () => {
                       <Badge variant="secondary">{t("services.training.methods.item3")}</Badge>
                     </div>
                     <Button size="sm" asChild>
-                      <Link to="/contacts">{t("contacts.training.enroll")}</Link>
+                      <Link to={localePath("contacts")}>{t("contacts.training.enroll")}</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -231,7 +229,7 @@ const Services = () => {
                     <li>• {t("services.clinical.individual.item3")}</li>
                   </ul>
                   <Button size="sm" asChild>
-                    <Link to="/contacts">{t("services.clinical.schedule")}</Link>
+                    <Link to={localePath("contacts")}>{t("services.clinical.schedule")}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -251,7 +249,7 @@ const Services = () => {
                     <li>• {t("services.clinical.specialized.item4")}</li>
                   </ul>
                   <Button size="sm" asChild>
-                    <Link to="/contacts">{t("services.clinical.learnmore")}</Link>
+                    <Link to={localePath("contacts")}>{t("services.clinical.learnmore")}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -283,7 +281,7 @@ const Services = () => {
                     <Badge>{t("services.digital.badge5")}</Badge>
                   </div>
                   <Button asChild>
-                    <Link to="/contacts">{t("services.digital.discuss")}</Link>
+                    <Link to={localePath("contacts")}>{t("services.digital.discuss")}</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -333,7 +331,7 @@ const Services = () => {
                         </a>
                       </Button>
                       <Button variant="outline" asChild>
-                        <Link to="/contacts">{t("services.publishing.inquiry")}</Link>
+                        <Link to={localePath("contacts")}>{t("services.publishing.inquiry")}</Link>
                       </Button>
                     </div>
                   </div>

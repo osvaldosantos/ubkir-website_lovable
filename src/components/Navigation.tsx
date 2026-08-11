@@ -1,25 +1,37 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ubkirLogo from "@/assets/ubkir-logo.jpg";
+import { useLocalizedPaths } from "@/hooks/useLocalizedPaths";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const location = useLocation();
-  const { language, setLanguage, t } = useLanguage();
+  const navigate = useNavigate();
+  const { language, t } = useLanguage();
+  const { localePath, switchTo } = useLocalizedPaths();
+
+  const changeLanguage = (lang: "en" | "pt") => {
+    setIsLanguageMenuOpen(false);
+    setIsMobileMenuOpen(false);
+    navigate(switchTo(lang));
+  };
 
   const navItems = [
-    { name: t("nav.home"), path: "/" },
-    { name: t("nav.about"), path: "/about" },
-    { name: t("nav.services"), path: "/services" },
-    { name: t("nav.team"), path: "/team" },
-    { name: t("nav.contacts"), path: "/contacts" },
+    { name: t("nav.home"), path: localePath("home") },
+    { name: t("nav.about"), path: localePath("about") },
+    { name: t("nav.services"), path: localePath("services") },
+    { name: t("nav.team"), path: localePath("team") },
+    { name: t("nav.contacts"), path: localePath("contacts") },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => {
+    const norm = (p: string) => (p.length > 1 && p.endsWith("/") ? p.slice(0, -1) : p);
+    return norm(location.pathname) === norm(path);
+  };
 
   return (
     <nav className="bg-background border-b border-border sticky top-0 z-50">
@@ -66,10 +78,7 @@ const Navigation = () => {
               {isLanguageMenuOpen && (
                 <div className="absolute right-0 mt-2 w-32 bg-popover border border-border rounded-md shadow-lg z-50">
                   <button
-                    onClick={() => {
-                      setLanguage('en');
-                      setIsLanguageMenuOpen(false);
-                    }}
+                    onClick={() => changeLanguage('en')}
                     className={`w-full px-4 py-2 text-left text-sm hover:bg-accent transition-colors ${
                       language === 'en' ? 'bg-accent text-accent-foreground' : 'text-foreground'
                     }`}
@@ -77,10 +86,7 @@ const Navigation = () => {
                     English
                   </button>
                   <button
-                    onClick={() => {
-                      setLanguage('pt');
-                      setIsLanguageMenuOpen(false);
-                    }}
+                    onClick={() => changeLanguage('pt')}
                     className={`w-full px-4 py-2 text-left text-sm hover:bg-accent transition-colors ${
                       language === 'pt' ? 'bg-accent text-accent-foreground' : 'text-foreground'
                     }`}
@@ -106,10 +112,7 @@ const Navigation = () => {
               {isLanguageMenuOpen && (
                 <div className="absolute right-0 mt-2 w-32 bg-popover border border-border rounded-md shadow-lg z-50">
                   <button
-                    onClick={() => {
-                      setLanguage('en');
-                      setIsLanguageMenuOpen(false);
-                    }}
+                    onClick={() => changeLanguage('en')}
                     className={`w-full px-4 py-2 text-left text-sm hover:bg-accent transition-colors ${
                       language === 'en' ? 'bg-accent text-accent-foreground' : 'text-foreground'
                     }`}
@@ -117,10 +120,7 @@ const Navigation = () => {
                     English
                   </button>
                   <button
-                    onClick={() => {
-                      setLanguage('pt');
-                      setIsLanguageMenuOpen(false);
-                    }}
+                    onClick={() => changeLanguage('pt')}
                     className={`w-full px-4 py-2 text-left text-sm hover:bg-accent transition-colors ${
                       language === 'pt' ? 'bg-accent text-accent-foreground' : 'text-foreground'
                     }`}

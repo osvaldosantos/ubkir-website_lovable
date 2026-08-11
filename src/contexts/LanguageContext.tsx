@@ -652,7 +652,13 @@ export const translations: Record<Language, Record<string, string>> = {
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>(() => {
+    if (typeof window === 'undefined') return 'en';
+    const path = window.location.pathname;
+    if (path === '/pt' || path.startsWith('/pt/')) return 'pt';
+    const saved = localStorage.getItem('ubkir-language');
+    return saved === 'pt' || saved === 'en' ? saved : 'en';
+  });
   const [overrides, setOverrides] = useState<Record<string, Record<string, string>>>({ en: {}, pt: {} });
 
   const reloadContent = async () => {
@@ -669,14 +675,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   useEffect(() => {
     reloadContent();
-  }, []);
-
-  // Load language preference from localStorage on mount
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('ubkir-language') as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'pt')) {
-      setLanguageState(savedLanguage);
-    }
   }, []);
 
   const setLanguage = (lang: Language) => {

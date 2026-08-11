@@ -5,17 +5,15 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import HeroCarousel from "@/components/HeroCarousel";
 import Seo from "@/components/Seo";
+import { useLocalizedPaths } from "@/hooks/useLocalizedPaths";
 
 const Home = () => {
   const { t } = useLanguage();
+  const { localePath } = useLocalizedPaths();
   
   return (
     <div className="min-h-screen">
-      <Seo
-        title="UBKIR | Applied Research, Training & Digital Health"
-        description="UBKIR provides quantitative, qualitative and mixed-methods research, training, clinical psychology, digital health and scientific publishing services."
-        path="/"
-      />
+      <Seo page="home" />
       {/* Hero Carousel */}
       <HeroCarousel />
 
@@ -32,7 +30,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            <Link to="/services?tab=research">
+            <Link to={`${localePath("services")}?tab=research`}>
               <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
                 <CardHeader>
                   <Brain className="h-12 w-12 text-primary mb-4" />
@@ -44,7 +42,7 @@ const Home = () => {
               </Card>
             </Link>
 
-            <Link to="/services?tab=training">
+            <Link to={`${localePath("services")}?tab=training`}>
               <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
                 <CardHeader>
                   <Users className="h-12 w-12 text-primary mb-4" />
@@ -56,7 +54,7 @@ const Home = () => {
               </Card>
             </Link>
 
-            <Link to="/services?tab=clinical">
+            <Link to={`${localePath("services")}?tab=clinical`}>
               <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
                 <CardHeader>
                   <TrendingUp className="h-12 w-12 text-primary mb-4" />
@@ -68,7 +66,7 @@ const Home = () => {
               </Card>
             </Link>
 
-            <Link to="/services?tab=digital">
+            <Link to={`${localePath("services")}?tab=digital`}>
               <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
                 <CardHeader>
                   <Monitor className="h-12 w-12 text-primary mb-4" />
@@ -80,7 +78,7 @@ const Home = () => {
               </Card>
             </Link>
 
-            <Link to="/services?tab=publishing">
+            <Link to={`${localePath("services")}?tab=publishing`}>
               <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
                 <CardHeader>
                   <BookOpen className="h-12 w-12 text-primary mb-4" />
@@ -110,7 +108,7 @@ const Home = () => {
                 {t("home.innovation.desc2")}
               </p>
               <Button asChild>
-                <Link to="/team">{t("home.innovation.team")}</Link>
+                <Link to={localePath("team")}>{t("home.innovation.team")}</Link>
               </Button>
             </div>
             <div className="bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-lg p-8 text-center">
@@ -133,7 +131,7 @@ const Home = () => {
             {t("home.cta.desc")}
           </p>
           <Button size="lg" asChild>
-            <Link to="/contacts">
+            <Link to={localePath("contacts")}>
               {t("home.cta.contact")} <ArrowRight className="ml-2" size={20} />
             </Link>
           </Button>

@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSiteImage } from "@/hooks/useSiteImages";
 import Seo from "@/components/Seo";
+import { useLocalizedPaths } from "@/hooks/useLocalizedPaths";
 
 const Team = () => {
   const { t } = useLanguage();
+  const { localePath } = useLocalizedPaths();
   const ceoPhoto = useSiteImage(
     "team.osvaldo.photo",
     "/lovable-uploads/383f7e0f-7e49-44bd-9e3c-2035355fd892.png"
@@ -16,11 +18,7 @@ const Team = () => {
   
   return (
     <div className="min-h-screen py-20">
-      <Seo
-        title="UBKIR Team | Research, Psychology & Digital Expertise"
-        description="Meet the UBKIR team and its expertise in research, psychology, public health, training, data analysis, digital development and scientific communication."
-        path="/team"
-      />
+      <Seo page="team" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -219,7 +217,7 @@ const Team = () => {
             {t("team.cta.desc")}
           </p>
           <Button size="lg" asChild>
-            <Link to="/contacts">
+            <Link to={localePath("contacts")}>
               {t("team.cta.button")}
             </Link>
           </Button>

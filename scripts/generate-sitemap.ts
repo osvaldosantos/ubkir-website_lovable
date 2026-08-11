@@ -13,11 +13,18 @@ interface SitemapEntry {
 }
 
 const entries: SitemapEntry[] = [
+  // English
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/about", changefreq: "monthly", priority: "0.8" },
   { path: "/services", changefreq: "monthly", priority: "0.8" },
   { path: "/team", changefreq: "monthly", priority: "0.7" },
   { path: "/contacts", changefreq: "yearly", priority: "0.6" },
+  // Portuguese
+  { path: "/pt/", changefreq: "weekly", priority: "1.0" },
+  { path: "/pt/sobre", changefreq: "monthly", priority: "0.8" },
+  { path: "/pt/servicos", changefreq: "monthly", priority: "0.8" },
+  { path: "/pt/equipa", changefreq: "monthly", priority: "0.7" },
+  { path: "/pt/contactos", changefreq: "yearly", priority: "0.6" },
 ]
 
 function generateSitemap(entries: SitemapEntry[]) {
