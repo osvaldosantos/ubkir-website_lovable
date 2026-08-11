@@ -27,6 +27,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.publishing': 'Acendalha Publishing',
     'nav.team': 'Team',
     'nav.contacts': 'Contacts',
+    'nav.menu.open': 'Open navigation menu',
+    'nav.menu.close': 'Close navigation menu',
     
     // Home page
     'home.hero.title': 'Unbreakable Idea Research',
@@ -345,6 +347,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.publishing': 'Publicação Acendalha',
     'nav.team': 'Equipa',
     'nav.contacts': 'Contactos',
+    'nav.menu.open': 'Abrir menu de navegação',
+    'nav.menu.close': 'Fechar menu de navegação',
     
     // Home page
     'home.hero.title': 'Unbreakable Idea Research',

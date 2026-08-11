@@ -74,12 +74,24 @@ const HeroCarousel = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
           <div className="absolute inset-0 flex items-end z-20">
             <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-16">
-              <h1 className="text-lg md:text-2xl font-semibold text-white/80 mb-1 tracking-wide drop-shadow">
-                Unbreakable Idea Research
-              </h1>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
-                {t(slide.titleKey)}
-              </h2>
+              {i === current ? (
+                <h1 className="text-lg md:text-2xl font-semibold text-white/80 mb-1 tracking-wide drop-shadow">
+                  Unbreakable Idea Research
+                </h1>
+              ) : (
+                <div className="text-lg md:text-2xl font-semibold text-white/80 mb-1 tracking-wide drop-shadow">
+                  Unbreakable Idea Research
+                </div>
+              )}
+              {i === current ? (
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
+                  {t(slide.titleKey)}
+                </h2>
+              ) : (
+                <div className="text-3xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
+                  {t(slide.titleKey)}
+                </div>
+              )}
               <p className="text-lg md:text-xl text-white/90 mb-6 max-w-2xl drop-shadow">
                 {t(slide.subtitleKey)}
               </p>
