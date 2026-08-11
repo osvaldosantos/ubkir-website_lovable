@@ -27,7 +27,7 @@ const About = () => {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <Target className="h-8 w-8 text-primary" />
-                <CardTitle className="text-2xl">{t("about.mission.title")}</CardTitle>
+                <h2 className="text-2xl font-semibold leading-none tracking-tight">{t("about.mission.title")}</h2>
               </div>
             </CardHeader>
             <CardContent>
@@ -41,7 +41,7 @@ const About = () => {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <Globe className="h-8 w-8 text-primary" />
-                <CardTitle className="text-2xl">{t("about.vision.title")}</CardTitle>
+                <h2 className="text-2xl font-semibold leading-none tracking-tight">{t("about.vision.title")}</h2>
               </div>
             </CardHeader>
             <CardContent>
