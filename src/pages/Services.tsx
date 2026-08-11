@@ -16,6 +16,7 @@ import {
 import { Link, useSearchParams } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Seo from "@/components/Seo";
+import { ServicesSchema } from "@/components/StructuredData";
 import { useLocalizedPaths } from "@/hooks/useLocalizedPaths";
 
 const Services = () => {
@@ -27,6 +28,7 @@ const Services = () => {
   return (
     <div className="min-h-screen py-20">
       <Seo page="services" />
+      <ServicesSchema />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
