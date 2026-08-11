@@ -64,9 +64,9 @@ export const PAGES: Record<PageKey, PageDef> = {
           "Meet the UBKIR team and its expertise in research, psychology, public health, training, data analysis, digital development and scientific communication.",
       },
       pt: {
-        title: "Equipa UBKIR | Investigação, Psicologia e Competências Digitais",
+        title: "Equipa UBKIR | Investigação, Psicologia e Digital",
         description:
-          "Conheça a equipa da UBKIR e a sua experiência em investigação, psicologia, saúde pública, formação, análise de dados, desenvolvimento digital e comunicação de ciência.",
+          "Conheça a equipa UBKIR e a sua experiência em investigação, psicologia, saúde pública, formação, análise de dados e soluções digitais.",
       },
     },
   },
