@@ -11,7 +11,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
 import Map from "@/components/Map";
 import Seo from "@/components/Seo";
-import emailjs from "@emailjs/browser";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contacts = () => {
   const { t } = useLanguage();
@@ -37,14 +37,6 @@ const Contacts = () => {
   });
   const [isTrainingLoading, setIsTrainingLoading] = useState(false);
 
-  // EmailJS Configuration
-  const EMAIL_CONFIG = {
-    PUBLIC_KEY: "OPfizN3VSaTfGTH_G", // Your EmailJS public key
-    SERVICE_ID: "service_dfqma8a", // Your EmailJS service ID
-    GENERAL_TEMPLATE_ID: "general_contact", // General contact form template
-    TRAINING_TEMPLATE_ID: "training_request" // Training enrollment form template
-  };
-
   // Handle general contact form submission
   const handleGeneralSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,21 +53,17 @@ const Contacts = () => {
     setIsGeneralLoading(true);
     
     try {
-      const templateParams = {
-        to_email: "info@ubkir.pt",
-        firstName: generalForm.firstName,
-        lastName: generalForm.lastName,
-        email: generalForm.email,
-        subject: generalForm.subject || "General Inquiry",
-        message: generalForm.message,
-      };
-
-      await emailjs.send(
-        EMAIL_CONFIG.SERVICE_ID,
-        EMAIL_CONFIG.GENERAL_TEMPLATE_ID,
-        templateParams,
-        EMAIL_CONFIG.PUBLIC_KEY
-      );
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          type: "general",
+          firstName: generalForm.firstName,
+          lastName: generalForm.lastName,
+          email: generalForm.email,
+          subject: generalForm.subject,
+          message: generalForm.message,
+        },
+      });
+      if (error) throw error;
       
       toast({
         title: "Message Sent!",
@@ -91,7 +79,7 @@ const Contacts = () => {
         message: ""
       });
     } catch (error) {
-      console.error("EmailJS error:", error);
+      console.error("Contact form error:", error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again or contact us directly at info@ubkir.pt",
@@ -118,21 +106,17 @@ const Contacts = () => {
     setIsTrainingLoading(true);
     
     try {
-      const templateParams = {
-        to_email: "info@ubkir.pt",
-        name: trainingForm.name,
-        email: trainingForm.email,
-        organization: trainingForm.organization || "Not specified",
-        program: trainingForm.program,
-        comments: trainingForm.comments || "No additional comments",
-      };
-
-      await emailjs.send(
-        EMAIL_CONFIG.SERVICE_ID,
-        EMAIL_CONFIG.TRAINING_TEMPLATE_ID,
-        templateParams,
-        EMAIL_CONFIG.PUBLIC_KEY
-      );
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          type: "training",
+          name: trainingForm.name,
+          email: trainingForm.email,
+          organization: trainingForm.organization,
+          program: trainingForm.program,
+          comments: trainingForm.comments,
+        },
+      });
+      if (error) throw error;
       
       toast({
         title: "Enrollment Request Sent!",
@@ -148,7 +132,7 @@ const Contacts = () => {
         comments: ""
       });
     } catch (error) {
-      console.error("EmailJS error:", error);
+      console.error("Contact form error:", error);
       toast({
         title: "Error",
         description: "Failed to send enrollment request. Please try again or contact us directly at info@ubkir.pt",
