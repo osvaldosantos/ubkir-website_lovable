@@ -84,6 +84,11 @@ const Team = () => {
                         EnviHeB Lab <ExternalLink className="ml-2" size={14} />
                       </a>
                     </Button>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://osvaldosantos.eu" target="_blank" rel="noopener noreferrer">
+                        osvaldosantos.eu <ExternalLink className="ml-2" size={14} />
+                      </a>
+                    </Button>
                   </div>
                 </div>
 
