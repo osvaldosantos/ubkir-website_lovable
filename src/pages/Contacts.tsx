@@ -161,11 +161,7 @@ const Contacts = () => {
   
   return (
     <div className="min-h-screen py-20">
-      <Seo
-        title="Contact UBKIR | Research & Health Innovation"
-        description="Contact UBKIR to discuss research, training, clinical psychology, digital solutions or scientific and editorial projects in Portugal."
-        path="/contacts"
-      />
+      <Seo page="contacts" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

@@ -9,11 +9,7 @@ const About = () => {
   
   return (
     <div className="min-h-screen py-20">
-      <Seo
-        title="About UBKIR | Research, Health & Innovation in Portugal"
-        description="Learn how UBKIR combines research, psychology, health, training and digital expertise to support evidence-informed decisions and practical solutions."
-        path="/about"
-      />
+      <Seo page="about" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

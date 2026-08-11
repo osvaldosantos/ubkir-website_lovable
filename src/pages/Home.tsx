@@ -11,11 +11,7 @@ const Home = () => {
   
   return (
     <div className="min-h-screen">
-      <Seo
-        title="UBKIR | Applied Research, Training & Digital Health"
-        description="UBKIR provides quantitative, qualitative and mixed-methods research, training, clinical psychology, digital health and scientific publishing services."
-        path="/"
-      />
+      <Seo page="home" />
       {/* Hero Carousel */}
       <HeroCarousel />
 
