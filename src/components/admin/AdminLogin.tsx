@@ -58,21 +58,8 @@ const AdminLogin = () => {
               />
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading
-                ? "A processar..."
-                : mode === "signin"
-                  ? "Entrar"
-                  : "Criar conta de administrador"}
+              {loading ? "A processar..." : "Entrar"}
             </Button>
-            <button
-              type="button"
-              className="w-full text-sm text-muted-foreground hover:text-foreground underline-offset-4 hover:underline"
-              onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
-            >
-              {mode === "signin"
-                ? "Primeira utilização? Criar a conta de administrador"
-                : "Já tenho conta — iniciar sessão"}
-            </button>
           </form>
         </CardContent>
       </Card>
