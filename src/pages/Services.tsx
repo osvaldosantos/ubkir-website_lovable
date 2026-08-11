@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Seo from "@/components/Seo";
 
 const Services = () => {
   const { t } = useLanguage();
@@ -23,6 +24,11 @@ const Services = () => {
   
   return (
     <div className="min-h-screen py-20">
+      <Seo
+        title="UBKIR Services | Research, Training, Clinical & Digital"
+        description="Explore UBKIR services in research, training, clinical psychology, digital solutions, data analysis and scientific and editorial support."
+        path="/services"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
