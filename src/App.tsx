@@ -14,11 +14,13 @@ import Team from "./pages/Team";
 import Contacts from "./pages/Contacts";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
+import LanguageRouteSync from "./components/LanguageRouteSync";
 
 const queryClient = new QueryClient();
 
 const SiteLayout = () => (
   <div className="min-h-screen flex flex-col">
+    <LanguageRouteSync />
     <Navigation />
     <main className="flex-1">
       <Routes>
@@ -27,6 +29,13 @@ const SiteLayout = () => (
         <Route path="/services" element={<Services />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contacts" element={<Contacts />} />
+        {/* Portuguese routes */}
+        <Route path="/pt" element={<Home />} />
+        <Route path="/pt/" element={<Home />} />
+        <Route path="/pt/sobre" element={<About />} />
+        <Route path="/pt/servicos" element={<Services />} />
+        <Route path="/pt/equipa" element={<Team />} />
+        <Route path="/pt/contactos" element={<Contacts />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
