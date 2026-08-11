@@ -71,6 +71,9 @@ const Navigation = () => {
                 size="sm"
                 onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
                 className="flex items-center space-x-1"
+                aria-label={t("nav.language.switch")}
+                aria-haspopup="menu"
+                aria-expanded={isLanguageMenuOpen}
               >
                 <Globe size={16} />
                 <span className="text-sm font-medium">{language.toUpperCase()}</span>
@@ -106,6 +109,9 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
+                aria-label={t("nav.language.switch")}
+                aria-haspopup="menu"
+                aria-expanded={isLanguageMenuOpen}
               >
                 <Globe size={16} />
               </Button>

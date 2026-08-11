@@ -14,6 +14,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <Seo page="home" />
+      <h1 className="sr-only">{t("home.h1")}</h1>
       {/* Hero Carousel */}
       <HeroCarousel />
 
