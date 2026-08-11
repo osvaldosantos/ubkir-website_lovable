@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSiteImage } from "@/hooks/useSiteImages";
 import Seo from "@/components/Seo";
+import { useLocalizedPaths } from "@/hooks/useLocalizedPaths";
 
 const Team = () => {
   const { t } = useLanguage();
+  const { localePath } = useLocalizedPaths();
   const ceoPhoto = useSiteImage(
     "team.osvaldo.photo",
     "/lovable-uploads/383f7e0f-7e49-44bd-9e3c-2035355fd892.png"
@@ -215,7 +217,7 @@ const Team = () => {
             {t("team.cta.desc")}
           </p>
           <Button size="lg" asChild>
-            <Link to="/contacts">
+            <Link to={localePath("contacts")}>
               {t("team.cta.button")}
             </Link>
           </Button>

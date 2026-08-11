@@ -16,9 +16,11 @@ import {
 import { Link, useSearchParams } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Seo from "@/components/Seo";
+import { useLocalizedPaths } from "@/hooks/useLocalizedPaths";
 
 const Services = () => {
   const { t } = useLanguage();
+  const { localePath } = useLocalizedPaths();
   const [searchParams] = useSearchParams();
   const activeTab = searchParams.get('tab') || 'research';
   
@@ -144,7 +146,7 @@ const Services = () => {
                       <Badge variant="secondary">{t("services.training.adherence.item3")}</Badge>
                     </div>
                     <Button size="sm" asChild>
-                      <Link to="/contacts">{t("contacts.training.enroll")}</Link>
+                      <Link to={localePath("contacts")}>{t("contacts.training.enroll")}</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -168,7 +170,7 @@ const Services = () => {
                       <Badge variant="secondary">{t("services.training.communication.item3")}</Badge>
                     </div>
                     <Button size="sm" asChild>
-                      <Link to="/contacts">{t("contacts.training.enroll")}</Link>
+                      <Link to={localePath("contacts")}>{t("contacts.training.enroll")}</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -192,7 +194,7 @@ const Services = () => {
                       <Badge variant="secondary">{t("services.training.methods.item3")}</Badge>
                     </div>
                     <Button size="sm" asChild>
-                      <Link to="/contacts">{t("contacts.training.enroll")}</Link>
+                      <Link to={localePath("contacts")}>{t("contacts.training.enroll")}</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -227,7 +229,7 @@ const Services = () => {
                     <li>• {t("services.clinical.individual.item3")}</li>
                   </ul>
                   <Button size="sm" asChild>
-                    <Link to="/contacts">{t("services.clinical.schedule")}</Link>
+                    <Link to={localePath("contacts")}>{t("services.clinical.schedule")}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -247,7 +249,7 @@ const Services = () => {
                     <li>• {t("services.clinical.specialized.item4")}</li>
                   </ul>
                   <Button size="sm" asChild>
-                    <Link to="/contacts">{t("services.clinical.learnmore")}</Link>
+                    <Link to={localePath("contacts")}>{t("services.clinical.learnmore")}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -279,7 +281,7 @@ const Services = () => {
                     <Badge>{t("services.digital.badge5")}</Badge>
                   </div>
                   <Button asChild>
-                    <Link to="/contacts">{t("services.digital.discuss")}</Link>
+                    <Link to={localePath("contacts")}>{t("services.digital.discuss")}</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -329,7 +331,7 @@ const Services = () => {
                         </a>
                       </Button>
                       <Button variant="outline" asChild>
-                        <Link to="/contacts">{t("services.publishing.inquiry")}</Link>
+                        <Link to={localePath("contacts")}>{t("services.publishing.inquiry")}</Link>
                       </Button>
                     </div>
                   </div>
