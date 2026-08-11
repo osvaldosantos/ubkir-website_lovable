@@ -29,6 +29,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.contacts': 'Contacts',
     'nav.menu.open': 'Open navigation menu',
     'nav.menu.close': 'Close navigation menu',
+    'nav.language.switch': 'Switch to Portuguese',
+    'nav.language.current': 'Change language, current language English',
+    'home.h1': 'UBKIR — Research, Health & Digital Solutions',
     
     // Home page
     'home.hero.title': 'Unbreakable Idea Research',
@@ -349,6 +352,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.contacts': 'Contactos',
     'nav.menu.open': 'Abrir menu de navegação',
     'nav.menu.close': 'Fechar menu de navegação',
+    'nav.language.switch': 'Mudar para inglês',
+    'nav.language.current': 'Mudar de idioma, idioma atual português',
+    'home.h1': 'UBKIR — Investigação, Saúde e Soluções Digitais',
     
     // Home page
     'home.hero.title': 'Unbreakable Idea Research',
