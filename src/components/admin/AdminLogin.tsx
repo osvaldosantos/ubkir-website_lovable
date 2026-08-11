@@ -11,30 +11,11 @@ const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    if (mode === "signup") {
-      const { error } = await supabase.auth.signUp({
-        email: email.trim(),
-        password,
-        options: { emailRedirectTo: `${window.location.origin}/admin` },
-      });
-      setLoading(false);
-      if (error) {
-        toast({ title: "Não foi possível criar a conta", description: error.message, variant: "destructive" });
-      } else {
-        toast({
-          title: "Conta criada",
-          description: "Confirme o endereço no email que recebeu e depois inicie sessão.",
-        });
-        setMode("signin");
-      }
-      return;
-    }
     const { error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
     setLoading(false);
     if (error) {
@@ -77,21 +58,8 @@ const AdminLogin = () => {
               />
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading
-                ? "A processar..."
-                : mode === "signin"
-                  ? "Entrar"
-                  : "Criar conta de administrador"}
+              {loading ? "A processar..." : "Entrar"}
             </Button>
-            <button
-              type="button"
-              className="w-full text-sm text-muted-foreground hover:text-foreground underline-offset-4 hover:underline"
-              onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
-            >
-              {mode === "signin"
-                ? "Primeira utilização? Criar a conta de administrador"
-                : "Já tenho conta — iniciar sessão"}
-            </button>
           </form>
         </CardContent>
       </Card>
