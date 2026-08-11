@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { BASE_URL, PAGES, PageKey, langFromPathname } from "@/lib/routes";
+import { OrganizationSchema } from "./StructuredData";
 
 interface SeoProps {
   page: PageKey;
@@ -17,6 +18,7 @@ const Seo = ({ page }: SeoProps) => {
   const selfUrl = lang === "pt" ? ptUrl : enUrl;
 
   return (
+    <>
     <Helmet>
       <html lang={lang} />
       <title>{title}</title>
@@ -34,6 +36,8 @@ const Seo = ({ page }: SeoProps) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
     </Helmet>
+    <OrganizationSchema />
+    </>
   );
 };
 
