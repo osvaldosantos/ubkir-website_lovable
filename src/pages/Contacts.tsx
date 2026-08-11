@@ -10,6 +10,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
 import Map from "@/components/Map";
+import Seo from "@/components/Seo";
 import emailjs from "@emailjs/browser";
 
 const Contacts = () => {
@@ -160,6 +161,11 @@ const Contacts = () => {
   
   return (
     <div className="min-h-screen py-20">
+      <Seo
+        title="Contact UBKIR | Research & Health Innovation"
+        description="Contact UBKIR to discuss research, training, clinical psychology, digital solutions or scientific and editorial projects in Portugal."
+        path="/contacts"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
