@@ -1,12 +1,6 @@
 import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors'
 import { z } from 'npm:zod@3.23.8'
 
-const EMAILJS_SERVICE_ID = 'service_dfqma8a'
-const EMAILJS_PUBLIC_KEY = 'OPfizN3VSaTfGTH_G'
-const TEMPLATES = {
-  general: 'general_contact',
-  training: 'training_request',
-} as const
 // Recipient is fixed server-side and can never be chosen by the browser.
 const RECIPIENT = 'info@ubkir.pt'
 
@@ -81,8 +75,6 @@ Deno.serve(async (req) => {
   const data = parsed.data
 
   // --- Delivery via Lovable App Emails (notify.ubkir.pt) ---
-  // Legacy EmailJS constants above are intentionally retained until the
-  // migration is signed off; they are no longer used for delivery.
   let templateName: string
   let templateData: Record<string, string>
 
