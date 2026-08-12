@@ -26,9 +26,9 @@ function generateToken(): string {
 }
 
 // Auth note: verify_jwt = true only proves the caller holds *some* valid project
-// key (the public anon key qualifies). This function is backend-only, so we also
-// require a dedicated internal secret header (INTERNAL_EMAIL_SECRET) or a
-// service-role bearer token. Neither is available to the browser.
+// key (the public anon key qualifies). This function is backend-only: the sole
+// authorization mechanism is the dedicated INTERNAL_EMAIL_SECRET header, which
+// exists only as a backend environment variable and never reaches the browser.
 
 function timingSafeEqual(a: string, b: string): boolean {
   const enc = new TextEncoder()
@@ -61,14 +61,9 @@ Deno.serve(async (req) => {
     )
   }
 
-  // --- Backend-only authorization ---
+  // --- Backend-only authorization (internal secret only) ---
   const providedSecret = req.headers.get('x-internal-email-secret') ?? ''
-  const bearer = (req.headers.get('Authorization') ?? '').replace(/^Bearer\s+/i, '')
-  const authorized =
-    (!!internalSecret && timingSafeEqual(providedSecret, internalSecret)) ||
-    timingSafeEqual(bearer, supabaseServiceKey)
-
-  if (!authorized) {
+  if (!internalSecret || !timingSafeEqual(providedSecret, internalSecret)) {
     console.warn('Rejected unauthorized send-transactional-email call')
     return new Response(JSON.stringify({ error: 'Forbidden' }), {
       status: 403,
