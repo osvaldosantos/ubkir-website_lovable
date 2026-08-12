@@ -13,6 +13,7 @@ const GeneralSchema = z.object({
   email: z.string().trim().email().max(255),
   subject: str(100).optional().default(''),
   message: str(5000).min(1),
+  turnstileToken: str(4096).min(1),
 })
 
 const TrainingSchema = z.object({
@@ -22,6 +23,7 @@ const TrainingSchema = z.object({
   organization: str(200).optional().default(''),
   program: str(100).min(1),
   comments: str(5000).optional().default(''),
+  turnstileToken: str(4096).min(1),
 })
 
 const BodySchema = z.discriminatedUnion('type', [GeneralSchema, TrainingSchema])
@@ -45,6 +47,47 @@ function rateLimited(ip: string) {
 
 // Strip control characters / header-injection attempts
 const clean = (v: string) => v.replace(/[\r\n\u0000-\u001F\u007F]+/g, ' ').trim()
+
+const SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
+const SITEVERIFY_TIMEOUT_MS = 5000
+
+// Server-side Cloudflare Turnstile verification. Fails closed on any error,
+// timeout, reuse or invalid/expired token.
+async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
+  const secret = Deno.env.get('TURNSTILE_SECRET_KEY')
+  if (!secret) {
+    console.error('TURNSTILE_SECRET_KEY is not configured')
+    return false
+  }
+
+  const form = new URLSearchParams()
+  form.set('secret', secret)
+  form.set('response', token)
+  if (ip && ip !== 'unknown') form.set('remoteip', ip)
+
+  try {
+    const res = await fetch(SITEVERIFY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: form,
+      signal: AbortSignal.timeout(SITEVERIFY_TIMEOUT_MS),
+    })
+    if (!res.ok) {
+      console.error('Turnstile siteverify HTTP error', res.status)
+      return false
+    }
+    const result = (await res.json()) as { success?: boolean; 'error-codes'?: string[] }
+    if (!result.success) {
+      // Error codes never contain the secret value.
+      console.warn('Turnstile verification rejected', result['error-codes'] ?? [])
+      return false
+    }
+    return true
+  } catch (err) {
+    console.error('Turnstile siteverify failed', err instanceof Error ? err.message : 'unknown error')
+    return false
+  }
+}
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders })
@@ -73,6 +116,18 @@ Deno.serve(async (req) => {
   const parsed = BodySchema.safeParse(raw)
   if (!parsed.success) return json({ error: parsed.error.flatten().fieldErrors }, 400)
   const data = parsed.data
+
+  // Anti-bot check runs before any sanitization/templating and before any email is queued.
+  const humanVerified = await verifyTurnstile(data.turnstileToken, ip)
+  if (!humanVerified) {
+    return json(
+      {
+        error:
+          'Anti-bot verification failed. Please reload the page and try again, or contact us directly at info@ubkir.pt',
+      },
+      403,
+    )
+  }
 
   // --- Delivery via Lovable App Emails (notify.ubkir.pt) ---
   let templateName: string
