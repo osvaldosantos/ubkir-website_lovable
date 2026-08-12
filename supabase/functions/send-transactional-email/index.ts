@@ -25,9 +25,20 @@ function generateToken(): string {
     .join('')
 }
 
-// Auth note: this function uses verify_jwt = true in config.toml, so Supabase's
-// gateway validates the caller's JWT (anon or service_role) before the request
-// reaches this code. No in-function auth check is needed.
+// Auth note: verify_jwt = true only proves the caller holds *some* valid project
+// key (the public anon key qualifies). This function is backend-only, so we also
+// require a dedicated internal secret header (INTERNAL_EMAIL_SECRET) or a
+// service-role bearer token. Neither is available to the browser.
+
+function timingSafeEqual(a: string, b: string): boolean {
+  const enc = new TextEncoder()
+  const x = enc.encode(a)
+  const y = enc.encode(b)
+  if (x.length !== y.length) return false
+  let diff = 0
+  for (let i = 0; i < x.length; i++) diff |= x[i] ^ y[i]
+  return diff === 0
+}
 
 Deno.serve(async (req) => {
   // Handle CORS preflight
@@ -37,6 +48,7 @@ Deno.serve(async (req) => {
 
   const supabaseUrl = Deno.env.get('SUPABASE_URL')
   const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
+  const internalSecret = Deno.env.get('INTERNAL_EMAIL_SECRET')
 
   if (!supabaseUrl || !supabaseServiceKey) {
     console.error('Missing required environment variables')
@@ -47,6 +59,21 @@ Deno.serve(async (req) => {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       }
     )
+  }
+
+  // --- Backend-only authorization ---
+  const providedSecret = req.headers.get('x-internal-email-secret') ?? ''
+  const bearer = (req.headers.get('Authorization') ?? '').replace(/^Bearer\s+/i, '')
+  const authorized =
+    (!!internalSecret && timingSafeEqual(providedSecret, internalSecret)) ||
+    timingSafeEqual(bearer, supabaseServiceKey)
+
+  if (!authorized) {
+    console.warn('Rejected unauthorized send-transactional-email call')
+    return new Response(JSON.stringify({ error: 'Forbidden' }), {
+      status: 403,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    })
   }
 
   // Parse request body

@@ -100,13 +100,16 @@ Deno.serve(async (req) => {
 
   const supabaseUrl = Deno.env.get('SUPABASE_URL')
   const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
-  if (!supabaseUrl || !serviceKey) return json({ error: 'Email service not configured' }, 500)
+  const internalSecret = Deno.env.get('INTERNAL_EMAIL_SECRET')
+  if (!supabaseUrl || !serviceKey || !internalSecret)
+    return json({ error: 'Email service not configured' }, 500)
 
   const res = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${serviceKey}`,
+      'x-internal-email-secret': internalSecret,
     },
     body: JSON.stringify({
       templateName,
