@@ -13,6 +13,7 @@ import Services from "./pages/Services";
 import Team from "./pages/Team";
 import Contacts from "./pages/Contacts";
 import Admin from "./pages/Admin";
+import Unsubscribe from "./pages/Unsubscribe";
 import NotFound from "./pages/NotFound";
 import LanguageRouteSync from "./components/LanguageRouteSync";
 
@@ -36,6 +37,7 @@ const SiteLayout = () => (
         <Route path="/pt/servicos" element={<Services />} />
         <Route path="/pt/equipa" element={<Team />} />
         <Route path="/pt/contactos" element={<Contacts />} />
+        <Route path="/unsubscribe" element={<Unsubscribe />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
