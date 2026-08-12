@@ -127,6 +127,7 @@ const Contacts = () => {
           organization: trainingForm.organization,
           program: trainingForm.program,
           comments: trainingForm.comments,
+          turnstileToken: trainingToken ?? "",
         },
       });
       if (error) throw error;
@@ -148,10 +149,13 @@ const Contacts = () => {
       console.error("Contact form error:", error);
       toast({
         title: "Error",
-        description: "Failed to send enrollment request. Please try again or contact us directly at info@ubkir.pt",
+        description: isTurnstileConfigured() && !trainingToken
+          ? t("contacts.form.turnstile.pending")
+          : "Failed to send enrollment request. Please try again or contact us directly at info@ubkir.pt",
         variant: "destructive",
       });
     } finally {
+      trainingTurnstileRef.current?.reset();
       setIsTrainingLoading(false);
     }
   };
