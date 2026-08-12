@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,11 +11,19 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
 import Map from "@/components/Map";
 import Seo from "@/components/Seo";
+import TurnstileWidget, { TurnstileHandle } from "@/components/TurnstileWidget";
+import { isTurnstileConfigured } from "@/lib/turnstile";
 import { supabase } from "@/integrations/supabase/client";
 
 const Contacts = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
+
+  // Separate Turnstile instances per form — tokens are single-use.
+  const [generalToken, setGeneralToken] = useState<string | null>(null);
+  const generalTurnstileRef = useRef<TurnstileHandle>(null);
+  const [trainingToken, setTrainingToken] = useState<string | null>(null);
+  const trainingTurnstileRef = useRef<TurnstileHandle>(null);
   
   // General contact form state
   const [generalForm, setGeneralForm] = useState({
@@ -61,6 +69,7 @@ const Contacts = () => {
           email: generalForm.email,
           subject: generalForm.subject,
           message: generalForm.message,
+          turnstileToken: generalToken ?? "",
         },
       });
       if (error) throw error;
@@ -82,10 +91,14 @@ const Contacts = () => {
       console.error("Contact form error:", error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again or contact us directly at info@ubkir.pt",
+        description: isTurnstileConfigured() && !generalToken
+          ? t("contacts.form.turnstile.pending")
+          : "Failed to send message. Please try again or contact us directly at info@ubkir.pt",
         variant: "destructive",
       });
     } finally {
+      // Always burn the token: single-use, whatever the outcome.
+      generalTurnstileRef.current?.reset();
       setIsGeneralLoading(false);
     }
   };
