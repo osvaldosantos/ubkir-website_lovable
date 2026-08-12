@@ -304,6 +304,13 @@ const Contacts = () => {
                     />
                   </div>
                   
+                  <TurnstileWidget
+                    ref={generalTurnstileRef}
+                    language={language}
+                    onToken={setGeneralToken}
+                    className="[&:not(:empty)]:mt-2"
+                  />
+
                   <Button type="submit" className="w-full" disabled={isGeneralLoading}>
                     {isGeneralLoading ? (
                       <>
@@ -391,6 +398,13 @@ const Contacts = () => {
                     />
                   </div>
                   
+                  <TurnstileWidget
+                    ref={trainingTurnstileRef}
+                    language={language}
+                    onToken={setTrainingToken}
+                    className="[&:not(:empty)]:mt-2"
+                  />
+
                   <Button type="submit" className="w-full" disabled={isTrainingLoading}>
                     {isTrainingLoading ? (
                       <>
