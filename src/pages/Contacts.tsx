@@ -61,6 +61,12 @@ const Contacts = () => {
     setIsGeneralLoading(true);
     
     try {
+      // Widget failed / token missing: surface the localized anti-bot error
+      // instead of letting the server reject with a generic error.
+      if (isTurnstileConfigured() && !generalToken) {
+        throw new Error("turnstile-missing-token");
+      }
+
       const { error } = await supabase.functions.invoke("send-contact-email", {
         body: {
           type: "general",
@@ -119,6 +125,10 @@ const Contacts = () => {
     setIsTrainingLoading(true);
     
     try {
+      if (isTurnstileConfigured() && !trainingToken) {
+        throw new Error("turnstile-missing-token");
+      }
+
       const { error } = await supabase.functions.invoke("send-contact-email", {
         body: {
           type: "training",

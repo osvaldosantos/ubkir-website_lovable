@@ -51,6 +51,16 @@ const clean = (v: string) => v.replace(/[\r\n\u0000-\u001F\u007F]+/g, ' ').trim(
 const SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
 const SITEVERIFY_TIMEOUT_MS = 5000
 
+// Hostnames allowed to produce a valid Turnstile token. Exact matches only —
+// no wildcards, no apex-domain widening.
+const ALLOWED_TURNSTILE_HOSTNAMES = new Set([
+  'ubkir.pt',
+  'www.ubkir.pt',
+  // Lovable preview surfaces (not required for production traffic)
+  '37bd2aea-804a-4f63-a547-d3a62f0afdc1.lovableproject.com',
+  'id-preview--37bd2aea-804a-4f63-a547-d3a62f0afdc1.lovable.app',
+])
+
 // Server-side Cloudflare Turnstile verification. Fails closed on any error,
 // timeout, reuse or invalid/expired token.
 async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
@@ -76,10 +86,19 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
       console.error('Turnstile siteverify HTTP error', res.status)
       return false
     }
-    const result = (await res.json()) as { success?: boolean; 'error-codes'?: string[] }
+    const result = (await res.json()) as {
+      success?: boolean
+      hostname?: string
+      'error-codes'?: string[]
+    }
     if (!result.success) {
       // Error codes never contain the secret value.
       console.warn('Turnstile verification rejected', result['error-codes'] ?? [])
+      return false
+    }
+    // Extra defence: the token must originate from a known hostname.
+    if (!result.hostname || !ALLOWED_TURNSTILE_HOSTNAMES.has(result.hostname)) {
+      console.warn('Turnstile hostname not allowed', result.hostname ?? 'missing')
       return false
     }
     return true
