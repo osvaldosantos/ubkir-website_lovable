@@ -69,9 +69,6 @@ Deno.serve(async (req) => {
     'unknown'
   if (rateLimited(ip)) return json({ error: 'Too many requests. Please try again later.' }, 429)
 
-  const privateKey = Deno.env.get('EMAILJS_PRIVATE_KEY')
-  if (!privateKey) return json({ error: 'Email service not configured' }, 500)
-
   let raw: unknown
   try {
     raw = await req.json()
@@ -83,13 +80,15 @@ Deno.serve(async (req) => {
   if (!parsed.success) return json({ error: parsed.error.flatten().fieldErrors }, 400)
   const data = parsed.data
 
-  let template_id: string
-  let template_params: Record<string, string>
+  // --- Delivery via Lovable App Emails (notify.ubkir.pt) ---
+  // Legacy EmailJS constants above are intentionally retained until the
+  // migration is signed off; they are no longer used for delivery.
+  let templateName: string
+  let templateData: Record<string, string>
 
   if (data.type === 'general') {
-    template_id = TEMPLATES.general
-    template_params = {
-      to_email: RECIPIENT,
+    templateName = 'contact-general'
+    templateData = {
       firstName: clean(data.firstName),
       lastName: clean(data.lastName),
       email: clean(data.email),
@@ -97,9 +96,8 @@ Deno.serve(async (req) => {
       message: data.message,
     }
   } else {
-    template_id = TEMPLATES.training
-    template_params = {
-      to_email: RECIPIENT,
+    templateName = 'contact-training'
+    templateData = {
       name: clean(data.name),
       email: clean(data.email),
       organization: clean(data.organization) || 'Not specified',
@@ -108,21 +106,29 @@ Deno.serve(async (req) => {
     }
   }
 
-  const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+  const supabaseUrl = Deno.env.get('SUPABASE_URL')
+  const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
+  if (!supabaseUrl || !serviceKey) return json({ error: 'Email service not configured' }, 500)
+
+  const res = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', origin: 'http://localhost' },
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${serviceKey}`,
+    },
     body: JSON.stringify({
-      service_id: EMAILJS_SERVICE_ID,
-      template_id,
-      user_id: EMAILJS_PUBLIC_KEY,
-      accessToken: privateKey,
-      template_params,
+      templateName,
+      // Recipient is fixed server-side (and again by the template's `to`).
+      recipientEmail: RECIPIENT,
+      replyTo: clean(data.email),
+      idempotencyKey: `${templateName}-${crypto.randomUUID()}`,
+      templateData,
     }),
   })
 
   if (!res.ok) {
     const detail = await res.text()
-    console.error('EmailJS send failed', res.status, detail)
+    console.error('App email send failed', res.status, detail)
     return json({ error: 'Failed to send email' }, 502)
   }
 
