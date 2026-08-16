@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Award, BookOpen, Users, Brain } from "lucide-react";
+import { ExternalLink, Award, BookOpen, Users, Brain, Code } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSiteImage } from "@/hooks/useSiteImages";
@@ -15,6 +15,7 @@ const Team = () => {
     "team.osvaldo.photo",
     "/lovable-uploads/383f7e0f-7e49-44bd-9e3c-2035355fd892.png"
   );
+  const davidPhoto = useSiteImage("team.david.photo", "/lovable-uploads/david-santos.jpg");
   
   return (
     <div className="min-h-screen py-20">
@@ -133,6 +134,37 @@ const Team = () => {
         </section>
 
         {/* Team Expertise Areas */}
+        <section className="mb-20">
+          <Card className="border-2 border-primary/20">
+            <CardContent className="p-8 md:p-12">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div className="lg:col-span-2">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-primary/10 rounded-full p-4">
+                      <Code className="h-8 w-8 text-primary" />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-bold text-foreground">{t("team.david.title")}</h2>
+                      <p className="text-lg text-primary font-semibold">{t("team.david.subtitle")}</p>
+                    </div>
+                  </div>
+
+                  <p className="text-lg text-muted-foreground mb-4">{t("team.david.bio1")}</p>
+                  <p className="text-lg text-muted-foreground">{t("team.david.bio2")}</p>
+                </div>
+
+                <div className="text-center">
+                  <img
+                    src={davidPhoto}
+                    alt="David Santos - Software Engineer & Full-Stack Developer"
+                    className="w-48 h-48 object-cover rounded-lg mx-auto shadow-lg"
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         <section className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
             {t("team.expertise.title")}
