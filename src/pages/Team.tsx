@@ -150,7 +150,15 @@ const Team = () => {
                   </div>
 
                   <p className="text-lg text-muted-foreground mb-4">{t("team.david.bio1")}</p>
-                  <p className="text-lg text-muted-foreground">{t("team.david.bio2")}</p>
+                  <p className="text-lg text-muted-foreground mb-6">{t("team.david.bio2")}</p>
+
+                  <div className="flex flex-wrap gap-3">
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://www.linkedin.com/in/davidzsantos/?locale=en" target="_blank" rel="noopener noreferrer">
+                        LinkedIn <ExternalLink className="ml-2" size={14} />
+                      </a>
+                    </Button>
+                  </div>
                 </div>
 
                 <div className="text-center">
