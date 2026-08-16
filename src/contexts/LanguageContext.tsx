@@ -255,7 +255,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'team.david.title': 'David Santos',
     'team.david.subtitle': 'Software Engineer & Full-Stack Developer',
     'team.david.bio1': 'David Santos is a Software Engineer and Full-Stack Developer at UBKIR. His work spans front-end and back-end development, web application architecture and implementation, and software development, combining technical expertise with a strong focus on problem-solving and the development of functional and robust digital solutions.',
-    'team.david.bio2': 'He has experience with JavaScript, Python, Java, C/C++, HTML and CSS, as well as object-oriented programming, client-server systems, data processing and integration, state management, and dynamic interface development. At UBKIR, he contributes to the development and continued evolution of its digital platforms and solutions, working across the different layers of the technology stack.',
+    'team.david.bio2': 'At UBKIR, he contributes to the development and continued evolution of digital platforms and solutions.',
     
     // Team page - Professional Specializations
     'team.prof.spec.clinical': 'Clinical Psychology',
@@ -584,7 +584,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'team.david.title': 'David Santos',
     'team.david.subtitle': 'Software Engineer & Full-Stack Developer',
     'team.david.bio1': 'David Santos é Software Engineer e Full-Stack Developer na UBKIR. O seu trabalho abrange desenvolvimento front-end e back-end, arquitetura e implementação de aplicações web e desenvolvimento de software, combinando competências técnicas com uma forte orientação para resolução de problemas e construção de soluções digitais funcionais e robustas.',
-    'team.david.bio2': 'Tem experiência em JavaScript, Python, Java, C/C++, HTML e CSS, bem como em programação orientada a objetos, sistemas cliente-servidor, processamento e integração de dados, gestão de estado e desenvolvimento de interfaces dinâmicas. Na UBKIR, contribui para o desenvolvimento e evolução das suas plataformas e soluções digitais, com intervenção nas diferentes componentes da stack tecnológica.',
+    'team.david.bio2': 'Na UBKIR, contribui para o desenvolvimento e evolução de plataformas e soluções digitais.',
     
     // Team page - Professional Specializations (Portuguese)
     'team.prof.spec.clinical': 'Psicologia Clínica',
