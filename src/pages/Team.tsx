@@ -56,7 +56,6 @@ const Team = () => {
                       <h3 className="font-semibold text-foreground mb-3">{t("team.osvaldo.achievements.title")}</h3>
                       <ul className="text-sm text-muted-foreground space-y-2">
                         <li>• {t("team.osvaldo.achievements.enviheb")}</li>
-                        <li>• {t("team.osvaldo.achievements.cited")}</li>
                         <li>• {t("team.osvaldo.achievements.research")}</li>
                         <li>• {t("team.osvaldo.achievements.clinical")}</li>
                       </ul>
