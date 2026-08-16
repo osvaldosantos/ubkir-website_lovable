@@ -5,7 +5,6 @@ import { ExternalLink, Award, BookOpen, Users, Brain, Code } from "lucide-react"
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSiteImage } from "@/hooks/useSiteImages";
-import davidPhotoAsset from "@/assets/david-santos.jpg.asset.json";
 import Seo from "@/components/Seo";
 import { useLocalizedPaths } from "@/hooks/useLocalizedPaths";
 
@@ -16,7 +15,7 @@ const Team = () => {
     "team.osvaldo.photo",
     "/lovable-uploads/383f7e0f-7e49-44bd-9e3c-2035355fd892.png"
   );
-  const davidPhoto = useSiteImage("team.david.photo", davidPhotoAsset.url);
+  const davidPhoto = useSiteImage("team.david.photo", "/lovable-uploads/david-santos.jpg");
   
   return (
     <div className="min-h-screen py-20">
