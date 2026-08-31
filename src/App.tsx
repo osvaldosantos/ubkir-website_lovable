@@ -41,6 +41,8 @@ const SiteLayout = () => (
         <Route path="/pt/servicos" element={<Services />} />
         <Route path="/pt/equipa" element={<Team />} />
         <Route path="/pt/contactos" element={<Contacts />} />
+        <Route path="/pt/governacao" element={<Governance />} />
+        <Route path="/pt/governacao/plano-igualdade-genero" element={<GenderEqualityPlan />} />
         <Route path="/unsubscribe" element={<Unsubscribe />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
