@@ -343,6 +343,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.clinical': 'Clinical Services',
     'footer.software': 'Digital Development',
     'footer.editorial': 'Editorial Services',
+    'footer.governance': 'Governance & Policies',
     'footer.rights': '© 2024 Unbreakable Idea Research. All rights reserved.',
   },
   pt: {
