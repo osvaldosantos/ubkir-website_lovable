@@ -92,6 +92,39 @@ export const PAGES: Record<PageKey, PageDef> = {
       },
     },
   },
+  governance: {
+    paths: { en: "/governance", pt: "/pt/governacao" },
+    meta: {
+      en: {
+        title: "Governance & Policies | UBKIR",
+        description:
+          "Public access to UBKIR's institutional policies and plans on responsible research, ethical practice, equality, transparency and proportionate governance.",
+      },
+      pt: {
+        title: "Governação e Políticas | UBKIR",
+        description:
+          "Acesso público às políticas e planos institucionais da UBKIR sobre investigação responsável, prática ética, igualdade, transparência e governação.",
+      },
+    },
+  },
+  genderEqualityPlan: {
+    paths: {
+      en: "/governance/gender-equality-plan",
+      pt: "/pt/governacao/plano-igualdade-genero",
+    },
+    meta: {
+      en: {
+        title: "UBKIR Gender Equality Plan (GEP) 2026–2029",
+        description:
+          "UBKIR Gender Equality Plan (GEP) 2026–2029: public institutional policy on gender equality, diversity and inclusion, aligned with Horizon Europe GEP requirements.",
+      },
+      pt: {
+        title: "Plano para a Igualdade de Género UBKIR 2026–2029",
+        description:
+          "Plano para a Igualdade de Género UBKIR 2026–2029: documento público de política institucional sobre igualdade, diversidade e inclusão, alinhado com os requisitos GEP do Horizonte Europa.",
+      },
+    },
+  },
 };
 
 export const PAGE_KEYS = Object.keys(PAGES) as PageKey[];
