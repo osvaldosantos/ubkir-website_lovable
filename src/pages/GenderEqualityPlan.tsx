@@ -955,6 +955,10 @@ const GenderEqualityPlan = () => {
               <CardContent className="p-8">
                 <p className="text-foreground leading-relaxed mb-6">{c.approval.statement}</p>
                 <div className="border-t border-border pt-6">
+                  <div className="h-10 border-b border-foreground/40 max-w-xs mb-3" aria-hidden="true" />
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">
+                    {language === "pt" ? "Assinatura" : "Signature"}
+                  </p>
                   <p className="font-semibold text-foreground">{c.approval.name}</p>
                   <p className="text-muted-foreground">{c.approval.role}</p>
                   <p className="text-muted-foreground">{c.approval.org}</p>
