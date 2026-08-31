@@ -12,6 +12,8 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
 import Contacts from "./pages/Contacts";
+import Governance from "./pages/Governance";
+import GenderEqualityPlan from "./pages/GenderEqualityPlan";
 import Admin from "./pages/Admin";
 import Unsubscribe from "./pages/Unsubscribe";
 import NotFound from "./pages/NotFound";
