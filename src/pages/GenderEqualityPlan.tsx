@@ -740,7 +740,7 @@ const GenderEqualityPlan = () => {
   const ordered = [
     ...c.sections.slice(0, 4),
     c.baseline,
-    ...c.sections.slice(4),
+    ...c.sections.slice(4, 12),
   ];
 
   const toc = [
