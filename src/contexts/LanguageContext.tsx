@@ -672,6 +672,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.clinical': 'Serviços Clínicos',
     'footer.software': 'Desenvolvimento de Software',
     'footer.editorial': 'Serviços Editoriais',
+    'footer.governance': 'Governação e Políticas',
     'footer.rights': '© 2024 Unbreakable Idea Research. Todos os direitos reservados.',
   },
 };
