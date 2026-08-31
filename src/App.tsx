@@ -32,6 +32,8 @@ const SiteLayout = () => (
         <Route path="/services" element={<Services />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/governance" element={<Governance />} />
+        <Route path="/governance/gender-equality-plan" element={<GenderEqualityPlan />} />
         {/* Portuguese routes */}
         <Route path="/pt" element={<Home />} />
         <Route path="/pt/" element={<Home />} />
