@@ -1,6 +1,13 @@
 export type Lang = "en" | "pt";
 
-export type PageKey = "home" | "about" | "services" | "team" | "contacts";
+export type PageKey =
+  | "home"
+  | "about"
+  | "services"
+  | "team"
+  | "contacts"
+  | "governance"
+  | "genderEqualityPlan";
 
 interface PageDef {
   paths: Record<Lang, string>;
