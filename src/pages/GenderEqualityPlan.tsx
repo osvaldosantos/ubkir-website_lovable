@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Download, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocalizedPaths } from "@/hooks/useLocalizedPaths";
 import Seo from "@/components/Seo";
@@ -44,7 +45,7 @@ interface Copy {
   references: { id: string; heading: string; items: { label: string; url: string }[] };
 }
 
-const EN: Copy = {
+export const EN: Copy = {
   breadcrumb: "Governance & Policies",
   title: "Gender Equality, Diversity & Inclusion Plan (GEP) 2026–2029",
   org: "Unbreakable Idea Research, Lda. (UBKIR)",
@@ -387,7 +388,7 @@ const EN: Copy = {
   },
 };
 
-const PT: Copy = {
+export const PT: Copy = {
   breadcrumb: "Governação e Políticas",
   title: "Plano para a Igualdade de Género, Diversidade e Inclusão (GEP) 2026–2029",
   org: "Unbreakable Idea Research, Lda. (UBKIR)",
@@ -522,14 +523,14 @@ const PT: Copy = {
       heading: "13. Formação e sensibilização",
       paragraphs: [
         "É realizada, pelo menos, uma atividade anual de sensibilização ou formação sobre igualdade de género e inclusão, prática inclusiva, enviesamento inconsciente, respeito no local de trabalho e prevenção do assédio. As atividades podem ser internas, externas ou baseadas em recursos europeus ou nacionais adequados.",
-        "Os novos trabalhadores remunerados e os colaboradores recorrentes são informados sobre este Plano e sobre os padrões esperados durante o acolhimento ou a integração em projeto.",
+        "Os novos trabalhadores remunerados e os colaboradores recorrentes são informados sobre este Plano e sobre os padrões esperados durante a integração na empresa ou a integração no projeto.",
       ],
     },
     {
       id: "review",
       heading: "16. Monitorização e revisão do Plano",
       paragraphs: [
-        "A implementação é revista pelo menos anualmente, considerando a execução das ações, os indicadores de monitorização, alterações de equipa e de projetos, o feedback recebido, as preocupações comunicadas e alterações relevantes nos requisitos europeus ou portugueses. As ações corretivas são documentadas internamente.",
+        "A implementação é revista pelo menos anualmente, considerando a execução das ações, os indicadores de monitorização, alterações de equipa e de projetos, os comentários e contributos recebidos, as preocupações comunicadas e alterações relevantes nos requisitos europeus ou portugueses. As ações corretivas são documentadas internamente.",
         "Uma revisão completa será concluída até 31 de dezembro de 2029, podendo ser antecipada se alterações organizacionais significativas criarem novos requisitos.",
       ],
     },
@@ -564,7 +565,7 @@ const PT: Copy = {
     ],
     after: [
       "Com números tão reduzidos, a entrada ou saída de uma pessoa altera substancialmente as percentagens. O Plano centra-se, por isso, em processos justos e em tendências, e não em quotas fixas.",
-      "Por razões de privacidade, a UBKIR não publica dados sobre nacionalidade, etnia, deficiência, orientação sexual, identidade de género ou outras características potencialmente sensíveis em grupos de pequena dimensão. A diversidade da equipa é reconhecida apenas em termos gerais. O reporte público protege sempre a confidencialidade; é publicada anualmente uma nota de progresso concisa quando tal possa ser feito com segurança.",
+      "Por razões de privacidade, a UBKIR não publica dados sobre nacionalidade, etnia, deficiência, orientação sexual, identidade de género ou outras características potencialmente sensíveis em grupos de pequena dimensão. A diversidade da equipa é reconhecida apenas em termos gerais. A divulgação pública protege sempre a confidencialidade; é publicada anualmente uma nota de progresso concisa quando tal possa ser feito com segurança.",
     ],
   },
   action: {
@@ -589,7 +590,7 @@ const PT: Copy = {
       {
         id: "A3",
         action: "Linguagem de recrutamento inclusiva e não discriminatória e seleção baseada em competência.",
-        indicator: "100% dos novos processos de recrutamento revistos com a checklist do GEP.",
+        indicator: "100% dos novos processos de recrutamento revistos com a lista de verificação do GEP.",
         timing: "Contínuo",
         responsible: "Responsável pelo recrutamento / Gerente",
       },
@@ -646,13 +647,13 @@ const PT: Copy = {
   },
   checklist: {
     id: "horizon-europe",
-    heading: "15. Checklist de alinhamento com o Horizonte Europa",
+    heading: "15. Lista de verificação de alinhamento com o Horizonte Europa",
     columns: ["Tipo", "Requisito", "Resposta da UBKIR"],
     rows: [
       {
         type: "Obrigatório",
         requirement: "Documento público",
-        response: "GEP público, aprovado pela gerência, disponível no sítio da UBKIR e comunicado internamente.",
+        response: "GEP público, aprovado pela gerência, disponível no sítio institucional da UBKIR e comunicado internamente.",
       },
       {
         type: "Obrigatório",
@@ -662,7 +663,7 @@ const PT: Copy = {
       {
         type: "Obrigatório",
         requirement: "Recolha de dados e monitorização",
-        response: "Monitorização anual desagregada por sexo/género, com reporte público protetor da privacidade.",
+        response: "Monitorização anual desagregada por sexo/género, com divulgação pública protetora da privacidade.",
       },
       {
         type: "Obrigatório",
@@ -702,7 +703,7 @@ const PT: Copy = {
     statement:
       "Aprovado como documento público de política institucional da Unbreakable Idea Research, Lda. (UBKIR), com entrada em vigor em 31 de agosto de 2026.",
     name: "Osvaldo Santos",
-    role: "Gerente / Managing Partner",
+    role: "Gerente",
     org: "Unbreakable Idea Research, Lda. (UBKIR)",
     date: "31 de agosto de 2026",
   },
@@ -783,6 +784,53 @@ const GenderEqualityPlan = () => {
             ))}
           </dl>
         </header>
+
+        <section aria-labelledby="official-document" className="mb-12">
+          <Card className="border-l-4 border-l-primary">
+            <CardContent className="p-6">
+              <h2 id="official-document" className="text-lg font-semibold text-foreground mb-4">
+                {language === "pt" ? "Documento oficial" : "Official document"}
+              </h2>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button asChild>
+                  <a
+                    href={language === "pt" ? "/UBKIR_GEP_2026-2029_PT.pdf" : "/UBKIR_GEP_2026-2029_EN.pdf"}
+                    download
+                    aria-label={
+                      language === "pt"
+                        ? "Descarregar GEP oficial — Português (PDF)"
+                        : "Download official GEP — English (PDF)"
+                    }
+                  >
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    {language === "pt"
+                      ? "Descarregar GEP oficial — Português (PDF)"
+                      : "Download official GEP — English (PDF)"}
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a
+                    href={language === "pt" ? "/UBKIR_GEP_2026-2029_EN.pdf" : "/UBKIR_GEP_2026-2029_PT.pdf"}
+                    download
+                    aria-label={
+                      language === "pt"
+                        ? "Descarregar GEP — Inglês (PDF)"
+                        : "Download GEP — Portuguese (PDF)"
+                    }
+                  >
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    {language === "pt" ? "Descarregar GEP — Inglês (PDF)" : "Download GEP — Portuguese (PDF)"}
+                  </a>
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                {language === "pt"
+                  ? "O PDF descarregável é a versão formal destinada à assinatura pela gerência e à publicação institucional."
+                  : "The downloadable PDF is the formal version intended for management signature and institutional publication."}
+              </p>
+            </CardContent>
+          </Card>
+        </section>
 
         <nav aria-label={c.tocTitle} className="mb-12">
           <Card>
@@ -907,6 +955,10 @@ const GenderEqualityPlan = () => {
               <CardContent className="p-8">
                 <p className="text-foreground leading-relaxed mb-6">{c.approval.statement}</p>
                 <div className="border-t border-border pt-6">
+                  <div className="h-10 border-b border-foreground/40 max-w-xs mb-3" aria-hidden="true" />
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">
+                    {language === "pt" ? "Assinatura" : "Signature"}
+                  </p>
                   <p className="font-semibold text-foreground">{c.approval.name}</p>
                   <p className="text-muted-foreground">{c.approval.role}</p>
                   <p className="text-muted-foreground">{c.approval.org}</p>
