@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Download, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocalizedPaths } from "@/hooks/useLocalizedPaths";
 import Seo from "@/components/Seo";
@@ -44,7 +45,7 @@ interface Copy {
   references: { id: string; heading: string; items: { label: string; url: string }[] };
 }
 
-const EN: Copy = {
+export const EN: Copy = {
   breadcrumb: "Governance & Policies",
   title: "Gender Equality, Diversity & Inclusion Plan (GEP) 2026–2029",
   org: "Unbreakable Idea Research, Lda. (UBKIR)",
@@ -387,7 +388,7 @@ const EN: Copy = {
   },
 };
 
-const PT: Copy = {
+export const PT: Copy = {
   breadcrumb: "Governação e Políticas",
   title: "Plano para a Igualdade de Género, Diversidade e Inclusão (GEP) 2026–2029",
   org: "Unbreakable Idea Research, Lda. (UBKIR)",
@@ -783,6 +784,53 @@ const GenderEqualityPlan = () => {
             ))}
           </dl>
         </header>
+
+        <section aria-labelledby="official-document" className="mb-12">
+          <Card className="border-l-4 border-l-primary">
+            <CardContent className="p-6">
+              <h2 id="official-document" className="text-lg font-semibold text-foreground mb-4">
+                {language === "pt" ? "Documento oficial" : "Official document"}
+              </h2>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button asChild>
+                  <a
+                    href={language === "pt" ? "/UBKIR_GEP_2026-2029_PT.pdf" : "/UBKIR_GEP_2026-2029_EN.pdf"}
+                    download
+                    aria-label={
+                      language === "pt"
+                        ? "Descarregar GEP oficial — Português (PDF)"
+                        : "Download official GEP — English (PDF)"
+                    }
+                  >
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    {language === "pt"
+                      ? "Descarregar GEP oficial — Português (PDF)"
+                      : "Download official GEP — English (PDF)"}
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a
+                    href={language === "pt" ? "/UBKIR_GEP_2026-2029_EN.pdf" : "/UBKIR_GEP_2026-2029_PT.pdf"}
+                    download
+                    aria-label={
+                      language === "pt"
+                        ? "Descarregar GEP — Inglês (PDF)"
+                        : "Download GEP — Portuguese (PDF)"
+                    }
+                  >
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    {language === "pt" ? "Descarregar GEP — Inglês (PDF)" : "Download GEP — Portuguese (PDF)"}
+                  </a>
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                {language === "pt"
+                  ? "O PDF descarregável é a versão formal destinada à assinatura pela gerência e à publicação institucional."
+                  : "The downloadable PDF is the formal version intended for management signature and institutional publication."}
+              </p>
+            </CardContent>
+          </Card>
+        </section>
 
         <nav aria-label={c.tocTitle} className="mb-12">
           <Card>
