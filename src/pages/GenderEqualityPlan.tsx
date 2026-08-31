@@ -951,6 +951,8 @@ const GenderEqualityPlan = () => {
             </div>
           </section>
 
+          <SectionBlock section={c.sections[12]} />
+
           <section id={c.approval.id} className="scroll-mt-24 mb-10">
             <h2 className="text-2xl font-semibold text-foreground mb-4">{c.approval.heading}</h2>
             <Card className="border-2 border-primary/20">
