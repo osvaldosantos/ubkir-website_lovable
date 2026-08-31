@@ -19,12 +19,16 @@ const entries: SitemapEntry[] = [
   { path: "/services", changefreq: "monthly", priority: "0.8" },
   { path: "/team", changefreq: "monthly", priority: "0.7" },
   { path: "/contacts", changefreq: "yearly", priority: "0.6" },
+  { path: "/governance", changefreq: "monthly", priority: "0.6" },
+  { path: "/governance/gender-equality-plan", changefreq: "yearly", priority: "0.6" },
   // Portuguese
   { path: "/pt/", changefreq: "weekly", priority: "1.0" },
   { path: "/pt/sobre", changefreq: "monthly", priority: "0.8" },
   { path: "/pt/servicos", changefreq: "monthly", priority: "0.8" },
   { path: "/pt/equipa", changefreq: "monthly", priority: "0.7" },
   { path: "/pt/contactos", changefreq: "yearly", priority: "0.6" },
+  { path: "/pt/governacao", changefreq: "monthly", priority: "0.6" },
+  { path: "/pt/governacao/plano-igualdade-genero", changefreq: "yearly", priority: "0.6" },
 ]
 
 function generateSitemap(entries: SitemapEntry[]) {
