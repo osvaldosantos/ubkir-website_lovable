@@ -740,7 +740,7 @@ const GenderEqualityPlan = () => {
   const ordered = [
     ...c.sections.slice(0, 4),
     c.baseline,
-    ...c.sections.slice(4),
+    ...c.sections.slice(4, 12),
   ];
 
   const toc = [
@@ -795,38 +795,40 @@ const GenderEqualityPlan = () => {
                 <Button asChild>
                   <a
                     href={language === "pt" ? "/UBKIR_GEP_2026-2029_PT.pdf" : "/UBKIR_GEP_2026-2029_EN.pdf"}
-                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={
                       language === "pt"
-                        ? "Descarregar GEP oficial — Português (PDF)"
-                        : "Download official GEP — English (PDF)"
+                        ? "Abrir / descarregar GEP oficial — Português (PDF)"
+                        : "Open / download official GEP — English (PDF)"
                     }
                   >
                     <Download className="h-4 w-4" aria-hidden="true" />
                     {language === "pt"
-                      ? "Descarregar GEP oficial — Português (PDF)"
-                      : "Download official GEP — English (PDF)"}
+                      ? "Abrir / descarregar GEP oficial — Português (PDF)"
+                      : "Open / download official GEP — English (PDF)"}
                   </a>
                 </Button>
                 <Button asChild variant="outline">
                   <a
                     href={language === "pt" ? "/UBKIR_GEP_2026-2029_EN.pdf" : "/UBKIR_GEP_2026-2029_PT.pdf"}
-                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={
                       language === "pt"
-                        ? "Descarregar GEP — Inglês (PDF)"
-                        : "Download GEP — Portuguese (PDF)"
+                        ? "Abrir / descarregar GEP — Inglês (PDF)"
+                        : "Open / download GEP — Portuguese (PDF)"
                     }
                   >
                     <Download className="h-4 w-4" aria-hidden="true" />
-                    {language === "pt" ? "Descarregar GEP — Inglês (PDF)" : "Download GEP — Portuguese (PDF)"}
+                    {language === "pt" ? "Abrir / descarregar GEP — Inglês (PDF)" : "Open / download GEP — Portuguese (PDF)"}
                   </a>
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground mt-4">
                 {language === "pt"
-                  ? "O PDF descarregável é a versão formal destinada à assinatura pela gerência e à publicação institucional."
-                  : "The downloadable PDF is the formal version intended for management signature and institutional publication."}
+                  ? "O PDF abre num novo separador, onde pode ser consultado ou descarregado. É a versão formal destinada à assinatura pela gerência e à publicação institucional."
+                  : "The PDF opens in a new tab, where it can be viewed or downloaded. It is the formal version intended for management signature and institutional publication."}
               </p>
             </CardContent>
           </Card>
@@ -948,6 +950,8 @@ const GenderEqualityPlan = () => {
               </table>
             </div>
           </section>
+
+          <SectionBlock section={c.sections[12]} />
 
           <section id={c.approval.id} className="scroll-mt-24 mb-10">
             <h2 className="text-2xl font-semibold text-foreground mb-4">{c.approval.heading}</h2>
