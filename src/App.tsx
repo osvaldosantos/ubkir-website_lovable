@@ -12,6 +12,8 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
 import Contacts from "./pages/Contacts";
+import Governance from "./pages/Governance";
+import GenderEqualityPlan from "./pages/GenderEqualityPlan";
 import Admin from "./pages/Admin";
 import Unsubscribe from "./pages/Unsubscribe";
 import NotFound from "./pages/NotFound";
@@ -30,6 +32,8 @@ const SiteLayout = () => (
         <Route path="/services" element={<Services />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/governance" element={<Governance />} />
+        <Route path="/governance/gender-equality-plan" element={<GenderEqualityPlan />} />
         {/* Portuguese routes */}
         <Route path="/pt" element={<Home />} />
         <Route path="/pt/" element={<Home />} />
@@ -37,6 +41,8 @@ const SiteLayout = () => (
         <Route path="/pt/servicos" element={<Services />} />
         <Route path="/pt/equipa" element={<Team />} />
         <Route path="/pt/contactos" element={<Contacts />} />
+        <Route path="/pt/governacao" element={<Governance />} />
+        <Route path="/pt/governacao/plano-igualdade-genero" element={<GenderEqualityPlan />} />
         <Route path="/unsubscribe" element={<Unsubscribe />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />

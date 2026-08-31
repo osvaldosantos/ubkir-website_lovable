@@ -45,12 +45,20 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground">
             {t("footer.rights")}
           </p>
-          <Link
-            to="/admin"
-            className="text-xs text-muted-foreground/70 hover:text-foreground transition-colors"
-          >
-            Admin
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              to={localePath("governance")}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t("footer.governance")}
+            </Link>
+            <Link
+              to="/admin"
+              className="text-xs text-muted-foreground/70 hover:text-foreground transition-colors"
+            >
+              Admin
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
