@@ -522,14 +522,14 @@ const PT: Copy = {
       heading: "13. Formação e sensibilização",
       paragraphs: [
         "É realizada, pelo menos, uma atividade anual de sensibilização ou formação sobre igualdade de género e inclusão, prática inclusiva, enviesamento inconsciente, respeito no local de trabalho e prevenção do assédio. As atividades podem ser internas, externas ou baseadas em recursos europeus ou nacionais adequados.",
-        "Os novos trabalhadores remunerados e os colaboradores recorrentes são informados sobre este Plano e sobre os padrões esperados durante o acolhimento ou a integração em projeto.",
+        "Os novos trabalhadores remunerados e os colaboradores recorrentes são informados sobre este Plano e sobre os padrões esperados durante a integração na empresa ou a integração no projeto.",
       ],
     },
     {
       id: "review",
       heading: "16. Monitorização e revisão do Plano",
       paragraphs: [
-        "A implementação é revista pelo menos anualmente, considerando a execução das ações, os indicadores de monitorização, alterações de equipa e de projetos, o feedback recebido, as preocupações comunicadas e alterações relevantes nos requisitos europeus ou portugueses. As ações corretivas são documentadas internamente.",
+        "A implementação é revista pelo menos anualmente, considerando a execução das ações, os indicadores de monitorização, alterações de equipa e de projetos, os comentários e contributos recebidos, as preocupações comunicadas e alterações relevantes nos requisitos europeus ou portugueses. As ações corretivas são documentadas internamente.",
         "Uma revisão completa será concluída até 31 de dezembro de 2029, podendo ser antecipada se alterações organizacionais significativas criarem novos requisitos.",
       ],
     },
@@ -564,7 +564,7 @@ const PT: Copy = {
     ],
     after: [
       "Com números tão reduzidos, a entrada ou saída de uma pessoa altera substancialmente as percentagens. O Plano centra-se, por isso, em processos justos e em tendências, e não em quotas fixas.",
-      "Por razões de privacidade, a UBKIR não publica dados sobre nacionalidade, etnia, deficiência, orientação sexual, identidade de género ou outras características potencialmente sensíveis em grupos de pequena dimensão. A diversidade da equipa é reconhecida apenas em termos gerais. O reporte público protege sempre a confidencialidade; é publicada anualmente uma nota de progresso concisa quando tal possa ser feito com segurança.",
+      "Por razões de privacidade, a UBKIR não publica dados sobre nacionalidade, etnia, deficiência, orientação sexual, identidade de género ou outras características potencialmente sensíveis em grupos de pequena dimensão. A diversidade da equipa é reconhecida apenas em termos gerais. A divulgação pública protege sempre a confidencialidade; é publicada anualmente uma nota de progresso concisa quando tal possa ser feito com segurança.",
     ],
   },
   action: {
@@ -589,7 +589,7 @@ const PT: Copy = {
       {
         id: "A3",
         action: "Linguagem de recrutamento inclusiva e não discriminatória e seleção baseada em competência.",
-        indicator: "100% dos novos processos de recrutamento revistos com a checklist do GEP.",
+        indicator: "100% dos novos processos de recrutamento revistos com a lista de verificação do GEP.",
         timing: "Contínuo",
         responsible: "Responsável pelo recrutamento / Gerente",
       },
@@ -646,13 +646,13 @@ const PT: Copy = {
   },
   checklist: {
     id: "horizon-europe",
-    heading: "15. Checklist de alinhamento com o Horizonte Europa",
+    heading: "15. Lista de verificação de alinhamento com o Horizonte Europa",
     columns: ["Tipo", "Requisito", "Resposta da UBKIR"],
     rows: [
       {
         type: "Obrigatório",
         requirement: "Documento público",
-        response: "GEP público, aprovado pela gerência, disponível no sítio da UBKIR e comunicado internamente.",
+        response: "GEP público, aprovado pela gerência, disponível no sítio institucional da UBKIR e comunicado internamente.",
       },
       {
         type: "Obrigatório",
@@ -662,7 +662,7 @@ const PT: Copy = {
       {
         type: "Obrigatório",
         requirement: "Recolha de dados e monitorização",
-        response: "Monitorização anual desagregada por sexo/género, com reporte público protetor da privacidade.",
+        response: "Monitorização anual desagregada por sexo/género, com divulgação pública protetora da privacidade.",
       },
       {
         type: "Obrigatório",
@@ -702,7 +702,7 @@ const PT: Copy = {
     statement:
       "Aprovado como documento público de política institucional da Unbreakable Idea Research, Lda. (UBKIR), com entrada em vigor em 31 de agosto de 2026.",
     name: "Osvaldo Santos",
-    role: "Gerente / Managing Partner",
+    role: "Gerente",
     org: "Unbreakable Idea Research, Lda. (UBKIR)",
     date: "31 de agosto de 2026",
   },
