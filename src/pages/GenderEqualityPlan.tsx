@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -756,7 +757,7 @@ const GenderEqualityPlan = () => {
 
   // Downloads the PDF via fetch + object URL instead of navigating, so it
   // works inside sandboxed iframes (no new tab, no Chrome navigation block).
-  const handlePdfDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handlePdfDownload = async (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const url = e.currentTarget.href;
     const filename = url.split("/").pop() || "UBKIR_GEP_2026-2029.pdf";
