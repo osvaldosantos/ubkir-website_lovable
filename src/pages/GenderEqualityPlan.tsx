@@ -795,40 +795,38 @@ const GenderEqualityPlan = () => {
                 <Button asChild>
                   <a
                     href={language === "pt" ? "/UBKIR_GEP_2026-2029_PT.pdf" : "/UBKIR_GEP_2026-2029_EN.pdf"}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={handlePdfDownload}
                     aria-label={
                       language === "pt"
-                        ? "Abrir / descarregar GEP oficial — Português (PDF)"
-                        : "Open / download official GEP — English (PDF)"
+                        ? "Descarregar GEP oficial — Português (PDF)"
+                        : "Download official GEP — English (PDF)"
                     }
                   >
                     <Download className="h-4 w-4" aria-hidden="true" />
                     {language === "pt"
-                      ? "Abrir / descarregar GEP oficial — Português (PDF)"
-                      : "Open / download official GEP — English (PDF)"}
+                      ? "Descarregar GEP oficial — Português (PDF)"
+                      : "Download official GEP — English (PDF)"}
                   </a>
                 </Button>
                 <Button asChild variant="outline">
                   <a
                     href={language === "pt" ? "/UBKIR_GEP_2026-2029_EN.pdf" : "/UBKIR_GEP_2026-2029_PT.pdf"}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={handlePdfDownload}
                     aria-label={
                       language === "pt"
-                        ? "Abrir / descarregar GEP — Inglês (PDF)"
-                        : "Open / download GEP — Portuguese (PDF)"
+                        ? "Descarregar GEP — Inglês (PDF)"
+                        : "Download GEP — Portuguese (PDF)"
                     }
                   >
                     <Download className="h-4 w-4" aria-hidden="true" />
-                    {language === "pt" ? "Abrir / descarregar GEP — Inglês (PDF)" : "Open / download GEP — Portuguese (PDF)"}
+                    {language === "pt" ? "Descarregar GEP — Inglês (PDF)" : "Download GEP — Portuguese (PDF)"}
                   </a>
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground mt-4">
                 {language === "pt"
-                  ? "O PDF abre num novo separador, onde pode ser consultado ou descarregado. É a versão formal destinada à assinatura pela gerência e à publicação institucional."
-                  : "The PDF opens in a new tab, where it can be viewed or downloaded. It is the formal version intended for management signature and institutional publication."}
+                  ? "O PDF é descarregado diretamente para o seu dispositivo. É a versão formal destinada à assinatura pela gerência e à publicação institucional."
+                  : "The PDF is downloaded directly to your device. It is the formal version intended for management signature and institutional publication."}
               </p>
             </CardContent>
           </Card>
