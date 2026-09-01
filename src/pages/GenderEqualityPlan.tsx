@@ -754,6 +754,30 @@ const GenderEqualityPlan = () => {
     { id: c.references.id, heading: c.references.heading },
   ];
 
+  // Downloads the PDF via fetch + object URL instead of navigating, so it
+  // works inside sandboxed iframes (no new tab, no Chrome navigation block).
+  const handlePdfDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const url = e.currentTarget.href;
+    const filename = url.split("/").pop() || "UBKIR_GEP_2026-2029.pdf";
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const blob = await res.blob();
+      const objectUrl = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = objectUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(objectUrl);
+    } catch {
+      // Fallback: direct navigation to the file
+      window.location.href = url;
+    }
+  };
+
   return (
     <div className="min-h-screen py-20">
       <Seo page="genderEqualityPlan" />
