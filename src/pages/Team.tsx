@@ -164,7 +164,7 @@ const Team = () => {
                   <img
                     src={davidPhoto}
                     alt="David Santos - Software Engineer & Full-Stack Developer"
-                    className="w-48 h-48 object-cover rounded-lg mx-auto shadow-lg"
+                    className="w-64 h-auto object-contain rounded-lg mx-auto shadow-lg"
                   />
                 </div>
               </div>
