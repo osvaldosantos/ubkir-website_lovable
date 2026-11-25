@@ -151,6 +151,14 @@ const Team = () => {
                   <p className="text-lg text-muted-foreground mb-4">{t("team.david.bio1")}</p>
                   <p className="text-lg text-muted-foreground mb-6">{t("team.david.bio2")}</p>
 
+                  <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Award className="h-5 w-5 text-primary" />
+                      <h3 className="font-semibold text-foreground">{t("team.david.achievement.title")}</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{t("team.david.achievement.text")}</p>
+                  </div>
+
                   <div className="flex flex-wrap gap-3">
                     <Button variant="outline" size="sm" asChild>
                       <a href="https://www.linkedin.com/in/davidzsantos/?locale=en" target="_blank" rel="noopener noreferrer">

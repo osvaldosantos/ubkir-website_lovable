@@ -255,6 +255,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'team.david.subtitle': 'Software Engineer & Full-Stack Developer',
     'team.david.bio1': 'David Santos is a Software Engineer and Full-Stack Developer at UBKIR. His work spans front-end and back-end development, web application architecture and implementation, and software development, combining technical expertise with a strong focus on problem-solving and the development of functional and robust digital solutions.',
     'team.david.bio2': 'At UBKIR, he contributes to the development and continued evolution of digital platforms and solutions.',
+    'team.david.achievement.title': 'Recent achievement',
+    'team.david.achievement.text': 'David won 1st Place Overall and the Inspiring Solutions Challenge at JunctionX Lisbon 2026 with the No Other Choice team, presenting QuantumTrace — a cybersecurity platform developed in 48 hours that identifies cryptographic vulnerabilities and helps organizations prepare for the risks associated with quantum computing. The victory secured the team a place at Junction 2026 in Finland, where they will represent Portugal and Instituto Superior Técnico.',
     
     // Team page - Professional Specializations
     'team.prof.spec.clinical': 'Clinical Psychology',
@@ -584,6 +586,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'team.david.subtitle': 'Software Engineer & Full-Stack Developer',
     'team.david.bio1': 'David Santos é Software Engineer e Full-Stack Developer na UBKIR. O seu trabalho abrange desenvolvimento front-end e back-end, arquitetura e implementação de aplicações web e desenvolvimento de software, combinando competências técnicas com uma forte orientação para resolução de problemas e construção de soluções digitais funcionais e robustas.',
     'team.david.bio2': 'Na UBKIR, contribui para o desenvolvimento e evolução de plataformas e soluções digitais.',
+    'team.david.achievement.title': 'Conquista recente',
+    'team.david.achievement.text': 'David venceu o 1.º lugar absoluto e o desafio Inspiring Solutions no JunctionX Lisbon 2026 com a equipa No Other Choice, apresentando o QuantumTrace — uma plataforma de cibersegurança desenvolvida em 48 horas que identifica vulnerabilidades criptográficas e ajuda organizações a preparar-se para os riscos associados à computação quântica. A vitória garantiu à equipa um lugar no Junction 2026, na Finlândia, onde representarão Portugal e o Instituto Superior Técnico.',
     
     // Team page - Professional Specializations (Portuguese)
     'team.prof.spec.clinical': 'Psicologia Clínica',
