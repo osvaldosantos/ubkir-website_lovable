@@ -256,7 +256,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'team.david.bio1': 'David Santos is a Software Engineer and Full-Stack Developer at UBKIR. His work spans front-end and back-end development, web application architecture and implementation, and software development, combining technical expertise with a strong focus on problem-solving and the development of functional and robust digital solutions.',
     'team.david.bio2': 'At UBKIR, he contributes to the development and continued evolution of digital platforms and solutions.',
     'team.david.achievement.title': 'Recent achievement',
-    'team.david.achievement.text': 'David won 1st Place Overall and the Inspiring Solutions Challenge at JunctionX Lisbon 2026 with the No Other Choice team, presenting QuantumTrace — a cybersecurity platform developed in 48 hours that identifies cryptographic vulnerabilities and helps organizations prepare for the risks associated with quantum computing. The victory secured the team a place at Junction 2026 in Finland, where they will represent Portugal and Instituto Superior Técnico.',
+    'team.david.achievement.text': 'David won 1st Place Overall and the Inspiring Solutions Challenge at JunctionX Lisbon 2026 with the No Other Choice team, presenting QuantumTrace — a cybersecurity platform developed in 48 hours that identifies cryptographic vulnerabilities and helps organizations prepare for the risks associated with quantum computing. The victory secured the team a place at Junction 2026 in Finland, where they represented Portugal and Instituto Superior Técnico.',
     
     // Team page - Professional Specializations
     'team.prof.spec.clinical': 'Clinical Psychology',
